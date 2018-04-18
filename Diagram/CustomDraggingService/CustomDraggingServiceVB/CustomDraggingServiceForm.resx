@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RadDiagram1.SerializedXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;RadDiagram Version="2018.1"&gt;&lt;Metadata Type="Telerik.WinControls.UI.RadDiagramElement" Id="6699b2a5-cd58-4a17-b996-4083758a539f" Zoom="1" Position="0;0"&gt;&lt;Title&gt;Diagram [4/18/2018 3:58:09 PM]&lt;/Title&gt;&lt;Description&gt;&lt;/Description&gt;&lt;/Metadata&gt;&lt;Groups /&gt;&lt;Shapes QNs="Telerik.WinControls.RadDiagram, Version=2018.1.312.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e;"&gt;&lt;RadDiagramShape Type="Telerik.WinControls.UI.RadDiagramShape" Id="7940eb89-523a-4edb-b78e-bd5f4a82572d" ZIndex="0" Position="30;39" Size="70;52" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" ElementShape="Telerik.WinControls.EllipseShape" Foreground="#FF000000" BackColor="#FF25A0DA" Text="" QN="0"&gt;&lt;Connectors QNs="Telerik.WinControls.RadDiagram, Version=2018.1.312.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e;"&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" Width="4" Height="4" QN="0" /&gt;&lt;/Connectors&gt;&lt;/RadDiagramShape&gt;&lt;RadDiagramShape Type="Telerik.WinControls.UI.RadDiagramShape" Id="158db6b1-75fd-4bd6-8f62-fd4064362c51" ZIndex="0" Position="145;39" Size="70;52" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" ElementShape="Telerik.WinControls.RoundRectShape|5" Foreground="#FF000000" BackColor="#FF25A0DA" Text="" QN="0"&gt;&lt;Connectors QNs="Telerik.WinControls.RadDiagram, Version=2018.1.312.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e;"&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" Width="4" Height="4" QN="0" /&gt;&lt;/Connectors&gt;&lt;/RadDiagramShape&gt;&lt;RadDiagramShape Type="Telerik.WinControls.UI.RadDiagramShape" Id="9880a41e-77dc-4abf-8093-25dd72bed0dd" ZIndex="0" Position="30;146" Size="70;52" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" ElementShape="Telerik.WinControls.UI.TabVsShape|False;False" Foreground="#FF000000" BackColor="#FF25A0DA" Text="" QN="0"&gt;&lt;Connectors QNs="Telerik.WinControls.RadDiagram, Version=2018.1.312.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e;"&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" Width="4" Height="4" QN="0" /&gt;&lt;/Connectors&gt;&lt;/RadDiagramShape&gt;&lt;RadDiagramShape Type="Telerik.WinControls.UI.RadDiagramShape" Id="9ae31100-ddec-4df0-8a2f-7320365f765b" ZIndex="0" Position="145;146" Size="70;52" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" ElementShape="Telerik.WinControls.CustomShape|-95,-100,190,181:96,80.87292,False,0,0,0,0,0:-96,81.00064,False,0,0,0,0,0:-96,-102.1401,False,0,0,0,0,0:" Foreground="#FF000000" BackColor="#FF25A0DA" Text="" QN="0"&gt;&lt;Connectors QNs="Telerik.WinControls.RadDiagram, Version=2018.1.312.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e;"&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" Width="4" Height="4" QN="0" /&gt;&lt;RadDiagramConnector Type="Telerik.WinControls.UI.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" Width="4" Height="4" QN="0" /&gt;&lt;/Connectors&gt;&lt;/RadDiagramShape&gt;&lt;/Shapes&gt;&lt;Connections /&gt;&lt;/RadDiagram&gt;</value>
+  </data>
+  <metadata name="TelerikMetroTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+</root>
