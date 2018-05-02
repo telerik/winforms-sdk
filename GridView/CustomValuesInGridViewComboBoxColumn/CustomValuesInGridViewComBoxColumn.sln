@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomValues", "CustomValuesCS\CustomValues.csproj", "{D06CBBD0-61BF-4B62-AD01-F472F959A531}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CustomValuesVB", "CustomValuesVB\CustomValuesVB.vbproj", "{820F1925-3A34-4293-8E9C-3DB67723B8C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D06CBBD0-61BF-4B62-AD01-F472F959A531}.Debug|x86.ActiveCfg = Debug|x86
+		{D06CBBD0-61BF-4B62-AD01-F472F959A531}.Debug|x86.Build.0 = Debug|x86
+		{D06CBBD0-61BF-4B62-AD01-F472F959A531}.Release|x86.ActiveCfg = Release|x86
+		{D06CBBD0-61BF-4B62-AD01-F472F959A531}.Release|x86.Build.0 = Release|x86
+		{820F1925-3A34-4293-8E9C-3DB67723B8C3}.Debug|x86.ActiveCfg = Debug|x86
+		{820F1925-3A34-4293-8E9C-3DB67723B8C3}.Debug|x86.Build.0 = Debug|x86
+		{820F1925-3A34-4293-8E9C-3DB67723B8C3}.Release|x86.ActiveCfg = Release|x86
+		{820F1925-3A34-4293-8E9C-3DB67723B8C3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02D30575-9E53-4539-9C48-A14B45071EA0}
+	EndGlobalSection
+EndGlobal
