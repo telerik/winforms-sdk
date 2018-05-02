@@ -6,11 +6,11 @@
     </tr>
     <tr>
         <td>Product</td>
-        <td>RadMap for WinForms</td>
+        <td>RadGridView for WinForms</td>
     </tr>
 </table>
 
 
 ## Description 
 
-Custom implementation demonstrating one can add a free value or use a value from the popup when using GridViewComBoxColumn.
+Custom implementation demonstrating how one can add a free value or use a value from the popup when using GridViewComBoxColumn.
