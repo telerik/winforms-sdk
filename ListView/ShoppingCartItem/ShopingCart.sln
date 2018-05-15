@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartItemCS", "ShoppingCartItemCS\ShoppingCartItemCS.csproj", "{D796DF0C-9F98-4427-8751-AFDD62C7CA9E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ShoppingCartItemVB", "ShoppingCartItemVB\ShoppingCartItemVB.vbproj", "{69138841-31C9-45CD-810C-521D4F1808FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D796DF0C-9F98-4427-8751-AFDD62C7CA9E}.Debug|x86.ActiveCfg = Debug|x86
+		{D796DF0C-9F98-4427-8751-AFDD62C7CA9E}.Debug|x86.Build.0 = Debug|x86
+		{D796DF0C-9F98-4427-8751-AFDD62C7CA9E}.Release|x86.ActiveCfg = Release|x86
+		{D796DF0C-9F98-4427-8751-AFDD62C7CA9E}.Release|x86.Build.0 = Release|x86
+		{69138841-31C9-45CD-810C-521D4F1808FF}.Debug|x86.ActiveCfg = Debug|x86
+		{69138841-31C9-45CD-810C-521D4F1808FF}.Debug|x86.Build.0 = Debug|x86
+		{69138841-31C9-45CD-810C-521D4F1808FF}.Release|x86.ActiveCfg = Release|x86
+		{69138841-31C9-45CD-810C-521D4F1808FF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9CA0AF3-BE5B-4816-BFF8-3E6FFED35F95}
+	EndGlobalSection
+EndGlobal
