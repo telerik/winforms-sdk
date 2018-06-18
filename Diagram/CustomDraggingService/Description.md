@@ -14,3 +14,5 @@
 ## Description 
 
 A custom dragging service class introducing a **DragMode** property determining in what direction a shape can be dragged.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/diagram-restricting-drag-direction

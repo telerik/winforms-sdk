@@ -14,3 +14,5 @@
 ## Description 
 
 This solution provides a C# and a VB.NET project demonstrating how to create a custom item suitable for a shopping cart (you can see the product details and adjust the amount).
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/shopping-cart-lsitview-custom-item
