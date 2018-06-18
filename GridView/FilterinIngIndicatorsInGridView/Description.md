@@ -16,4 +16,4 @@
 An example demonstrating how additional filtering indicators can be added to the filter row header and data cells.
 ![filtering-indicators-gridview 001](filtering-indicators-gridview001.gif)
 
-Step by Step Guide: https://docs.telerik.com/devtools/winforms/knowledge-base/filtering-indicators-in-gridview
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/filtering-indicators-in-gridview

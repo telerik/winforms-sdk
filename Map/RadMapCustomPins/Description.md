@@ -14,3 +14,5 @@
 ## Description 
 
 Custom implementation demonstrating how the MapPin object can be extended to support images.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/radmap-pins-with-an-image

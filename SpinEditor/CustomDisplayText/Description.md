@@ -14,3 +14,5 @@
 ## Description 
 
 An example demonstrating how the text in the editor can be formatted to support scientific notation or display leading zeros.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/scientific-notation-leading-zeros-spineditor

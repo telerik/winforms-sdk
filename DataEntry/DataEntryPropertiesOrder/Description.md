@@ -14,3 +14,5 @@
 ## Description 
 
 This article demonstrates how to control the properties order in **RadDataEntry**.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/dataentry-properties-order

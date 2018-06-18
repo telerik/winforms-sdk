@@ -14,3 +14,5 @@
 ## Description 
 
 An example demonstrating how server side paging can be implemented fetching the data form an IQueryable object.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/server-side-paging-in-virtualgrid

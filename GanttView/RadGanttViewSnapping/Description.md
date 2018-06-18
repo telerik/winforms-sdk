@@ -14,3 +14,5 @@
 ## Description 
 
 A custom implementation showing how the tasks can snap to a full day and update with a single day at a time during drag-and drop or while resizing.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/snapping-per-day-in-radganttview

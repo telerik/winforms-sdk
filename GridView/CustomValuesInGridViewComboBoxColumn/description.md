@@ -14,3 +14,5 @@
 ## Description 
 
 Custom implementation demonstrating how one can add a free value or use a value from the popup when using GridViewComBoxColumn.
+
+Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/free-text-in-combobox-column
