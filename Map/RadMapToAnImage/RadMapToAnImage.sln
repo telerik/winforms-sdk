@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadMapToAnImage", "RadMapToAnImage\RadMapToAnImage.csproj", "{DC38200A-5175-4E94-ACB8-FBF4D5B545D8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RadMapToAnImageVB", "RadMapToAnImageVB\RadMapToAnImageVB.vbproj", "{90D86DCA-AED9-4172-A355-67A34EFD5D65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC38200A-5175-4E94-ACB8-FBF4D5B545D8}.Debug|x86.ActiveCfg = Debug|x86
+		{DC38200A-5175-4E94-ACB8-FBF4D5B545D8}.Debug|x86.Build.0 = Debug|x86
+		{DC38200A-5175-4E94-ACB8-FBF4D5B545D8}.Release|x86.ActiveCfg = Release|x86
+		{DC38200A-5175-4E94-ACB8-FBF4D5B545D8}.Release|x86.Build.0 = Release|x86
+		{90D86DCA-AED9-4172-A355-67A34EFD5D65}.Debug|x86.ActiveCfg = Debug|x86
+		{90D86DCA-AED9-4172-A355-67A34EFD5D65}.Debug|x86.Build.0 = Debug|x86
+		{90D86DCA-AED9-4172-A355-67A34EFD5D65}.Release|x86.ActiveCfg = Release|x86
+		{90D86DCA-AED9-4172-A355-67A34EFD5D65}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F438306E-DB8B-418A-9F54-AC3DEE5E6712}
+	EndGlobalSection
+EndGlobal

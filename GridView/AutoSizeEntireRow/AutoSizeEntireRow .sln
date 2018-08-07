@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSizeEntireRow ", "AutoSizeEntireRowCS\AutoSizeEntireRow .csproj", "{1CDD6303-9D3A-4F7E-8A68-F2C2F2700311}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AutoSizeEntireRowVB", "AutoSizeEntireRowVB\AutoSizeEntireRowVB.vbproj", "{27916C1B-F36F-42C0-95E3-D958BF2BFB98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CDD6303-9D3A-4F7E-8A68-F2C2F2700311}.Debug|x86.ActiveCfg = Debug|x86
+		{1CDD6303-9D3A-4F7E-8A68-F2C2F2700311}.Debug|x86.Build.0 = Debug|x86
+		{1CDD6303-9D3A-4F7E-8A68-F2C2F2700311}.Release|x86.ActiveCfg = Release|x86
+		{1CDD6303-9D3A-4F7E-8A68-F2C2F2700311}.Release|x86.Build.0 = Release|x86
+		{27916C1B-F36F-42C0-95E3-D958BF2BFB98}.Debug|x86.ActiveCfg = Debug|x86
+		{27916C1B-F36F-42C0-95E3-D958BF2BFB98}.Debug|x86.Build.0 = Debug|x86
+		{27916C1B-F36F-42C0-95E3-D958BF2BFB98}.Release|x86.ActiveCfg = Release|x86
+		{27916C1B-F36F-42C0-95E3-D958BF2BFB98}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {952B814B-E014-41D7-9E07-26E2BD28DCD6}
+	EndGlobalSection
+EndGlobal
