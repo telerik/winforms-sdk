@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ScalingZoomVB", "ScalingZoomVB\ScalingZoomVB.vbproj", "{232A39AE-50D7-40C7-AF51-B04751E9A17C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScalingZoomCS", "ScalingZoom\ScalingZoomCS.csproj", "{4C463624-C7CE-40F7-A731-8A95B686FFCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{232A39AE-50D7-40C7-AF51-B04751E9A17C}.Debug|x86.ActiveCfg = Debug|x86
+		{232A39AE-50D7-40C7-AF51-B04751E9A17C}.Debug|x86.Build.0 = Debug|x86
+		{232A39AE-50D7-40C7-AF51-B04751E9A17C}.Release|x86.ActiveCfg = Release|x86
+		{232A39AE-50D7-40C7-AF51-B04751E9A17C}.Release|x86.Build.0 = Release|x86
+		{4C463624-C7CE-40F7-A731-8A95B686FFCE}.Debug|x86.ActiveCfg = Debug|x86
+		{4C463624-C7CE-40F7-A731-8A95B686FFCE}.Debug|x86.Build.0 = Debug|x86
+		{4C463624-C7CE-40F7-A731-8A95B686FFCE}.Release|x86.ActiveCfg = Release|x86
+		{4C463624-C7CE-40F7-A731-8A95B686FFCE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
