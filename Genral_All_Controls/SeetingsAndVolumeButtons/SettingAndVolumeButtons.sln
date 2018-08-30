@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SettingAndVolumeButtons", "SettingAndVolumeButtons\SettingAndVolumeButtons.csproj", "{6471E81A-2FF5-4270-A9AA-0B3D67D221A8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SettingAndVolumeButtonsVB", "SettingAndVolumeButtonsVB\SettingAndVolumeButtonsVB.vbproj", "{110CB091-9A26-4153-8B7A-8F768A9421A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6471E81A-2FF5-4270-A9AA-0B3D67D221A8}.Debug|x86.ActiveCfg = Debug|x86
+		{6471E81A-2FF5-4270-A9AA-0B3D67D221A8}.Debug|x86.Build.0 = Debug|x86
+		{6471E81A-2FF5-4270-A9AA-0B3D67D221A8}.Release|x86.ActiveCfg = Release|x86
+		{6471E81A-2FF5-4270-A9AA-0B3D67D221A8}.Release|x86.Build.0 = Release|x86
+		{110CB091-9A26-4153-8B7A-8F768A9421A5}.Debug|x86.ActiveCfg = Debug|x86
+		{110CB091-9A26-4153-8B7A-8F768A9421A5}.Debug|x86.Build.0 = Debug|x86
+		{110CB091-9A26-4153-8B7A-8F768A9421A5}.Release|x86.ActiveCfg = Release|x86
+		{110CB091-9A26-4153-8B7A-8F768A9421A5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F4FF4CD-E3E7-448D-A0EC-35C9D4354D5A}
+	EndGlobalSection
+EndGlobal

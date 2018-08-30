@@ -17,4 +17,4 @@
 
 ## Description 
 
-This solution provides a C# and a VB.NET projects demonstrating how to create a custom row that measure all cells (by default only the visible cells are measured). This solution uses cached row height as well and this improves the performance. Detailed information about this is available here: https://docs.telerik.com/devtools/winforms/gridview/rows/how-to/autosize-entire-row
+This solution provides a C# and a VB.NET projects demonstrating how to implement a custom scaling in your application. THe solution uses the Scale method which requires keeping the previous scaling factor.
