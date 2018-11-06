@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_3DBarChart", "3DBarChart\_3DBarChart.csproj", "{B0ACDEA5-09F2-4058-BCE2-2AC6D49510A9}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "_3DBarChartVB", "3DBarChartVB\_3DBarChartVB.vbproj", "{520D56B5-7D97-4307-A1D8-7DA6689235B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0ACDEA5-09F2-4058-BCE2-2AC6D49510A9}.Debug|x86.ActiveCfg = Debug|x86
+		{B0ACDEA5-09F2-4058-BCE2-2AC6D49510A9}.Debug|x86.Build.0 = Debug|x86
+		{B0ACDEA5-09F2-4058-BCE2-2AC6D49510A9}.Release|x86.ActiveCfg = Release|x86
+		{B0ACDEA5-09F2-4058-BCE2-2AC6D49510A9}.Release|x86.Build.0 = Release|x86
+		{520D56B5-7D97-4307-A1D8-7DA6689235B8}.Debug|x86.ActiveCfg = Debug|x86
+		{520D56B5-7D97-4307-A1D8-7DA6689235B8}.Debug|x86.Build.0 = Debug|x86
+		{520D56B5-7D97-4307-A1D8-7DA6689235B8}.Release|x86.ActiveCfg = Release|x86
+		{520D56B5-7D97-4307-A1D8-7DA6689235B8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F33E68D8-3FE1-47AB-8FEE-FB9CBB0492E4}
+	EndGlobalSection
+EndGlobal
