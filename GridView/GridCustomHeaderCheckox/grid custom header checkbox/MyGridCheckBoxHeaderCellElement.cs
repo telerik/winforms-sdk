@@ -23,7 +23,7 @@ namespace _1171173
 
         private void CheckBox_ToggleStateChanged(object sender, StateChangedEventArgs args)
         {
-
+            this.MasterTemplate.BeginUpdate();
             if (args.ToggleState == Telerik.WinControls.Enumerations.ToggleState.On)
             {
                 foreach (var item in this.GridControl.ChildRows)
@@ -38,6 +38,7 @@ namespace _1171173
                     item.Cells[this.ColumnIndex].Value = false;
                 }
             }
+            this.MasterTemplate.EndUpdate(true, new DataViewChangedEventArgs(ViewChangedAction.DataChanged));
 
         }
         public override bool IsCompatible(GridViewColumn data, object context)
