@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutocompleteDeleteButtonCS", "AutocompleteDeleteButtonCS\AutocompleteDeleteButtonCS.csproj", "{899924BA-EF3B-44DC-AE88-0CC5C3E0B7DD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AutocompleteDeleteButtonVB", "AutocompleteDeleteButtonVB\AutocompleteDeleteButtonVB.vbproj", "{F1540072-0EA3-4BFC-843F-B3F404D0CAC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{899924BA-EF3B-44DC-AE88-0CC5C3E0B7DD}.Debug|x86.ActiveCfg = Debug|x86
+		{899924BA-EF3B-44DC-AE88-0CC5C3E0B7DD}.Debug|x86.Build.0 = Debug|x86
+		{899924BA-EF3B-44DC-AE88-0CC5C3E0B7DD}.Release|x86.ActiveCfg = Release|x86
+		{899924BA-EF3B-44DC-AE88-0CC5C3E0B7DD}.Release|x86.Build.0 = Release|x86
+		{F1540072-0EA3-4BFC-843F-B3F404D0CAC6}.Debug|x86.ActiveCfg = Debug|x86
+		{F1540072-0EA3-4BFC-843F-B3F404D0CAC6}.Debug|x86.Build.0 = Debug|x86
+		{F1540072-0EA3-4BFC-843F-B3F404D0CAC6}.Release|x86.ActiveCfg = Release|x86
+		{F1540072-0EA3-4BFC-843F-B3F404D0CAC6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5F5D98A-87DC-4C0A-AB8B-79601A03A07E}
+	EndGlobalSection
+EndGlobal
