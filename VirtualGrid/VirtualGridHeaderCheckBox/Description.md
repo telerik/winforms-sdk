@@ -13,8 +13,8 @@
 
 ## Description 
 
-An example demonstrating how you can create a header check box in **RadVirtualGrid**.
+An example demonstrating how you can create a header check box in **RadVirtualGrid**. 
 
-![virtualgrid-header-checkbox](images/virtualgrid-header-checkbox.gif)
+![virtualgrid-header-checkbox 001](virtualgrid-header-checkbox001.gif)
 
 Step by step guide: https://docs.telerik.com/devtools/winforms/knowledge-base/virtualgrid-header-checkbox
