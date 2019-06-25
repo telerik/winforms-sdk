@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropBetweenGrids", "DragAndDropBetweenGrids\DragAndDropBetweenGrids.csproj", "{042226E1-270F-4482-8673-F9F0F12849ED}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DragAndDropBetweenGridsVB", "DragAndDropBetweenGridsVB\DragAndDropBetweenGridsVB.vbproj", "{AA32C3BA-5FC7-4627-904A-CF9EE0CF3E4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{042226E1-270F-4482-8673-F9F0F12849ED}.Debug|x86.ActiveCfg = Debug|x86
+		{042226E1-270F-4482-8673-F9F0F12849ED}.Debug|x86.Build.0 = Debug|x86
+		{042226E1-270F-4482-8673-F9F0F12849ED}.Release|x86.ActiveCfg = Release|x86
+		{042226E1-270F-4482-8673-F9F0F12849ED}.Release|x86.Build.0 = Release|x86
+		{AA32C3BA-5FC7-4627-904A-CF9EE0CF3E4A}.Debug|x86.ActiveCfg = Debug|x86
+		{AA32C3BA-5FC7-4627-904A-CF9EE0CF3E4A}.Debug|x86.Build.0 = Debug|x86
+		{AA32C3BA-5FC7-4627-904A-CF9EE0CF3E4A}.Release|x86.ActiveCfg = Release|x86
+		{AA32C3BA-5FC7-4627-904A-CF9EE0CF3E4A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F15CC984-4A61-4302-998F-DB4AFC3E8686}
+	EndGlobalSection
+EndGlobal
