@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveRestoreExpandedStatesCS", "SaveRestoreExpandedStatesCS\SaveRestoreExpandedStatesCS.csproj", "{E5701A95-2E96-4970-BDC7-45BC00843F38}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SaveRestoreExpandedStatesVB", "SaveRestoreExpandedStatesVB\SaveRestoreExpandedStatesVB.vbproj", "{5FEE1E46-F845-49ED-BBC3-C08F826F64A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5701A95-2E96-4970-BDC7-45BC00843F38}.Debug|x86.ActiveCfg = Debug|x86
+		{E5701A95-2E96-4970-BDC7-45BC00843F38}.Debug|x86.Build.0 = Debug|x86
+		{E5701A95-2E96-4970-BDC7-45BC00843F38}.Release|x86.ActiveCfg = Release|x86
+		{E5701A95-2E96-4970-BDC7-45BC00843F38}.Release|x86.Build.0 = Release|x86
+		{5FEE1E46-F845-49ED-BBC3-C08F826F64A9}.Debug|x86.ActiveCfg = Debug|x86
+		{5FEE1E46-F845-49ED-BBC3-C08F826F64A9}.Debug|x86.Build.0 = Debug|x86
+		{5FEE1E46-F845-49ED-BBC3-C08F826F64A9}.Release|x86.ActiveCfg = Release|x86
+		{5FEE1E46-F845-49ED-BBC3-C08F826F64A9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D4E6ADC-F869-4081-A3F3-5873941BF92D}
+	EndGlobalSection
+EndGlobal
