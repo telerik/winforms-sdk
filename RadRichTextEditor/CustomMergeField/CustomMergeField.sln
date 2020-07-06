@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CustomMergeFieldVB", "CustomMergeFieldVB\CustomMergeFieldVB.vbproj", "{B537BB00-3C77-45FE-A93C-4A8A540999A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMergeFieldCS", "CustomMergeFieldCS\CustomMergeFieldCS.csproj", "{93C71F90-EB3D-4B0D-9A4A-01683CD231F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B537BB00-3C77-45FE-A93C-4A8A540999A4}.Debug|x86.ActiveCfg = Debug|x86
+		{B537BB00-3C77-45FE-A93C-4A8A540999A4}.Debug|x86.Build.0 = Debug|x86
+		{B537BB00-3C77-45FE-A93C-4A8A540999A4}.Release|x86.ActiveCfg = Release|x86
+		{B537BB00-3C77-45FE-A93C-4A8A540999A4}.Release|x86.Build.0 = Release|x86
+		{93C71F90-EB3D-4B0D-9A4A-01683CD231F5}.Debug|x86.ActiveCfg = Debug|x86
+		{93C71F90-EB3D-4B0D-9A4A-01683CD231F5}.Debug|x86.Build.0 = Debug|x86
+		{93C71F90-EB3D-4B0D-9A4A-01683CD231F5}.Release|x86.ActiveCfg = Release|x86
+		{93C71F90-EB3D-4B0D-9A4A-01683CD231F5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A86A529-5349-41ED-A8BC-7CF1F4EF8E2D}
+	EndGlobalSection
+EndGlobal
