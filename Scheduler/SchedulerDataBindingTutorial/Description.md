@@ -1,10 +1,3 @@
-page_title: Scheduler Data Binding Tutorial    
-slug: scheduler-databinding-tutorial
-position: 0
-tags: scheduler, binding
-res_type: kb
----
-
 ## Environment
  
 |Product Version|Product|Author|
