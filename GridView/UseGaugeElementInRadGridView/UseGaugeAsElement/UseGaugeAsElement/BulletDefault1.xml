@@ -1,0 +1,21 @@
+﻿
+  <Items>
+    <Telerik.WinControls.UI.Gauges.BulletGraphQualitativeBar RangeEnd="49" BackColor2="184, 197, 218" BackColor="184, 197, 218" Padding="0, 0, 0, 0" Name="bulletGraphQualitativeBar1">
+      <DataBindings DefaultDataSourceUpdateMode="OnValidation" />
+    </Telerik.WinControls.UI.Gauges.BulletGraphQualitativeBar>
+    <Telerik.WinControls.UI.Gauges.BulletGraphQualitativeBar RangeEnd="74" RangeStart="50" BackColor2="210, 219, 232" BackColor="210, 219, 232" Padding="0, 0, 0, 0" Name="bulletGraphQualitativeBar2">
+      <DataBindings DefaultDataSourceUpdateMode="OnValidation" />
+    </Telerik.WinControls.UI.Gauges.BulletGraphQualitativeBar>
+    <Telerik.WinControls.UI.Gauges.BulletGraphQualitativeBar RangeStart="75" BackColor2="237, 240, 246" BackColor="237, 240, 246" Padding="0, 0, 0, 0" Name="bulletGraphQualitativeBar3">
+      <DataBindings DefaultDataSourceUpdateMode="OnValidation" />
+    </Telerik.WinControls.UI.Gauges.BulletGraphQualitativeBar>
+    <Telerik.WinControls.UI.Gauges.BulletGraphFeaturedMeasureBar Offset="11" Width2="10" Width="10" RangeEnd="85" AutoSize="False" Bounds="0, 0, 280, 50" Padding="0, 0, 0, 0" Name="bulletGraphFeaturedMeasureBar1">
+      <DataBindings DefaultDataSourceUpdateMode="OnValidation" />
+    </Telerik.WinControls.UI.Gauges.BulletGraphFeaturedMeasureBar>
+    <Telerik.WinControls.UI.Gauges.LinearGaugeNeedleIndicator LineLenght="30" LocationPercentage="30" Thickness="3" Value="80" LenghtPercentage="0" BackColor="Black" AutoSize="False" Bounds="0, 0, 280, 50" Padding="0, 0, 0, 0" Name="linearGaugeNeedleIndicator1">
+      <DataBindings DefaultDataSourceUpdateMode="OnValidation" />
+    </Telerik.WinControls.UI.Gauges.LinearGaugeNeedleIndicator>
+    <Telerik.WinControls.UI.Gauges.LinearGaugeLabels AutoSize="False" Bounds="0, 0, 280, 40" Padding="0, 0, 0, 0" Name="linearGaugeLabels1">
+      <DataBindings DefaultDataSourceUpdateMode="OnValidation" />
+    </Telerik.WinControls.UI.Gauges.LinearGaugeLabels>
+  </Items>  
