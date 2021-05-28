@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VirtualMultiColumnComboBox", "VirtualMultiColumnComboBox\VirtualMultiColumnComboBox.vbproj", "{3D9724FF-8B11-4773-9090-9FE203192305}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VirtualMultiColumnComboBox.Implementation", "VirtualMultiColumnComboBox.Implementation\VirtualMultiColumnComboBox.Implementation.vbproj", "{3CCE7987-5F99-4A7B-9BE1-7EE604C43DAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D9724FF-8B11-4773-9090-9FE203192305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9724FF-8B11-4773-9090-9FE203192305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9724FF-8B11-4773-9090-9FE203192305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9724FF-8B11-4773-9090-9FE203192305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCE7987-5F99-4A7B-9BE1-7EE604C43DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCE7987-5F99-4A7B-9BE1-7EE604C43DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCE7987-5F99-4A7B-9BE1-7EE604C43DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCE7987-5F99-4A7B-9BE1-7EE604C43DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
