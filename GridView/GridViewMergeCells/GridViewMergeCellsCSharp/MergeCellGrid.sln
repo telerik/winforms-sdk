@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewMergeCellsCS", "GridViewMergeCellsCS.csproj", "{D48B20A9-4969-44E0-8B3B-E43210897EE2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridViewMergeCellsVB", "..\GridViewMergeCells\GridViewMergeCellsVB.vbproj", "{A720901A-1342-4D68-A463-81B6D42FD5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D48B20A9-4969-44E0-8B3B-E43210897EE2}.Debug|x86.ActiveCfg = Debug|x86
+		{D48B20A9-4969-44E0-8B3B-E43210897EE2}.Debug|x86.Build.0 = Debug|x86
+		{D48B20A9-4969-44E0-8B3B-E43210897EE2}.Release|x86.ActiveCfg = Release|x86
+		{D48B20A9-4969-44E0-8B3B-E43210897EE2}.Release|x86.Build.0 = Release|x86
+		{A720901A-1342-4D68-A463-81B6D42FD5B8}.Debug|x86.ActiveCfg = Debug|x86
+		{A720901A-1342-4D68-A463-81B6D42FD5B8}.Debug|x86.Build.0 = Debug|x86
+		{A720901A-1342-4D68-A463-81B6D42FD5B8}.Release|x86.ActiveCfg = Release|x86
+		{A720901A-1342-4D68-A463-81B6D42FD5B8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
