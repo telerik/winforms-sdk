@@ -15,4 +15,4 @@
 
 The below example demonstrates how one can use the **InkEdit** control to enter data in RadGridView using a pen device.
 
-A complete step by step tutorial is available [here](https://docs.telerik.com/devtools/winforms/knowledge-base/how-to-use-inking-in-a-winforms-application) article.
+A complete step by step tutorial is available [here](https://docs.telerik.com/devtools/winforms/knowledge-base/how-to-use-inking-in-a-winforms-application).
