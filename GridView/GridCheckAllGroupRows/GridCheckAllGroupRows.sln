@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridCheckAllGroupRows", "GridCheckAllGroupRows\GridCheckAllGroupRows.csproj", "{F60C377D-B301-4ED0-B454-FEDB7F2B10AE}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridCheckAllGroupRowsVB", "GridCheckAllGroupRowsVB\GridCheckAllGroupRowsVB.vbproj", "{7C178BB1-33CA-4126-BC94-88CFAA6B22CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F60C377D-B301-4ED0-B454-FEDB7F2B10AE}.Debug|x86.ActiveCfg = Debug|x86
+		{F60C377D-B301-4ED0-B454-FEDB7F2B10AE}.Debug|x86.Build.0 = Debug|x86
+		{F60C377D-B301-4ED0-B454-FEDB7F2B10AE}.Release|x86.ActiveCfg = Release|x86
+		{F60C377D-B301-4ED0-B454-FEDB7F2B10AE}.Release|x86.Build.0 = Release|x86
+		{7C178BB1-33CA-4126-BC94-88CFAA6B22CE}.Debug|x86.ActiveCfg = Debug|x86
+		{7C178BB1-33CA-4126-BC94-88CFAA6B22CE}.Debug|x86.Build.0 = Debug|x86
+		{7C178BB1-33CA-4126-BC94-88CFAA6B22CE}.Release|x86.ActiveCfg = Release|x86
+		{7C178BB1-33CA-4126-BC94-88CFAA6B22CE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
