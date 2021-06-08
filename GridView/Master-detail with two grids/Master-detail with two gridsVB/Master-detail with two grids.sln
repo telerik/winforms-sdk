@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Master-detail with two grids", "Master-detail with two grids.vbproj", "{E90F1DC4-F932-4CDB-9715-21C97FA912ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90F1DC4-F932-4CDB-9715-21C97FA912ED}.Debug|x86.ActiveCfg = Debug|x86
+		{E90F1DC4-F932-4CDB-9715-21C97FA912ED}.Debug|x86.Build.0 = Debug|x86
+		{E90F1DC4-F932-4CDB-9715-21C97FA912ED}.Release|x86.ActiveCfg = Release|x86
+		{E90F1DC4-F932-4CDB-9715-21C97FA912ED}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
