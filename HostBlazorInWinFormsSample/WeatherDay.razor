@@ -1,0 +1,40 @@
+﻿@using Telerik.Blazor.Components
+@inject WeatherForecastService ForecastService
+
+<TelerikListView Data="@forecasts" Width="700px" Pageable="true">
+    <HeaderTemplate>
+        <h2>Blazor Weather forecast</h2>
+    </HeaderTemplate>
+    <Template>
+        <div class="listview-item">
+            <h4>@context.Date.DayOfWeek</h4>
+            <h5>@context.TemperatureC C&deg;</h5>
+            <h5>@context.Summary</h5>
+            <img src=@context.ImagePath alt="Weather icon"> 
+        </div>
+    </Template>
+</TelerikListView>
+
+ 
+
+@code{
+
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    } 
+}
+
+<style>
+    .listview-item {
+        height: 250px;
+        width: 100px;
+        display: inline-block;
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style> 

@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Components.Web 
+@using Telerik.Blazor.Components
+<h1>Blazor Counter</h1>
+
+<p>The current count is: @currentCount</p>
+<TelerikButton Primary="true" Icon="plus" OnClick="IncrementCount">Count</TelerikButton>
+
+@code {
+    int currentCount = 0;
+
+    void IncrementCount()
+    {
+        currentCount++;
+    }
+}
