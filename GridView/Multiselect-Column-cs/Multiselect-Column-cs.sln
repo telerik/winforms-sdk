@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.223
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiselect-Column-cs", "Multiselect-Column-cs\Multiselect-Column-cs.csproj", "{4B915E93-481C-4C88-9904-460EFAF75122}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B915E93-481C-4C88-9904-460EFAF75122}.Debug|x86.ActiveCfg = Debug|x86
+		{4B915E93-481C-4C88-9904-460EFAF75122}.Debug|x86.Build.0 = Debug|x86
+		{4B915E93-481C-4C88-9904-460EFAF75122}.Release|x86.ActiveCfg = Release|x86
+		{4B915E93-481C-4C88-9904-460EFAF75122}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F60F72F-EF74-43E4-B875-58AF31B17D9D}
+	EndGlobalSection
+EndGlobal
