@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlTheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ThemeName="CustomMessageBox">
+  <BuilderRegistrations>
+    <XmlStyleBuilderRegistration>
+      <BuilderData xsi:type="XmlStyleSheet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <PropertySettingGroups>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.VisualElement.BackColor" Value="175, 174, 199" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.BackColor2" Value="186, 188, 203" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.BackColor3" Value="White" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.BackColor4" Value="188, 189, 205" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.NumberOfColors" Value="4" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientStyle" Value="Linear" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientAngle" Value="90" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientPercentage" Value="0.175710589" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientPercentage2" Value="0.9121447" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="TitleFill" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Padding" Value="0, 1, 0, 1" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="TitleBar" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Visibility" Value="Hidden" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="MinimizeButton" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Visibility" Value="Hidden" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="MaximizeButton" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.UI.RadButtonItem.Image" Value="Qk02BAAAAAAAADYAAAAoAAAAEAAAABAAAAABACAAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAASTyoUEw+qtBMP6v/TkCs/00/q/9MPqv/TD6s/0w+rP9MPqv/TD6r/0w+q/9NP6v/TkCs/0w/q/9JParQSTyoUEw+qtBYS7r/al/E/4J3zP9vZMb/XVHA/1tPwP9bT8D/W0/A/1tPwP9dUcD/b2TG/4J3zP9qX8T/WEu6/0w+qtBPRbT/bWbO/6ek4//W1PL/sK7m/3Vx1f9gXM//XlrP/15az/9gXM//dXHV/7Cu5v/W1PL/p6Tj/21mzv9PRbT/UUm2/4SA1v/V0+7/+vn9/+zr+f+0s+r/d3Ta/2Fe1P9hXtT/d3Ta/7Sz6v/s6/n/+vn9/9XT7v+EgNb/UUm2/1BHt/9vasz/qaTT/+nn8P/+/f7/8PD7/7i37P94dtz/eHbc/7i37P/w8Pv//v3+/+nn8P+ppNP/b2rM/1BHt/9PR7n/YF3R/29rxv+rptH/7evy///////w8Pv/u7ru/7u67v/w8Pv//////+3r8v+rptH/b2vG/2Bd0f9PR7n/T0m6/2Ji2f9kY9j/c2/K/6+p0v/t6/L//f3+//Tz/P/08/z//f3+/+3r8v+vqdL/c2/K/2Rj2P9iYtn/T0m6/1BJu/9jZNz/Zmff/2dm2v9ybcf/sazS//Hw9f/+/v///v7///Hw9f+xrNL/cm3H/2dm2v9mZ9//Y2Tc/1BJu/9RS7z/Zmjf/2hr4P9rbeD/fX7h/7m35f/y8fj//v7+//7+/v/y8fj/ubfl/31+4f9rbeD/aGvg/2Zo3/9RS7z/Uky9/2hq4P9sbuL/gYLm/7y98v/x8fz//f3+//Hw9f/x8PX//f3+//Hx/P+8vfL/gYLm/2xu4v9oauD/Uky9/1NNvv9tbuL/goPn/7u78v/x8fz//////+3r8v+yrdP/sq3T/+3r8v//////8fH8/7u78v+Cg+f/bW7i/1NNvv9VUL//foHm/7e48P/u7vz//v3+/+3s8v+xrdT/eXfN/3l3zf+xrdT/7ezy//79/v/u7vz/t7fw/36B5v9VUL//VlHA/4CB3v+8ueD/8e/2/+ro8P+zsNT/g4TS/3mA5P95gOT/g4TS/7Ow1f/q6PD/8e/2/7y54P+Agd7/VlHA/1hVwv94feP/jY7S/7u61/+zs9T/kJjT/4yb5v+Onu3/jp/s/4yb5v+QmNT/s7PU/7u61/+NjtL/eH3j/1hVwv9ZWcTQgIvs/5Kk6v+ZqtT/m7DY/5+96/+jw/L/o8Pz/6PE8v+jw/L/n73r/5uw2P+ZqtT/kqTq/4CL7f9ZWcTQWVK8UGRkxtBrcMf/a3TB/2x2wv9ve8b/b3vH/297x/9ve8f/b3vH/297xv9sdsL/a3TB/2pwx/9iY8bQVlK8UA==" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="CloseButton" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <Selectors>
+              <XmlTypeSelector ElementType="Telerik.WinControls.Primitives.ImagePrimitive" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Padding" Value="2, 1, 0, 0" />
+              <XmlPropertySetting Property="Telerik.WinControls.VisualElement.Font" Value="Arial Black, 8.25pt" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="TitleCaption" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Visibility" Value="Collapsed" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="ButtonBorder" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Visibility" Value="Collapsed" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="TitleBorder" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <Selectors>
+              <XmlTypeSelector ElementType="Telerik.WinControls.Layouts.DockLayoutPanel" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+        </PropertySettingGroups>
+      </BuilderData>
+      <StylesheetRelations>
+        <RadStylesheetRelation ControlType="Telerik.WinControls.RadForm" ElementType="Telerik.WinControls.UI.RadFormTitleBarElement" />
+      </StylesheetRelations>
+    </XmlStyleBuilderRegistration>
+    <XmlStyleBuilderRegistration>
+      <BuilderData xsi:type="XmlStyleSheet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <PropertySettingGroups>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FormBorderPrimitive.BorderStyle" Value="OfficeThick" />
+              <XmlPropertySetting Property="Telerik.WinControls.VisualElement.ForeColor" Value="97, 98, 100" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.BorderPrimitive.GradientStyle" Value="Linear" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.BorderPrimitive.ForeColor2" Value="White" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.BorderPrimitive.ForeColor3" Value="White" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.BorderPrimitive.ForeColor4" Value="175, 174, 199" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="RadFormBorder" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RootRadElement.ApplyShapeToControl" Value="True" />
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.Shape" Value="Telerik.WinControls.UI.OfficeShape|False" />
+              <XmlPropertySetting Property="Telerik.WinControls.VisualElement.BackColor" Value="194, 217, 247" />
+            </PropertySettings>
+            <Selectors>
+              <XmlTypeSelector ElementType="Telerik.WinControls.RootRadElement" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.VisualElement.BackColor" Value="97, 98, 100" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.BackColor2" Value="214, 231, 255" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.BackColor3" Value="173, 199, 239" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.BackColor4" Value="222, 235, 235" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientStyle" Value="Solid" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientAngle" Value="90" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientPercentage" Value="0.3901809" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.GradientPercentage2" Value="1" />
+              <XmlPropertySetting Property="Telerik.WinControls.Primitives.FillPrimitive.NumberOfColors" Value="1" />
+            </PropertySettings>
+            <Selectors>
+              <XmlClassSelector ElementClass="RadFormClientFill" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+          <XmlPropertySettingGroup>
+            <PropertySettings>
+              <XmlPropertySetting Property="Telerik.WinControls.RadElement.BorderThickness" Value="2, 2, 2, 2" />
+            </PropertySettings>
+            <Selectors>
+              <XmlTypeSelector ElementType="Telerik.WinControls.UI.RadFormElement" />
+            </Selectors>
+          </XmlPropertySettingGroup>
+        </PropertySettingGroups>
+      </BuilderData>
+      <StylesheetRelations>
+        <RadStylesheetRelation ControlType="Telerik.WinControls.RadForm" ElementType="Telerik.WinControls.RootRadElement" />
+      </StylesheetRelations>
+    </XmlStyleBuilderRegistration>
+  </BuilderRegistrations>
+</XmlTheme>
