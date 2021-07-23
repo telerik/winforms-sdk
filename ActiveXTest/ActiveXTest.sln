@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveXTest", "ActiveXTest\ActiveXTest.csproj", "{360DEAA6-F03B-4127-BC26-AD3D2ACB5776}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveXTestLibrary", "ActiveXTestLibrary\ActiveXTestLibrary.csproj", "{FE8224F2-7F99-4D59-9688-76568602DA9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{360DEAA6-F03B-4127-BC26-AD3D2ACB5776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360DEAA6-F03B-4127-BC26-AD3D2ACB5776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360DEAA6-F03B-4127-BC26-AD3D2ACB5776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360DEAA6-F03B-4127-BC26-AD3D2ACB5776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8224F2-7F99-4D59-9688-76568602DA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8224F2-7F99-4D59-9688-76568602DA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8224F2-7F99-4D59-9688-76568602DA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8224F2-7F99-4D59-9688-76568602DA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
