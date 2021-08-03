@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="radBindingNavigator1MoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAHVJREFUKFOVkUEOgCAMBPFgfIEf8nt+jVd49u6t2m1ashKJMAmhXehwIP2xbvvt
+        ZQGZMntraD952QaDtTCyLgETgyzkbEjIg1hfWbcQF4/zyjyMvM6GhNhZYAcKZ91CJgTeGpEpr19uUr8M
+        gZcFZCKyeEuk9AD6tHycrInJpwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <assembly alias="Telerik.WinControls" name="Telerik.WinControls, Version=2020.3.915.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  <data name="radBindingNavigator1MoveFirstItem.SvgImage" type="Telerik.WinControls.RadSvgImage, Telerik.WinControls">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="20" height="8" viewBox="0, 0, 20, 8" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #f2f9ff;
+        opacity: 0.8;
+      }
+
+      .cls-2 {
+        fill: #15428b;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;polygon points="9,1 5,4.5 9,8 9,1" opacity="0.8" class="cls-1" style="fill:#F2F9FF;" /&gt;
+    &lt;polygon points="9,0 5,3.5 9,7 9,0" class="cls-2" style="fill:#15428B;" /&gt;
+  &lt;/g&gt;
+  &lt;g&gt;
+    &lt;polygon points="14,1 10,4.5 14,8 14,1" opacity="0.8" class="cls-1" style="fill:#F2F9FF;" /&gt;
+    &lt;polygon points="14,0 10,3.5 14,7 14,0" class="cls-2" style="fill:#15428B;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="radBindingNavigator1MovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAFNJREFUKFNjIAWIOnX/BwJGKJcBmU0yABmGbiDZAGYYVQxENowqBj568/0MWQZi
+        UwgTQzaUKgaCAMxQdHVAPiuUSRgAFTNBmWAAMhSLgRwIdQwMAEvFX0BzUja9AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="radBindingNavigator1MovePreviousItem.SvgImage" type="Telerik.WinControls.RadSvgImage, Telerik.WinControls">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="20" height="8" viewBox="0, 0, 20, 8" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #f2f9ff;
+        opacity: 0.8;
+      }
+
+      .cls-2 {
+        fill: #15428b;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;polygon points="12,1 8,4.5 12,8 12,1" opacity="0.8" class="cls-1" style="fill:#F2F9FF;" /&gt;
+    &lt;polygon points="12,0 8,3.5 12,7 12,0" class="cls-2" style="fill:#15428B;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="radBindingNavigator1MoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAFVJREFUKFNjwAf+///PJOrU/R/KpRwADWQEGUg1Q5ENhBkKcjVYklyAbCAIAwEz
+        VIo8gGzYozffz1DNQJBhID5VDIQZBgIUhyGyYSAANJARysQCGBgATx1HTDoLVm8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="radBindingNavigator1MoveNextItem.SvgImage" type="Telerik.WinControls.RadSvgImage, Telerik.WinControls">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="20" height="8" viewBox="0, 0, 20, 8" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #f2f9ff;
+        opacity: 0.8;
+      }
+
+      .cls-2 {
+        fill: #15428b;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;polygon points="8,1 12,4.5 8,8 8,1" opacity="0.8" class="cls-1" style="fill:#F2F9FF;" /&gt;
+    &lt;polygon points="8,0 12,3.5 8,7 8,0" class="cls-2" style="fill:#15428B;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="radBindingNavigator1MoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAG1JREFUKFNjQAf//v0TFnXq/g/lwgG62P///xmhTPwAaKAQSDO6AehiRBsIVKgA
+        04xsADYxogDQQH5kzTADsIkRBYAGsiJrfPTm+xmQODYxogDQQGZsGskyDARAgY1NI1mGgQDIQGwaiTOM
+        gQEAolB25S2tSOgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="radBindingNavigator1MoveLastItem.SvgImage" type="Telerik.WinControls.RadSvgImage, Telerik.WinControls">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="20" height="8" viewBox="0, 0, 20, 8" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #f2f9ff;
+        opacity: 0.8;
+      }
+
+      .cls-2 {
+        fill: #15428b;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;polygon points="10,1 14,4.5 10,8 10,1" opacity="0.8" class="cls-1" style="fill:#F2F9FF;" /&gt;
+    &lt;polygon points="10,0 14,3.5 10,7 10,0" class="cls-2" style="fill:#15428B;" /&gt;
+  &lt;/g&gt;
+  &lt;g&gt;
+    &lt;polygon points="5,1 9,4.5 5,8 5,1" opacity="0.8" class="cls-1" style="fill:#F2F9FF;" /&gt;
+    &lt;polygon points="5,0 9,3.5 5,7 5,0" class="cls-2" style="fill:#15428B;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="radBindingNavigator1AddNewItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAKRJREFUOE+1kl0KwjAQhFNF9AJeyIdepkfxzon7hQmk6SYNqB8MbPdnMg8NM6SU
+        rkif3xFj3GqpvcP6d5VjSIXJ8/VOiNpLav1V5ZhZQ+s9VPpwVOQZFmmd/ZvKIxy1qg1bcdM1tMHCUjE4
+        E7tKe5HFHoY/NQSWWtUGrbgxwyUf99CrWRw5ibK07mMLh1d6hhqP+Yeh+3NiUkvtc7yEBVLNJQvhA37Z
+        UVPRfbp0AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="radBindingNavigator1AddNewItem.SvgImage" type="Telerik.WinControls.RadSvgImage, Telerik.WinControls">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="20" height="14" viewBox="0, 0, 20, 14" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #fff;
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill: #1e4489;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;polygon points="16,5 12,5 12,1 8,1 8,5 4,5 4,9 8,9 8,13 12,13 12,9 16,9 16,5" opacity="0.5" class="cls-1" style="fill:white;" /&gt;
+    &lt;polygon points="15,6 11,6 11,2 9,2 9,6 5,6 5,8 9,8 9,12 11,12 11,8 15,8 15,6" class="cls-2" style="fill:#1E4489;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="radBindingNavigator1DeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAALCAYAAACQy8Z9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGNJREFUOE9jwAb+///PCGUyKLi3lok6df+HYagwCgCqZ4YycQNkQ4kBRKkHKUJ2
+        HS4MVU4cINWlRAGYodhcB8NghaQAZEPx0SSBEW4oDBAyFGY5SQCkGRcGyQMNlQArRAEMDABWyH7Q38Bk
+        9wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="radBindingNavigator1DeleteItem.SvgImage" type="Telerik.WinControls.RadSvgImage, Telerik.WinControls">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="21" height="11" viewBox="0, 0, 21, 11" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;
+      .cls-1 {
+        fill: #1e4489;
+      }
+    &lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g&gt;
+    &lt;rect x="9" width="3" height="1" class="cls-1" style="fill:#1E4489;" /&gt;
+    &lt;rect x="6" y="2" width="9" height="1" class="cls-1" style="fill:#1E4489;" /&gt;
+    &lt;path d="M12 4 L7 4 L7 11 L14 11 L14 4 L12 4 z M9 10 L8 10 L8 5 L9 5 z M11 10 L10 10 L10 5 L11 5 z M13 10 L12 10 L12 5 L13 5 z" class="cls-1" style="fill:#1E4489;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+</root>

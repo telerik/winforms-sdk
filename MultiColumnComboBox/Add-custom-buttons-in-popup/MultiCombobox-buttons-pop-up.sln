@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCombobox_buttons_pop_up", "MultiCombobox-buttons-pop-up\MultiCombobox_buttons_pop_up.csproj", "{BAC3710B-33C0-4C0D-9E25-7135725B39D0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MultiComboBox_buttons_pop_up_VB", "MultiComboBox_buttons_pop_up_VB\MultiComboBox_buttons_pop_up_VB.vbproj", "{407E313D-1850-4150-873C-D2282DD1A87B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAC3710B-33C0-4C0D-9E25-7135725B39D0}.Debug|x86.ActiveCfg = Debug|x86
+		{BAC3710B-33C0-4C0D-9E25-7135725B39D0}.Debug|x86.Build.0 = Debug|x86
+		{BAC3710B-33C0-4C0D-9E25-7135725B39D0}.Release|x86.ActiveCfg = Release|x86
+		{BAC3710B-33C0-4C0D-9E25-7135725B39D0}.Release|x86.Build.0 = Release|x86
+		{407E313D-1850-4150-873C-D2282DD1A87B}.Debug|x86.ActiveCfg = Debug|x86
+		{407E313D-1850-4150-873C-D2282DD1A87B}.Debug|x86.Build.0 = Debug|x86
+		{407E313D-1850-4150-873C-D2282DD1A87B}.Release|x86.ActiveCfg = Release|x86
+		{407E313D-1850-4150-873C-D2282DD1A87B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A812F10-A19D-45E2-825D-77C649B2B2AD}
+	EndGlobalSection
+EndGlobal
