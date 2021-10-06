@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBoardEditDialog", "TaskBoardEditDialog\TaskBoardEditDialog.csproj", "{065BF2C5-C5AE-4DC6-8857-47BFF4FBA4CD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TaskBoardEditDialogVB", "TaskBoardEditDialogVB\TaskBoardEditDialogVB.vbproj", "{1BD1310E-6163-4B74-B4D6-83208EAC12B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{065BF2C5-C5AE-4DC6-8857-47BFF4FBA4CD}.Debug|x86.ActiveCfg = Debug|x86
+		{065BF2C5-C5AE-4DC6-8857-47BFF4FBA4CD}.Debug|x86.Build.0 = Debug|x86
+		{065BF2C5-C5AE-4DC6-8857-47BFF4FBA4CD}.Release|x86.ActiveCfg = Release|x86
+		{065BF2C5-C5AE-4DC6-8857-47BFF4FBA4CD}.Release|x86.Build.0 = Release|x86
+		{1BD1310E-6163-4B74-B4D6-83208EAC12B8}.Debug|x86.ActiveCfg = Debug|x86
+		{1BD1310E-6163-4B74-B4D6-83208EAC12B8}.Debug|x86.Build.0 = Debug|x86
+		{1BD1310E-6163-4B74-B4D6-83208EAC12B8}.Release|x86.ActiveCfg = Release|x86
+		{1BD1310E-6163-4B74-B4D6-83208EAC12B8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
