@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfRefLoadOnDemandGrid", "SelfRefLoadOnDemandGrid\SelfRefLoadOnDemandGrid.csproj", "{1E6BBB18-AE5F-45E6-9E55-8A1E8E5DD94C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SelfRefLoadOnDemandGridVB", "SelfRefLoadOnDemandGridVB\SelfRefLoadOnDemandGridVB.vbproj", "{3419466F-873F-4276-BDF3-7CDF97DF37D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E6BBB18-AE5F-45E6-9E55-8A1E8E5DD94C}.Debug|x86.ActiveCfg = Debug|x86
+		{1E6BBB18-AE5F-45E6-9E55-8A1E8E5DD94C}.Debug|x86.Build.0 = Debug|x86
+		{1E6BBB18-AE5F-45E6-9E55-8A1E8E5DD94C}.Release|x86.ActiveCfg = Release|x86
+		{1E6BBB18-AE5F-45E6-9E55-8A1E8E5DD94C}.Release|x86.Build.0 = Release|x86
+		{3419466F-873F-4276-BDF3-7CDF97DF37D4}.Debug|x86.ActiveCfg = Debug|x86
+		{3419466F-873F-4276-BDF3-7CDF97DF37D4}.Debug|x86.Build.0 = Debug|x86
+		{3419466F-873F-4276-BDF3-7CDF97DF37D4}.Release|x86.ActiveCfg = Release|x86
+		{3419466F-873F-4276-BDF3-7CDF97DF37D4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A23AAA8-6D09-4C5C-8B42-C827BE7325DB}
+	EndGlobalSection
+EndGlobal
