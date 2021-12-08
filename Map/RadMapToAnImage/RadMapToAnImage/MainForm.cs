@@ -18,6 +18,8 @@ namespace RadMapToAnImage
             this.radMap1.Layers.Add(pinLayer);
 
             OpenStreetMapProvider osmProvider = new OpenStreetMapProvider();
+            MapTileDownloader tileDownloader = osmProvider.TileDownloader as MapTileDownloader;
+            tileDownloader.WebHeaders.Add(System.Net.HttpRequestHeader.UserAgent, "your application name");
             osmProvider.InitializationComplete += OsmProvider_InitializationComplete;
             this.radMap1.MapElement.Providers.Add(osmProvider);
         }
@@ -46,7 +48,8 @@ namespace RadMapToAnImage
             }
 
             object state = gg.SaveState();
-            gg.TranslateTransform(-this.radMap1.MapElement.ViewportInPixels.X, -this.radMap1.MapElement.ViewportInPixels.Y);
+            //As of R2 2021 calling TranslateTransform is not necessary
+            //gg.TranslateTransform(-this.radMap1.MapElement.ViewportInPixels.X, -this.radMap1.MapElement.ViewportInPixels.Y);
             this.radMap1.MapElement.Layers["PinsLayer"].Paint(gg, this.radMap1.MapElement);
 
             gg.RestoreState(state);

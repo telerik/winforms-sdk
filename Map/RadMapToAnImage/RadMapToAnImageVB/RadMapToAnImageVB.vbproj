@@ -58,18 +58,21 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Telerik.WinControls, Version=2018.3.529.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R3 2018\Bin40\Telerik.WinControls.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Telerik.WinControls, Version=2021.3.1123.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\dyordano\Desktop\DLL\Telerik_UI_For_WinForms_2021_3_1123_Dev_dlls\Bin40\Telerik.WinControls.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadMap, Version=2018.3.529.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2018.3.529.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R3 2018\Bin40\Telerik.WinControls.UI.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Telerik.WinControls.RadMap, Version=2021.3.1123.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\dyordano\Desktop\DLL\Telerik_UI_For_WinForms_2021_3_1123_Dev_dlls\Bin40\Telerik.WinControls.RadMap.dll</HintPath>
     </Reference>
-    <Reference Include="TelerikCommon, Version=2018.3.529.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R3 2018\Bin40\TelerikCommon.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Telerik.WinControls.UI, Version=2021.3.1123.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\dyordano\Desktop\DLL\Telerik_UI_For_WinForms_2021_3_1123_Dev_dlls\Bin40\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2021.3.1123.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\dyordano\Desktop\DLL\Telerik_UI_For_WinForms_2021_3_1123_Dev_dlls\Bin40\TelerikCommon.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
