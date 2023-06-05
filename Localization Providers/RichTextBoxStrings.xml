@@ -3627,4 +3627,64 @@
 	<data name="Documents_Commands_DeleteAnnotationRangeCommand_Name" xml:space="preserve">
     <value>Delete Annotation Range</value>
   </data>
+<data name="Documents_LineNumbersDialog_Header" xml:space="preserve">
+		<value>Line Numbers</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_AddLineNumbering" xml:space="preserve">
+		<value>Add line numbering</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_StartAt" xml:space="preserve">
+		<value>Start at:</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_FromText" xml:space="preserve">
+		<value>From text:</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_CountBy" xml:space="preserve">
+		<value>Count by:</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_Numbering" xml:space="preserve">
+		<value>Numbering:</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_RestartEachPage" xml:space="preserve">
+		<value>Restart each page</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_RestartEachSection" xml:space="preserve">
+		<value>Restart each section</value>
+	</data>
+	<data name="Documents_LineNumbersDialog_Continuous" xml:space="preserve">
+		<value>Continuous</value>
+	</data>
+	<data name="RibbonUI_DropDownLineNumbers" xml:space="preserve">
+		<value>Line Numbers</value>
+	</data>
+	<data name="RibbonUI_MenuItemLineNumbersNone" xml:space="preserve">
+		<value>None</value>
+	</data>
+	<data name="RibbonUI_MenuItemLineNumbersContinuous" xml:space="preserve">
+		<value>Continuous</value>
+	</data>
+	<data name="RibbonUI_MenuItemLineNumbersRestartEachPage" xml:space="preserve">
+		<value>Restart Each Page</value>
+	</data>
+	<data name="RibbonUI_MenuItemLineNumbersRestartEachSection" xml:space="preserve">
+		<value>Restart Each Section</value>
+	</data>
+	<data name="RibbonUI_MenuItemLineNumbersSuppressCurrentParagraph" xml:space="preserve">
+		<value>Suppress for Current Paragraph</value>
+	</data>
+	<data name="RibbonUI_MenuItemLineNumbersLineNumberingOptions" xml:space="preserve">
+		<value>Line Numbering Options...</value>
+	</data>
+	<data name="Documents_LineNumbers_ExceedMeasurement" xml:space="preserve">
+		<value>The measurement must be between 0\" and 22\".</value>
+	</data>	
+	<data name="Documents_LineNumbers_NotValidMeasurement" xml:space="preserve">
+		<value>This is not valid measurement.</value>
+	</data>	
+	<data name="Documents_LineNumbers_NotInNumberRange" xml:space="preserve">
+		<value>This number must be between 1 and 32767.</value>
+	</data>
+	<data name="Documents_LineNumbers_NotInNumberRange100" xml:space="preserve">
+		<value>This number must be between 1 and 100.</value>
+	</data>
 </root>
