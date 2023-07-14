@@ -3687,4 +3687,10 @@
 	<data name="Documents_LineNumbers_NotInNumberRange100" xml:space="preserve">
 		<value>This number must be between 1 and 100.</value>
 	</data>
+	<data name="Documents_OpenDocumentCommand_XAMLValidationFailed" xml:space="preserve">
+    		<value>The XAML document contains types from untrusted assemblies. Continue loading the document?</value>
+  	</data>
+  	<data name="Documents_OpenDocumentCommand_XAMLVerification" xml:space="preserve">
+    		<value>XAML Verification</value>
+  	</data>
 </root>
