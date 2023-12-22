@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP.Service</RootNamespace>
+    <AssemblyName>ERP.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.EntityFrameworkProvider, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.OData.EntityFrameworkProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\5.6.2\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorksModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorksModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AdventureWorksModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorksModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="ErpDataService.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddressType.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdventureWorksModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BillOfMaterial.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntity.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntityAddress.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessEntityContact.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactType.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryRegion.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryRegionCurrency.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCard.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Culture.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyRate.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAddress.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErpDataService.svc.cs">
+      <DependentUpon>ErpDataService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Password.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCreditCard.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPhone.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneNumberType.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCostHistory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDescription.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDocument.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInventory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductListPriceHistory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModel.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModelIllustration.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductModelProductDescriptionCulture.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductProductPhoto.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReview.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSubcategory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductVendor.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrderDetail.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderHeader.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderDetail.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderHeader.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderHeaderSalesReason.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPerson.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesPersonQuotaHistory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesReason.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTaxRate.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTerritory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTerritoryHistory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScrapReason.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShipMethod.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCartItem.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialOffer.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialOfferProduct.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StateProvince.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionHistory.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionHistoryArchive.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitMeasure.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendor.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrder.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOrderRouting.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EntityDeploy Include="AdventureWorksModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdventureWorksModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AdventureWorksModel.edmx.diagram">
+      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VSToolsPath Condition=" ('$(VSToolsPath)' == '' OR !Exists('$(VSToolsPath)')) AND Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)') ">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58919</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60585/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
