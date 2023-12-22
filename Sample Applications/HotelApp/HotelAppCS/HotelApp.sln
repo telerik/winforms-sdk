@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelApp", "HotelApp.csproj", "{02AC04A6-8C0C-4110-84BD-66641AFC2583}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Debug40|x86 = Debug40|x86
+		Debug48|x86 = Debug48|x86
+		Release|x86 = Release|x86
+		Release40|x86 = Release40|x86
+		Release48|x86 = Release48|x86
+		ReleaseTrial|x86 = ReleaseTrial|x86
+		ReleaseTrial40|x86 = ReleaseTrial40|x86
+		ReleaseTrial48|x86 = ReleaseTrial48|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Debug|x86.ActiveCfg = Debug|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Debug|x86.Build.0 = Debug|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Debug40|x86.ActiveCfg = Debug40|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Debug40|x86.Build.0 = Debug40|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Debug48|x86.ActiveCfg = Debug48|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Debug48|x86.Build.0 = Debug48|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Release|x86.ActiveCfg = Release|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Release|x86.Build.0 = Release|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Release40|x86.ActiveCfg = Release40|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Release40|x86.Build.0 = Release40|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Release48|x86.ActiveCfg = Release48|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.Release48|x86.Build.0 = Release48|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.ReleaseTrial|x86.ActiveCfg = ReleaseTrial|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.ReleaseTrial|x86.Build.0 = ReleaseTrial|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.ReleaseTrial40|x86.ActiveCfg = ReleaseTrial40|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.ReleaseTrial40|x86.Build.0 = ReleaseTrial40|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.ReleaseTrial48|x86.ActiveCfg = ReleaseTrial48|x86
+		{02AC04A6-8C0C-4110-84BD-66641AFC2583}.ReleaseTrial48|x86.Build.0 = ReleaseTrial48|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {359467ED-6A75-445D-B2C0-91D302A694FA}
+	EndGlobalSection
+EndGlobal

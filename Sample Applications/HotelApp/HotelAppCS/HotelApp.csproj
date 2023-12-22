@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02AC04A6-8C0C-4110-84BD-66641AFC2583}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotelApp</RootNamespace>
+    <AssemblyName>HotelApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseTrial|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug40|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release40|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseTrial40|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug48|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release48|x86'">
+    <OutputPath>bin\</OutputPath>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseTrial48|x86'">
+    <OutputPath>bin\</OutputPath>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MediaFoundation, Version=3.1.0.32450, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.MSXML, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Microsoft.MSXML.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Microsoft.Toolkit.Uwp.Notifications.dll</HintPath>
+    </Reference>
+    <Reference Include="RadControlSpy, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\RadControlSpy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.ChartView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.PivotGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMap, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadSpreadsheet, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadToastNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadToastNotification.Design, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadToastNotification.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadWebCam, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadWebCam.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.SyntaxEditor, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.SyntaxEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Crystal.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.CrystalDark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Desert.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Fluent, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Material, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Material.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.MaterialPink, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.MaterialPink.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2019.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2022, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.VisualStudio2022.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows11, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Windows11.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.CMapUtils, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.CMapUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.DrawingML, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.DrawingML.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Doc, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.MediaFoundation, Version=2023.2.1002.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\TelerikExport.dll</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\VisualStyleBuilder.Design.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogs\BookingEditAppointmentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BookingEditAppointmentDialog.Designer.cs">
+      <DependentUpon>BookingEditAppointmentDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelAppForm.BookingTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelAppForm.HouseKeepingTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelAppForm.ReportsTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\BookingInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BookingInfo.Designer.cs">
+      <DependentUpon>BookingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\HouseKeepingEditAppointmentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\HouseKeepingEditAppointmentDialog.Designer.cs">
+      <DependentUpon>HouseKeepingEditAppointmentDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomBehaviors\CustomGridDataRowBehavior.cs" />
+    <Compile Include="CustomElements\CustomResourceHeaderCell.cs" />
+    <Compile Include="Data\Booking.cs" />
+    <Compile Include="Data\HouseKeeper.cs" />
+    <Compile Include="Data\Utils.cs" />
+    <Compile Include="UserControls\DateNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateNavigator.Designer.cs">
+      <DependentUpon>DateNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditGuestInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditGuestInfo.Designer.cs">
+      <DependentUpon>EditGuestInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelAppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelAppForm.Designer.cs">
+      <DependentUpon>HotelAppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Guest.cs" />
+    <Compile Include="CustomElements\NameGridDataCellElement.cs" />
+    <Compile Include="CustomElements\OptionsSimpleListViewVisualItem.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\Room.cs" />
+    <Compile Include="UserControls\RoomDetailsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RoomDetailsUC.Designer.cs">
+      <DependentUpon>RoomDetailsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomElements\RoomGridDataCellElement.cs" />
+    <Compile Include="CustomElements\RoomIconListViewVisualItem.cs" />
+    <Compile Include="UserControls\SearchDropDownList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlBookingsByType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlBookingsByType.Designer.cs">
+      <DependentUpon>UserControlBookingsByType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCurrentStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlCurrentStatus.Designer.cs">
+      <DependentUpon>UserControlCurrentStatus.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Dialogs\BookingEditAppointmentDialog.resx">
+      <DependentUpon>BookingEditAppointmentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BookingInfo.resx">
+      <DependentUpon>BookingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\HouseKeepingEditAppointmentDialog.resx">
+      <DependentUpon>HouseKeepingEditAppointmentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DateNavigator.resx">
+      <DependentUpon>DateNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditGuestInfo.resx">
+      <DependentUpon>EditGuestInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelAppForm.resx">
+      <DependentUpon>HotelAppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\RoomDetailsUC.resx">
+      <DependentUpon>RoomDetailsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlBookingsByType.resx">
+      <DependentUpon>UserControlBookingsByType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlCurrentStatus.resx">
+      <DependentUpon>UserControlCurrentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Compile Include="HotelAppForm.ScheduleTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Roboto-Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_done_white96_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_gavel_black_18dp_1x_grey96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_person_white96_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_timelapse_black_18dp_1x_grey96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlyphCalendar_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlyphCheck_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlyphArrowChevronLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlyphArrowChevronRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlyphClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlyphWrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\not clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reapair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_user_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple_user_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_user_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family_user_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stars.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starsIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Millie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bobby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repair_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fasha_borders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fasha_no_borders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fasha_no_borders_fullsize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue grey_green_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teal_red_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pink_blue_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_user_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family_user_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple_user_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_user_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_user_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_room_bluegrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_room_teal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free_room_pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family_user_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple_user_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_user_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_user_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family_user_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\family_user_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple_user_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_user_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\single_user_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tripple_user_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double_user_blue.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
