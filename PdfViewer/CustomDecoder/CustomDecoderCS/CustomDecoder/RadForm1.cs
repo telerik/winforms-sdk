@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -14,15 +15,15 @@ namespace CustomDecoder
 {
     public partial class RadForm1 : Telerik.WinControls.UI.RadForm
     {
-        private JpxDecoder filter;
+        private JpxDecoder filterNew;
         public RadForm1()
         {
-            filter = new JpxDecoder();
-            FiltersManager.RegisterFilter(filter);
+            filterNew = new JpxDecoder();
+            FiltersManager.RegisterFilter(filterNew);
 
             InitializeComponent();
-
-            radPdfViewer1.LoadDocument("../../SampleData/test.pdf");
+            var stream = File.OpenRead("../../SampleData/test.pdf");
+            radPdfViewer1.LoadDocument(stream);
 
         }
     }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,11 +12,12 @@
     <RootNamespace>CustomDecoder</RootNamespace>
     <AssemblyName>CustomDecoder</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -33,7 +35,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -45,6 +49,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,25 +58,42 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R2 2020\Bin40\Telerik.WinControls.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Telerik.WinControls, Version=2023.3.1114.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\Telerik.WinControls.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.PdfViewer, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R2 2020\Bin40\Telerik.WinControls.UI.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2023.3.1114.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\Telerik.WinControls.PdfViewer.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Core, Version=2020.2.504.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
-    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2020.2.504.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
-    <Reference Include="TelerikCommon, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R2 2020\Bin40\TelerikCommon.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Telerik.WinControls.UI, Version=2023.3.1114.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2023.3.1114.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2023.3.1114.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for WinForms R3 2023\Bin40\TelerikData.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JPXDecode.cs" />
+    <Compile Include="JpxDecoder.cs" />
     <Compile Include="RadForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,15 +114,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="app.manifest" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openjp2.lib" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openjpeg-2.1\OpenJPEGConfig.cmake" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openjpeg-2.1\OpenJPEGTargets-relwithdebinfo.cmake" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openjpeg-2.1\OpenJPEGTargets.cmake" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openjpip.lib" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openjpwl.lib" />
-    <None Include="openjpeg-2.1.0-win32-x86\lib\openmj2.lib" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,32 +127,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SampleData\test.pdf" />
+    <EmbeddedResource Include="SampleData\test.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\openjp2.dll" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\openjpip.dll" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\openjpwl.dll" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_compress.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_decompress.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_dec_server.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_dump.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_jpip_addxml.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_jpip_test.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_jpip_transcode.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_jpwl_compress.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_jpwl_decompress.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_mj2_compress.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_mj2_decompress.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_mj2_extract.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\bin\opj_mj2_wrap.exe" />
-    <Content Include="openjpeg-2.1.0-win32-x86\include\openjpeg-2.1\openjpeg.h" />
-    <Content Include="openjpeg-2.1.0-win32-x86\include\openjpeg-2.1\opj_config.h" />
-    <Content Include="openjpeg-2.1.0-win32-x86\include\openjpeg-2.1\opj_stdint.h" />
-    <Content Include="openjpeg-2.1.0-win32-x86\lib\openmj2.dll" />
-    <Content Include="openjpeg-2.1.0-win32-x86\share\opj_jpip_viewer.jar" />
+    <Content Include="FreeImage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ThirdPartyLibrary\FreeImage-License.txt" />
+    <Content Include="ThirdPartyLibrary\FreeImageNET.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
