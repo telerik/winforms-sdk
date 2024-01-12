@@ -2,7 +2,7 @@
 <table>
 	<tr>
 		<td>Product Version</td>
-		<td>2023.3.1113</td>
+		<td>2023.3.1114</td>
 	</tr>
 	<tr>
 		<td>Telerik UI for WinForms</td>
