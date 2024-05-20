@@ -1,0 +1,35 @@
+public class PagesTraduccionLocalizationProvider : RadPageViewLocalizationProvider
+{
+	public override string GetLocalizedString(string id)
+    {					  
+		switch (id)
+		{
+			case RadPageViewStringId.AddRemoveButtonsItemCaption:
+				return "Añadir o Eliminar";
+			case RadPageViewStringId.CloseButtonTooltip:
+				return "Cerrar";
+			case RadPageViewStringId.CloseSelectedPageCaption:
+				return "Cerrar página seleccionada";
+			case RadPageViewStringId.ItemCloseButtonTooltip:
+				return "Cerrar";
+			case RadPageViewStringId.ItemListButtonTooltip:
+				return "Páginas disponibles";
+			case RadPageViewStringId.LeftScrollButtonTooltip:
+				return "Atras";
+			case RadPageViewStringId.NewItemTooltipText:
+				return "Nuevo";
+			case RadPageViewStringId.RightScrollButtonTooltip:
+				return "Adelante";
+			case RadPageViewStringId.ScrollStripLeftCaption:
+				return "Atrás";
+			case RadPageViewStringId.ScrollStripRightCaption:
+				return "Adelante";
+			case RadPageViewStringId.ShowFewerButtonsItemCaption:
+				return "Menos";
+			case RadPageViewStringId.ShowMoreButtonsItemCaption:
+				return "Más";
+			default:
+				return base.GetLocalizedString(id);
+		}
+	}
+}

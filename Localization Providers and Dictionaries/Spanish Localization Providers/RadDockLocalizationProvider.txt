@@ -1,0 +1,49 @@
+public class DockTraduccionLocalizationProvider : RadDockLocalizationProvider
+{
+	public override string GetLocalizedString(string id)
+	{
+		switch (id)
+		{
+			case RadDockStringId.ContextMenuAutoHide:
+				return "Ocultar automáticamente";
+			case RadDockStringId.ContextMenuCancel:
+				return "Cancelar";
+			case RadDockStringId.ContextMenuClose:
+				return "Cerrar";
+			case RadDockStringId.ContextMenuCloseAll:
+				return "Cerrar todo";
+			case RadDockStringId.ContextMenuCloseAllButThis:
+				return "Cerrar todos excepto este";
+			case RadDockStringId.ContextMenuDockable:
+				return "Anclable";
+			case RadDockStringId.ContextMenuFloating:
+				return "Flotante";
+			case RadDockStringId.ContextMenuHide:
+				return "Ocultar";
+			case RadDockStringId.ContextMenuMoveToNextTabGroup:
+				return "Cambiar a la siguiente";
+			case RadDockStringId.ContextMenuMoveToPreviousTabGroup:
+				return "Cambiar a la anterior";
+			case RadDockStringId.ContextMenuNewHorizontalTabGroup:
+				return "Nuevo grupo horizontal";
+			case RadDockStringId.ContextMenuNewVerticalTabGroup:
+				return "Nuevo grupo vertical";
+			case RadDockStringId.ContextMenuTabbedDocument:
+				return "Cargar la ficha del documento";
+			case RadDockStringId.DocumentTabStripCloseButton:
+				return "Cerrar";
+			case RadDockStringId.DocumentTabStripListButton:
+				return "Lista";
+			case RadDockStringId.ToolTabStripCloseButton:
+				return "Cerrar";
+			case RadDockStringId.ToolTabStripDockStateButton:
+				return "Estado";
+			case RadDockStringId.ToolTabStripPinButton:
+				return "Fijar";
+			case RadDockStringId.ToolTabStripUnpinButton:
+				return "Soltar";
+			default:
+				return base.GetLocalizedString(id);
+		}
+	}
+}

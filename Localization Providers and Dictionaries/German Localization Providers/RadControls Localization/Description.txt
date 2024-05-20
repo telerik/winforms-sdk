@@ -1,0 +1,19 @@
+## Environment
+<table>
+	<tr>
+		<td>Date of Creation</td>
+		<td>20 Feb 2013</td>
+	</tr>
+	<tr>
+		<td>Product</td>
+		<td>Telerik UI for WinForms</td>
+	</tr>
+</table>
+
+## Description
+
+This project contains the german localization providers for the RadBrowseEditor, the RadColorDialog, the RadCommandBar, the RadDock, the RadGridView, the RadMarkupEditor, the RadMessageBox, the RadPageView, the RadPrintDialogs, the RadPropertyGrid, the RadReminder, the RadScheduler, the RadSchedulerNavigator, the RadSpellChecker, the RadTextBox, the RadTimePicker, the RadTreeView and the RadWizard for the Telerik Q3'12 Service Pack 1 - Release. The project also shows how to localize the RadRibbonBar, the RadCalenadar and the RadDateTimePicker. 
+
+The demo project shows all of the previously named controls in action with the german localization providers. 
+
+ 

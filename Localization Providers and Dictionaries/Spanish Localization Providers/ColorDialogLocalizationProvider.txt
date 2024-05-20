@@ -1,0 +1,22 @@
+public class ColorDialogTraduccionLocalizationProvider : ColorDialogLocalizationProvider
+{
+	public override string GetLocalizedString(string id)
+	{
+		switch (id)
+		{
+			//localizing the static strings
+			case ColorDialogStringId.ColorDialogProfessionalTab: return "Profesional";
+			case ColorDialogStringId.ColorDialogWebTab: return "Web";
+			case ColorDialogStringId.ColorDialogSystemTab: return "Sistema";
+			case ColorDialogStringId.ColorDialogBasicTab: return "Basicos";
+			case ColorDialogStringId.ColorDialogAddCustomColorButton: return "Añadir Color Personalizado";
+			case ColorDialogStringId.ColorDialogOKButton: return "Aceptar";
+			case ColorDialogStringId.ColorDialogCancelButton: return "Cancelar";
+			case ColorDialogStringId.ColorDialogNewColorLabel: return "Nuevo";
+			case ColorDialogStringId.ColorDialogCurrentColorLabel: return "Actual";
+			case ColorDialogStringId.ColorDialogCaption: return "Color";
+
+		}
+		return base.GetLocalizedString(id);
+	}
+}
