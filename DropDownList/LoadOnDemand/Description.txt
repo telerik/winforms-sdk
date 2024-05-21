@@ -1,0 +1,20 @@
+Requirements
+
+RadControls version		2012.2.726.40
+.NET version		3.5
+Visual Studio version		2010 & 2012
+programming language		VB.Net & C#
+
+PROJECT DESCRIPTION
+This project demonstrates "load on demand" functionality for a dropdownlist and the dropdownlistelement in a grid. Though using a dropdownlist to select from a large list of data is arguably not the best solution, the autocomplete mode of the dropdownlist is a very user friendly way to let your user choose from a large list of possible choices. However, binding large amount of data to controls does not improve the performance. Load on demand can help but is only available with the controls for ASP.NET and currently not supported by the WinForms RadDropDownList.
+
+The solutions contains 2 identical projects, one in VB.Net and one in C#. It is a single RadForm containing a RadDropDownList control and a RadGridView. All controls keep the designer defaults when placed on the form. Sample data is provided by the ExampleData class, which is able to generate a list of ExampleData objects to populate the dropdownlist. RadLabels are used to show the real time values of the RadDropDownList selected value.
+Only when the user selects an item from the dropdownlist, or when the (text-)input exactly matches the displaymember of a listed item, the selected index of the dropdownlist is set.
+
+When the application loads, RadDropDownList1 is initialized to act as a load on demand control. This is done in code behind to show which properties and events are used, but could also be done using the visual studio designer. Same applies to the settings of RadGridView1, more specifically the  GridViewComboBoxColumn.
+The RadDropDownList starts loading content when the user enters at least two characters (see KeyUp event). The gridviewcombobox refreshes after each keypress. Load on demand functionality for the gridviewcombobox is provided by changing the default editor to a "load on demand editor" using the RadGridView1_EditorRequired event.
+
+Though in the example project a object list serves as the dropdownlist datasource, it should work with other data sources as well.
+I hope you find this project helpful. I'm open to suggestions and improvements from the Telerik community.
+
+To test it, simply add "ab", "de" or any other string from the list in the ExampleData class and the control will be populated accordingly.

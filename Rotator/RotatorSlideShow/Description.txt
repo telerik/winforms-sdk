@@ -1,0 +1,14 @@
+Requirements
+
+RadControls version	
+RadControls for WinForms Q2 2011 SP1
+
+.NET version 2.0
+
+Visual Studio version 2008
+
+programming language C# and VB
+
+
+PROJECT DESCRIPTION
+This project demonstrates the usage of RadRotator for WinForms to create slideshows and to save the slideshows containing the pictures and the order they appear in as XML flies.
