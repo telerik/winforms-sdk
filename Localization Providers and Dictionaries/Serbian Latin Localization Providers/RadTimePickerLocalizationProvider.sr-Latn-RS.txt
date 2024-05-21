@@ -1,0 +1,17 @@
+Class MyTimePickerLocalizationProvider
+Inherits RadTimePickerLocalizationProvider
+
+    Public Overrides Function GetLocalizedString(id As String) As String
+        Select Case id
+            Case RadTimePickerStringId.HourHeaderText
+                Return "Sati"
+            Case RadTimePickerStringId.MinutesHeaderText
+                Return "Minuti"
+            Case RadTimePickerStringId.CloseButtonText
+                Return "U redu"
+            Case Else
+                Return String.Empty
+        End Select
+    End Function
+
+End Class

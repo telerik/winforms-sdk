@@ -1,0 +1,24 @@
+Public Class MySchedulerNavigatorLocalizationProvider
+Inherits SchedulerNavigatorLocalizationProvider
+    Public Overrides Function GetLocalizedString(ByVal id As String) As String
+        Select Case id
+            Case SchedulerNavigatorStringId.DayViewButtonCaption
+                    Return "  Dan  "
+            Case SchedulerNavigatorStringId.WeekViewButtonCaption
+                    Return "Nedelja"
+            Case SchedulerNavigatorStringId.MonthViewButtonCaption
+                    Return "Mesec"
+ Case SchedulerNavigatorStringId.TimelineViewButtonCaption
+                    Return "Zbirno"
+            Case SchedulerNavigatorStringId.ShowWeekendCheckboxCaption
+                    Return "Vikend"
+   Case SchedulerNavigatorStringId.TodayButtonCaptionToday
+                Return "Danas"
+           Case SchedulerNavigatorStringId.TodayButtonCaptionThisWeek
+                Return "Ove nedelje"
+            Case SchedulerNavigatorStringId.TodayButtonCaptionThisMonth
+                Return "Ovog meseca"
+        End Select
+        Return String.Empty
+    End Function
+End Class

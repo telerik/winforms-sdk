@@ -1,0 +1,22 @@
+public class TexBoxTraduccionLocalizationProvider : TextBoxControlLocalizationProvider
+{
+	public override string GetLocalizedString(string id)
+	{
+						 
+		switch (id)
+		{
+			case TextBoxControlStringId.ContextMenuCopy:
+				return "Copiar";
+			case TextBoxControlStringId.ContextMenuCut:
+				return "Cortar";
+			case TextBoxControlStringId.ContextMenuDelete:
+				return "Eliminar";
+			case TextBoxControlStringId.ContextMenuPaste:
+				return "Pegar";
+			case TextBoxControlStringId.ContextMenuSelectAll:
+				return "Seleccionar Todo";
+			default:
+				return base.GetLocalizedString(id);
+		}
+	}
+}

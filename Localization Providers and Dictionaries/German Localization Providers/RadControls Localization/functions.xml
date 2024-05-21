@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ExpressionItemsList>
+  
+  <ExpressionItem Name="Summe" Value="SUM()" Syntax="SUM([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Berechnet die Summe  &uuml eber eine Menge von Werten.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Average" Value="AVG()" Syntax="AVG([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Computes the average of sequence of number.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Min" Value="MIN()" Syntax="MIN([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Returns the min value of sequence.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Max" Value="MAX()" Syntax="MAX([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Returns the max value of sequence.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Count" Value="COUNT()" Syntax="COUNT([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Returns the count of sequence.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="First" Value="FIRST()" Syntax="FIRST([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Returns the first value of sequence.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Last" Value="LAST()" Syntax="LAST([List(Of Number)])" Type="AggregateFunc">
+    <Description>
+      Returns the last value of sequence.
+    </Description>
+  </ExpressionItem>
+  
+  <ExpressionItem Name="Now" Value="NOW()" Syntax="NOW()" Type="DateTimeFunc">
+    <Description>
+      Returns the current system date and time.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Today" Value="TODAY()" Syntax="TODAY()" Type="DateTimeFunc">
+    <Description>
+      Returns the current date. Regardless of the actual time, this function returns midnight of the current date.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddDays" Value="ADDDAYS(,)" Syntax="ADDDAYS(Value, DaysToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of days away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddHours" Value="ADDHOURS(,)" Syntax="ADDHOURS(Value, HoursToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of hours away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddMilliseconds" Value="ADDMILLISECONDS(,)" Syntax="ADDMILLISECONDS(Value, MillisecondsToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of milliseconds away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddMinutes" Value="ADDMINUTES(,)" Syntax="ADDMINUTES(Value, MinutesToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of minutes away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddMonths" Value="ADDMONTHS(,)" Syntax="ADDMONTHS(Value, MonthsToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of months away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddSeconds" Value="ADDSECONDS(,)" Syntax="ADDSECONDS(Value, SecondsToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of seconds away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddTicks" Value="ADDTICKS(,)" Syntax="ADDTICKS(Value, TicksToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of ticks away from the specified DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddTimeSpan" Value="ADDTIMESPAN(,)" Syntax="ADDTIMESPAN(Value, TimeSpan)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is away from the specified DateTime for the given TimeSpan.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="AddYears" Value="ADDYEARS(,)" Syntax="ADDYEARS(Value, YearsToAdd)" Type="DateTimeFunc">
+    <Description>
+      Returns a date-time value that is the specified number of years away from the specieid DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="DateDiffDay" Value="DATEDIFFDAY(,)" Syntax="DATEDIFFDAY(StartDate, EndDate)" Type="DateTimeFunc">
+    <Description>
+      Returns the number of day boundaries between two non-nullable dates.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="DateDiffHour" Value="DATEDIFFHOUR(,)" Syntax="DATEDIFFHOWR(StartDate, EndDate)" Type="DateTimeFunc">
+    <Description>
+      Returns the number of hour boundaries between two non-nullable dates.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="DateDiffMilliSecond" Value="DATEDIFFMILLISECOND(,)" Syntax="DATEDIFFMILLISECOND(StartDate, EndDate)" Type="DateTimeFunc">
+    <Description>
+      Returns the number of millisecond boundaries between two non-nullable dates.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="DateDiffMinute" Value="DATEDIFFMINUTE(,)" Syntax="DATEDIFFMINUTE(StartDate, EndDate)" Type="DateTimeFunc">
+    <Description>
+      Returns the number of minute boundaries between two non-nullable dates.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="DateDiffSecond" Value="DATEDIFFSECOND(,)" Syntax="DATEDIFFSECOND(StartDate, EndDate)" Type="DateTimeFunc">
+    <Description>
+      Returns the number of second boundaries between two non-nullable dates.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="DateDiffTick" Value="DATEDIFFTICK(,)" Syntax="DATEDIFFTICK(StartDate, EndDate)" Type="DateTimeFunc">
+    <Description>
+      Returns the number of tick boundaries between two non-nullable dates.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetDate" Value="GETDATE()" Syntax="GETDATE(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts a date from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetDay" Value="GETDAY()" Syntax="GETDAY(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts a day from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetDayOfWeek" Value="GETDAYOFWEEK()" Syntax="GETDAYOFWEEK(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts a day of the week from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetDayOfYear" Value="GETDAYOFYEAR()" Syntax="GETDAYOFYEAR(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts a day of the year from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetHour" Value="GETHOUR()" Syntax="GETHOUR(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts an hour from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetMilliSecond" Value="GETMILLISECOND()" Syntax="GETMILLISECOND(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts milliseconds from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetMinute" Value="GETMINUTE()" Syntax="GETMINUTE(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts minutes from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetMonth" Value="GETMONTH()" Syntax="GETMONTH(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts a month from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetSecond" Value="GETSECOND()" Syntax="GETSECOND(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts seconds from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetTimeOfDay" Value="GETTIMEOFDAY()" Syntax="GETTIMEOFDAY(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts the time of the day from the defined DateTime, in ticks.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GetYear" Value="GETYEAR()" Syntax="GETYEAR(Value)" Type="DateTimeFunc">
+    <Description>
+      Extracts a year from the defined DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="UtcNow" Value="UTCNOW()" Syntax="UTCNOW()" Type="DateTimeFunc">
+    <Description>
+      Returns the current system date and time, expressed as Coordinated Universal Time (UTC).
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="IIf" Value="IIF(, , )" Syntax="IIF(Expression, TruePart, FalsePart)" Type="LogicalFunc">
+    <Description>
+      Returns either TruePart or FalsePart, depending on the evaluation of the Boolean Expression.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="IsNull" Value="ISNULL(,)" Syntax="ISNULL(Value, DefaultValue)" Type="LogicalFunc">
+    <Description>
+      Replaces the NULL with the specified replacement value.
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="Abs" Value="ABS()" Syntax="ABS(Value)" Type="MathFunc">
+    <Description>
+      Returns the absolute, positive value of the given numeric expression.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Ceiling" Value="CEILING()" Syntax="CEILING(Value)" Type="MathFunc">
+    <Description>
+      Returns the ceiling value of a specified number.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Floor" Value="FLOOR()" Syntax="FLOOR(Value)" Type="MathFunc">
+    <Description>
+      Returns the floor value of a specified number.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Acos" Value="ACOS()" Syntax="ACOS(Value)" Type="MathFunc">
+    <Description>
+      Returns the arccosine of a number (the angle, in radians, whose cosine is the given float expression).
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Asin" Value="ASIN()" Syntax="ASIN(Value)" Type="MathFunc">
+    <Description>
+      Returns the arcsine of a number (the angle, in radians, whose sine is the given float expression).
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Atan" Value="ATAN()" Syntax="ATAN(Value)" Type="MathFunc">
+    <Description>
+      Returns the arctangent of a number (the angle, in radians, whose tangent is the given float expression).
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="BigMul" Value="BIGMUL(,)" Syntax="BIGMUL(Value1, Value2)" Type="MathFunc">
+    <Description>
+      Returns an Int64 containing the full product of two specified 32-bit numbers.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Cos" Value="COS()" Syntax="COS(Value)" Type="MathFunc">
+    <Description>
+      Returns the cosine of the angle defined in radians.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Cosh" Value="COSH()" Syntax="COSH(Value)" Type="MathFunc">
+    <Description>
+      Returns the hyperbolic cosine of the angle defined in radians.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Exp" Value="EXP()" Syntax="EXP(Value)" Type="MathFunc">
+    <Description>
+      Returns the exponential value of the given float expression.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Log" Value="LOG()" Syntax="LOG(Value)" Type="MathFunc">
+    <Description>
+      Returns the natural logarithm of a specified number.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Log10" Value="LOG10()" Syntax="LOG10(Value)" Type="MathFunc">
+    <Description>
+      Returns the base 10 logarithm of a specified number.
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="Power" Value="POWER(,)" Syntax="POWER(Value, Power)" Type="MathFunc">
+    <Description>
+      Returns a specified number raised to a specified power.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Rnd" Value="RND()" Syntax="RND()" Type="MathFunc">
+    <Description>
+      Returns a random number that is less than 1, but greater than or equal to zero.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Round" Value="ROUND()" Syntax="ROUND(Value)" Type="MathFunc">
+    <Description>
+      Rounds the given value to the nearest integer.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Sign" Value="SIGN()" Syntax="SIGN(Value)" Type="MathFunc">
+    <Description>
+      Returns the positive (+1), zero (0), or negative (-1) sign of the given expression.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Sin" Value="SIN()" Syntax="SIN(Value)" Type="MathFunc">
+    <Description>
+      Returns the sine of the angle, defined in radians.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Sinh" Value="SINH()" Syntax="SINH(Value)" Type="MathFunc">
+    <Description>
+      Returns the hyperbolic sine of the angle defined in radians.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Sqrt" Value="SQRT()" Syntax="SQRT(Value)" Type="MathFunc">
+    <Description>
+      Returns the square root of a given number.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Tan" Value="TAN()" Syntax="TAN(Value)" Type="MathFunc">
+    <Description>
+      Returns the tangent of the angle defined in radians.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Tanh" Value="TANH()" Syntax="TANH(Value)" Type="MathFunc">
+    <Description>
+      Returns the hyperbolic tangent of the angle defined in radians.
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="ToStr" Value="TOSTR()" Syntax="TOSTR(Object)" Type="StringFunc">
+    <Description>
+      Returns a string representation of an object.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Trim" Value="TRIM()" Syntax="TRIM(Value)" Type="StringFunc">
+    <Description>
+      Removes all occurrences of white space characters from the beginning and end of this instance.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Lenght" Value="LEN()" Syntax="LEN(Value)" Type="StringFunc">
+    <Description>
+      Gets the number of characters in a string.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Format" Value="FORMAT()" Syntax="FORMAT(Format, Value)" Type="StringFunc">
+    <Description>
+      Replaces the format item in a specified System.String with the text equivalent of the value of a specified System.Object instance.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="SubString" Value="SUBSTR(,,)" Syntax="SUBSTR(Value, StartIndex, Lenght)" Type="StringFunc">
+    <Description>
+      Retrieves a substring from a string. The substring starts at a specified character position and has a specified length.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Insert" Value="INSERT(,,)" Syntax="INSERT(String1, StartIndex, String2)" Type="StringFunc">
+    <Description>
+      Inserts String2 into String1 at the position specified by StartPositon.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Lower" Value="LOWER()" Syntax="LOWER(String)" Type="StringFunc">
+    <Description>
+      Returns the String in lowercase.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Upper" Value="UPPER()" Syntax="UPPER(String)" Type="StringFunc">
+    <Description>
+      Returns String in uppercase.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="PadLeft" Value="PADLEFT(,)" Syntax="PADLEFT(String, Lenght)" Type="StringFunc">
+    <Description>
+      Left-aligns characters in the defined string, padding its left side with white space characters up to a specified total length.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="PadRight" Value="PADRIGHT(,)" Syntax="PADRIGHT(String, Lenght)" Type="StringFunc">
+    <Description>
+      Right-aligns characters in the defined string, padding its right side with white space characters up to a specified total length.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Remove" Value="REMOVE(,)" Syntax="REMOVE(StartPosition, Lenght)" Type="StringFunc">
+    <Description>
+      Deletes a specified number of characters from this instance, beginning at a specified position.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Replace" Value="REPLACE(,,)" Syntax="REPLACE(String1, SubString2, String3)" Type="StringFunc">
+    <Description>
+      Returns a copy of String1, in which SubString2 has been replaced with String3.
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="ConvertToInt" Value="CINT()" Syntax="CINT(expression)" Type="OtherFunc">
+    <Description>
+      Converts particular expression to System.Int32.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="ConvertToDouble" Value="CDBL()" Syntax="CDBL(expression)" Type="OtherFunc">
+    <Description>
+      Converts particular expression to System.Double.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="ConvertToBool" Value="CBOOL()" Syntax="CBOOL(expression)" Type="OtherFunc">
+    <Description>
+      Converts particular expression to System.Boolean.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="ConvertToDate" Value="CDATE()" Syntax="CDATE(expression)" Type="OtherFunc">
+    <Description>
+      Converts particular expression to System.DateTime.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="ConvertToStr" Value="CSTR()" Syntax="CSTR(expression)" Type="OtherFunc">
+    <Description>
+      Converts particular expression to System.String.
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="Plus" Value="+" Syntax="+" Type="Operator">
+    <Description>
+      Adds the value of one numeric expression to another, or concatenates two strings.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Minus" Value="-" Syntax="-" Type="Operator">
+    <Description>
+      Finds the difference between two numbers.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Multiply" Value="*" Syntax="*" Type="Operator">
+    <Description>
+      Multiplies the value of two expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Divide" Value="/" Syntax="/" Type="Operator">
+    <Description>
+      Divides the first operand by the second.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Modulus" Value="%" Syntax="%" Type="Operator">
+    <Description>
+      Returns the remainder (modulus) obtained by dividing one numeric expression into another.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Equal" Value="=" Syntax="=" Type="Operator">
+    <Description>
+      Returns true if both operands have the same value; otherwise, it returns false.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GreaterThan" Value="&gt;" Syntax="GreaterThan" Type="Operator">
+    <Description>
+      Greater than operator. Used to compare expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="LessThan" Value="&lt;" Syntax="LessThan" Type="Operator">
+    <Description>
+      Less than operator. Used to compare expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="GreaterOrEqual" Value="&gt;=" Syntax="GreaterOrEqual" Type="Operator">
+    <Description>
+      Greater than or equal to operator. Used to compare expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="LessOrEqual" Value="&lt;=" Syntax="LessOrEqual" Type="Operator">
+    <Description>
+      Less than or equal to operator. Used to compare expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="NotEqual" Value="&lt;&gt;" Syntax="NotEqual" Type="Operator">
+    <Description>
+      Returns true if the operands do not have the same value; otherwise, it returns false.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="And" Value="AND" Syntax="AND" Type="Operator">
+    <Description>
+      Performs a logical conjunction on two expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Or" Value="OR" Syntax="OR" Type="Operator">
+    <Description>
+      Performs a logical disjunction on two Boolean expressions.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Not" Value="NOT" Syntax="NOT" Type="Operator">
+    <Description>
+      Performs logical negation on an expression.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="In" Value="IN" Syntax="IN" Type="Operator">
+    <Description>
+      Tests for the existence.
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Between" Value="BETWEEN" Syntax="TestValue BETWEEN Value1 AND Value2" Type="Operator">
+    <Description>
+      Specifies a range to test. Returns true if a value is greater than or equal to the first operand and less than or equal to the second operand.
+    </Description>
+  </ExpressionItem>
+
+  <ExpressionItem Name="True" Value="TRUE" Syntax="TRUE" Type="Constant">
+    <Description>
+      Represents the Boolean value TRUE
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="False" Value="FALSE" Syntax="FALSE" Type="Constant">
+    <Description>
+      Represents the Boolean value FALSE
+    </Description>
+  </ExpressionItem>
+  <ExpressionItem Name="Null" Value="NULL" Syntax="NULL" Type="Constant">
+    <Description>
+      Represents NULL.
+    </Description>
+  </ExpressionItem>
+  
+</ExpressionItemsList>

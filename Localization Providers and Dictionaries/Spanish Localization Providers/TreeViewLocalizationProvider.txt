@@ -1,0 +1,27 @@
+public class TreeViewTraduccionLocalizationProvider : TreeViewLocalizationProvider
+{
+	public override string GetLocalizedString(string id)
+	{
+		switch (id)
+		{
+			case TreeViewStringId.ContextMenuCollapse:
+				return "Colapsar";
+			case TreeViewStringId.ContextMenuCopy:
+				return "Copiar";
+			case TreeViewStringId.ContextMenuCut:
+				return "Cortar";
+			case TreeViewStringId.ContextMenuDelete:
+				return "Eliminar";
+			case TreeViewStringId.ContextMenuEdit:
+				return "Editar";
+			case TreeViewStringId.ContextMenuExpand:
+				return "Expandir";
+			case TreeViewStringId.ContextMenuNew:
+				return "Nuevo";
+			case TreeViewStringId.ContextMenuPaste:
+				return "Pegar";
+			 default:
+				return base.GetLocalizedString(id);
+		}
+	}
+}

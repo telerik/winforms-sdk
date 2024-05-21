@@ -1,0 +1,49 @@
+public class RadChartTraduccionLocalizationProvider : RadChartLocalizationProvider
+{
+	public override string GetLocalizedString(string id)
+	{
+									 
+		switch (id)
+		{
+			case RadChartStringId.Palette:
+				return "Paleta de colores";
+			case RadChartStringId.PaletteArctic:
+				return "Ártico";
+			case RadChartStringId.PaletteAutumn:
+				return "Otoño";
+			case RadChartStringId.PaletteCold:
+				return "Frío";
+			case RadChartStringId.PaletteFlower:
+				return "Flor";
+			case RadChartStringId.PaletteForest:
+				return "Bosque";
+			case RadChartStringId.PaletteGrayscale:
+				return "Escala de grises";
+			case RadChartStringId.PaletteGround:
+				return "Tierra";
+			case RadChartStringId.PaletteLilac:
+				return "Lila";
+			case RadChartStringId.PaletteMetro:
+				return "Metro";
+			case RadChartStringId.PaletteNatural:
+				return "Natural";
+			case RadChartStringId.PalettePastel:
+				return "Pastel";
+			case RadChartStringId.PaletteRainbow:
+				return "Arcoiris";
+			case RadChartStringId.PaletteSpring:
+				return "Primavera";
+			case RadChartStringId.PaletteSummer:
+				return "Verano";
+			case RadChartStringId.PaletteSun:
+				return "Sol";
+			case RadChartStringId.PaletteWarm:
+				return "Cálido";
+			case RadChartStringId.PaletteWindows8:
+				return "Windows 8";
+			
+			default:
+				return base.GetLocalizedString(id);
+		}
+	}
+}

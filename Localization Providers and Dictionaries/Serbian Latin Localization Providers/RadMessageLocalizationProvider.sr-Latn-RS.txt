@@ -1,0 +1,24 @@
+Public Class MyRadMessageLocalizationProvider
+Inherits RadMessageLocalizationProvider
+
+    Public Overloads Overrides Function GetLocalizedString(ByVal id As String) As String
+        Select Case id
+            Case RadMessageStringID.AbortButton
+                Return "Odustani"
+            Case RadMessageStringID.CancelButton
+                Return "Otkaži"
+            Case RadMessageStringID.IgnoreButton
+                Return "Zanemari"
+            Case RadMessageStringID.NoButton
+                Return "Ne"
+            Case RadMessageStringID.OKButton
+                Return "U redu"
+            Case RadMessageStringID.RetryButton
+                Return "Pokušaj opet"
+            Case RadMessageStringID.YesButton
+                Return "Da"
+            Case Else
+                Return MyBase.GetLocalizedString(id)
+        End Select
+    End Function
+End Class
