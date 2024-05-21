@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SampleApp</name>
+    </assembly>
+    <members>
+        <member name="T:SampleApp.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SampleApp.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SampleApp.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:SampleApp.localhost.Service">
+            <remarks/>
+        </member>
+        <member name="M:SampleApp.localhost.Service.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:SampleApp.localhost.Service.GetMatchingItemsCompleted">
+            <remarks/>
+        </member>
+        <member name="M:SampleApp.localhost.Service.GetMatchingItems(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:SampleApp.localhost.Service.GetMatchingItemsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:SampleApp.localhost.Service.GetMatchingItemsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:SampleApp.localhost.Service.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:SampleApp.localhost.GetMatchingItemsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:SampleApp.localhost.GetMatchingItemsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:SampleApp.localhost.GetMatchingItemsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+    </members>
+</doc>
