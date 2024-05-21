@@ -1,0 +1,7 @@
+ROJECT DESCRIPTION
+During the Q1 2011 Webinar I was very pleased to see the new RadTreeView has filter functionality. This was demonstrated as simple system of setting the Filter property which you give some text to, and it will filter the RadTreeView down to the node that contains that text. The same demo is also available in the RadTreeView Filtering Help Topic 
+
+This is great, but you can also set more complex filters on the RadTreeView, specifically Composite Filters (just like in the RadGridView).
+
+Attached is a small solution with a VB and CS project that shows some very basic functionality of being able to set Composite Filters on a RadTreeView.
+ 
