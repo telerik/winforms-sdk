@@ -1,0 +1,18 @@
+Requirements
+
+RadControls version	
+Q2 2011
+
+.NET version	
+3.0
+
+Visual Studio version	
+2008
+
+programming language	
+C# and VB
+
+
+ 
+PROJECT DESCRIPTION
+The solution shows how WinForms control can be integrated in a WPF application and vice versa. For the first case in order to host WinForms control in WPF application you can use WindowsFormsHost component and for the second case (to host WPF control in WinForms application) the ElementHost component.

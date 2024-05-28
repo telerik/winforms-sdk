@@ -1,0 +1,14 @@
+﻿<Window x:Class="MyWpfApp.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+	xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+	xmlns:user="clr-namespace:RadUserControls;assembly=RadUserControls"
+    Title="MyWpfApp" Height="369" Width="328"
+    >
+	<Grid>
+		<wfi:WindowsFormsHost>
+			<user:UserControl1 x:Name="contro1" />
+		</wfi:WindowsFormsHost>
+	</Grid>
+</Window>
