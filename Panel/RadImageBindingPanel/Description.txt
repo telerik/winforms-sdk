@@ -1,0 +1,22 @@
+Requirements
+
+RadControls version	
+2009.3.9.1203+
+
+.NET version	
+3.5
+
+Visual Studio version	
+2008
+
+programming language	C# and VB
+PROJECT DESCRIPTION
+In building a furniture inventory system, I needed to create a control which allows the user to import an image (a photo of the item, a fabric swatch, etc.). The project uses business objects (built on CSLA.NET), so I needed it to be data-bindable as well. Most importantly, the project is build using Telerik's WinForms Controls, so it needed to be pretty. I've been tweaking this control for a while and wanted to share it with others.
+
+The result is RadImageBindingPanel, which inherits from RadPanel. In ReadOnly mode, the control looks more or less like a label (transparent background, no border, no control buttons). In editable mode (ReadOnly=false), the control looks more like a TextBox (border, light background, and control buttons). Images can be opened from a file or pasted from the clipboard using icon buttons.
+
+Attached zip file includes screen captures and the code file.
+
+Notes:
+Out of the box, this fits into the basic ControlDefault theme. With some tweaking, I'm sure it would fit into any project nicely.
+The folder, clipboard, and delete icons are not included with this code due to licensing.
