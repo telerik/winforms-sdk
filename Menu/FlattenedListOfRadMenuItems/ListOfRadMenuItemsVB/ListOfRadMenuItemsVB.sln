@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ListOfRadMenuItemsVB", "ListOfRadMenuItemsVB.vbproj", "{7B18F549-A734-4DA9-81F1-1C95E68F82CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B18F549-A734-4DA9-81F1-1C95E68F82CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B18F549-A734-4DA9-81F1-1C95E68F82CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B18F549-A734-4DA9-81F1-1C95E68F82CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B18F549-A734-4DA9-81F1-1C95E68F82CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B60B70F9-E13A-4B65-9813-E70B8E20ACFE}
+	EndGlobalSection
+EndGlobal

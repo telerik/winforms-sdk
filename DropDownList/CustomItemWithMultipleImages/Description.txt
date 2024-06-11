@@ -1,0 +1,2 @@
+PROJECT DESCRIPTION
+This project demonstrates the ease of which you can create and use a custom element inside the new list control. This project takes advantage of the new virtualization mechanism, which (shared with RadGridView) provides exceptional data binding and visual performance. In this project I've just created a new Visual item with a text property and two images.

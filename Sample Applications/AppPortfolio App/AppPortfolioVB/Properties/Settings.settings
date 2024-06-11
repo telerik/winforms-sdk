@@ -1,0 +1,150 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HelpDeskPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/products/winforms/sample-applications.aspx</Value>
+    </Setting>
+    <Setting Name="FurnitureConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Applications\BusinessGrid\Furniture.mdb;Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Applications\BusinessGrid\Furniture.mdb;Persist Security Info=True</Value>
+    </Setting>
+    <Setting Name="FurnitureConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Applications\DataSources\Furniture.mdb;Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Applications\DataSources\Furniture.mdb;Persist Security Info=True</Value>
+    </Setting>
+    <Setting Name="SalesDashboardImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SalesDashBoard.png</Value>
+    </Setting>
+    <Setting Name="BookKioskImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BookKiosk.png</Value>
+    </Setting>
+    <Setting Name="QSFImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ScreenshotWinFormsQSF.png</Value>
+    </Setting>
+    <Setting Name="HelpDeskImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Helpdesk.png</Value>
+    </Setting>
+    <Setting Name="BugTrackerImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BugTracker.png</Value>
+    </Setting>
+    <Setting Name="PhotoAlbumImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PhotoAlbum.png</Value>
+    </Setting>
+    <Setting Name="MovieLabImageLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">movieLab.png</Value>
+    </Setting>
+    <Setting Name="HelpDeskTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Telerik Help Desk</Value>
+    </Setting>
+    <Setting Name="HelpDeskDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HelpDesk demo application for WinForms integrates components from Telerik UI for WinForms suite. It simulates a contact management system, which is data-bound to a Microsoft SQL Server to show how to build rich user interfaces with Telerik UI for WinForms. It illustrates how to combine our award-winning components to deliver elaborate UIs.</Value>
+    </Setting>
+    <Setting Name="MovieLabTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Telerik Movie Lab</Value>
+    </Setting>
+    <Setting Name="MovieLabDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MovieLab demo application demonstrates the capabilities of RadListView for WinForms. Give your users slick and modern lists, kinetic scrolling, and hot tracking. The features of RadListView at a glance.</Value>
+    </Setting>
+    <Setting Name="BookstoreKioskTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Bookstore Kiosk Demo</Value>
+    </Setting>
+    <Setting Name="BookstoreKioskDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The Bookstore Kiosk Demo demonstrates the unmatched WPF-like visual attractiveness of Telerik UIfor WinForms. It simulates a bookstore kiosk system, much like the one you would use in your local bookstore. You can browse books, check for book availability, and even see the current book inventory through the Telerik Reporting tool.</Value>
+    </Setting>
+    <Setting Name="PhotoAlbumTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Photo Gallery Example</Value>
+    </Setting>
+    <Setting Name="PhotoAlbumDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Similar to Bookstore Kiosk demo, this application demonstrates the unmatched WPF-like visual effects of Telerik UI for WinForms. It simulates a photo album viewer that presents the photos using transitions. With the Telerik Presentation Framework that lies under Telerik UI for WinForms you can easily create cool transition effects.</Value>
+    </Setting>
+    <Setting Name="SalesDashboardTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Sales Dashboard</Value>
+    </Setting>
+    <Setting Name="SalesDashBoardDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The Sales Dashboard for Windows Forms is a composite business application for visualizing a company’s sales force performance. It provides senior management with a dynamic application that enables monitoring and evaluation of enterprise sales. By using statistical data representation, detailed information about individual sales, tools for filtering data by various parameters it greatly facilitates the decision-making process in a classic business scenario.</Value>
+    </Setting>
+    <Setting Name="QSFTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Demo Application</Value>
+    </Setting>
+    <Setting Name="QSFDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The Demo Application of Telerik UI WinForms showcases all Telerik WinForms controls in a single application. Each product comes with several examples, each with full source code.</Value>
+    </Setting>
+    <Setting Name="BugTrackerDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The Bug Tracker demo is an excellent example of a real-world application that can be built with Telerik UI for WinForms. Thanks to the variety of navigation and data controls that this suite provides, you can easily set up a fully-functional application with a slick and finished look.</Value>
+    </Setting>
+    <Setting Name="FurnitureConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Controls\BusinessGrid\Furniture.mdb;Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Controls\BusinessGrid\Furniture.mdb;Persist Security Info=True</Value>
+    </Setting>
+    <Setting Name="MovieLabPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/products/winforms/sample-applications.aspx</Value>
+    </Setting>
+    <Setting Name="BugTrackerPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/community/code-library/winforms/general/bugtracker-demo-application.aspx</Value>
+    </Setting>
+    <Setting Name="PhotoAlbumPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/support/code-library/photoalbum-demo-application</Value>
+    </Setting>
+    <Setting Name="SalesDashboardPath" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/products/winforms/sample-applications.aspx</Value>
+    </Setting>
+    <Setting Name="BugTrackerTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BugTracker Demo Application</Value>
+    </Setting>
+    <Setting Name="BookstorePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/products/winforms/sample-applications.aspx</Value>
+    </Setting>
+    <Setting Name="CarouselAnimationDelay" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="CarouselAnimationFrames" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="FileExplorerDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">The File Explorer Demo emulates the UI representation of the Windows 8's File Explorer demonstrating that with Telerik UI for WinForms you can build application according to the latest fashion trends in the UI design.</Value>
+    </Setting>
+    <Setting Name="FileExplorerImage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">fileExplorer.png</Value>
+    </Setting>
+    <Setting Name="FileExplorerTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FileExplorer Demo Application</Value>
+    </Setting>
+    <Setting Name="FileExplorerText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">FileExplorer Demo Application</Value>
+    </Setting>
+    <Setting Name="CheckersDescription" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Telerik Checkers is an implementation of the standard Checkers game and follows most of its rules. The drag and drop restrictions and customizations are possible thanks to the capabilities of the RadDragDropService. This service allows you to move a specific cell to a specific location, easily change the drag hint and have control over the data of the dragged cell and the target cell.</Value>
+    </Setting>
+    <Setting Name="CheckersImage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Checkers.png</Value>
+    </Setting>
+    <Setting Name="CheckersTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Telerik Checkers</Value>
+    </Setting>
+    <Setting Name="CheckersText" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Telerik Checkers</Value>
+    </Setting>
+    <Setting Name="QSFPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/products/winforms.aspx#DownloadableDemos</Value>
+    </Setting>
+    <Setting Name="CheckersPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/community/code-library/winforms/gridview/telerik-checkers.aspx</Value>
+    </Setting>
+    <Setting Name="FileExplorerPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.telerik.com/community/code-library/winforms/general/fileexplorer-demo-application.aspx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
