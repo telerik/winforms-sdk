@@ -1,0 +1,12 @@
+PROJECT DESCRIPTION
+This example demonstrates how you can quickly and smoothly browse through local images using RadCarousel for WinForms. The application also showcases some of the performance features of RadCarousel for WinForms.
+
+Once the application is started, a Browse dialog appears (featuring RadDropDownList and RadButton for WinForms), asking the user to input a local folder with images. The images are then loaded in RadCarousel and can be previewed with a single click.
+
+Features of the application:
+Load on demand - only the visible images are loaded in the Carousel, regardless of the amount of images stored in the local folder;
+Image reflection - RadCarousel handles the reflection of all images for a nice and complete visual appearance of the application;
+Thumbnail generation - proportional image thumbnails are created for just the images visible in the carousel - this way the carousel rotates scaled-down images with smaller size, rather than the original high-resolution images;
+Zooming - clicking on the focused/center image smoothly expands the image to fit the parent RadForm and loads the image with its original quality;
+Form Resize - when the form is resized, the image size is recalculated to fit the new size of the parent form;
+Image types supported: JPG, JPEG, GIF, PNG, BNP

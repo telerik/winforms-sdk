@@ -1,0 +1,15 @@
+PROJECT DESCRIPTION
+The Application Portfolio demonstrates the full capabilities of RadCarousel for WinForms in a very innovative and interactive way. It simulates a portfolio of WinForms applications, each represented by an animated item in RadCarousel, which rotates on a predefined pseudo-3D trajectory.
+
+
+This project was first showcased on TechEd by the Telerik crew and is now available for general download. 
+
+The applications used in RadCarousel are independent of each other and can be started with a single click. These are:
+Telerik Checkers
+Sales Dashboard
+PhotoGallery 
+File Explorer
+Telerik UI for WinForms Demo Application
+Bug Tracker
+Telerik HelpDesk application for WinForms
+Bookstore Kiosk Demo - WinForms with WPF flavor

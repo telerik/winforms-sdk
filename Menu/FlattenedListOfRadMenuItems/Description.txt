@@ -1,0 +1,9 @@
+PROJECT DESCRIPTION 
+I put together this little function for something that wasn't required in the end but thought it could be quite useful sometimes. 
+
+This code returns a collection of RadMenuItemBase objects from a given control that contains RadMenuItemBase objects 
+
+For example: Use it to get back a collection of all RadMenuItemBase objects in RadMenu, RadApplicationMenu, RadSplitButton 
+
+The code can easily be adapted too to get back a flattened collection of items from other types,
+For example: Adapt it and use it to get back a collection of RadtreeNode objects in a RadTreeView
