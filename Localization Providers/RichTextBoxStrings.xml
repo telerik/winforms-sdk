@@ -3693,4 +3693,10 @@
   	<data name="Documents_OpenDocumentCommand_XAMLVerification" xml:space="preserve">
     		<value>XAML Verification</value>
   	</data>
+	<data name="Invalid_Hyperlink_Caption" xml:space="preserve">
+    	<value>Invalid hyperlink!</value>
+    </data>
+	<data name="Invalid_Hyperlink_Message" xml:space="preserve">
+    	<value>Broken or malicious link, be careful when opening external apps: </value>
+    </data>
 </root>
