@@ -5328,4 +5328,11 @@ A user has restricted values that can be entered into this cell.</value>
 	<data name="Spreadsheet_InsertChartDialog_Title" xml:space="preserve">
     <value>Insert Chart</value>
   </data>
+    </data>
+  <data name="Invalid_Hyperlink_Caption" xml:space="preserve">
+    <value>Invalid hyperlink!</value>
+  </data>
+  <data name="Invalid_Hyperlink_Message" xml:space="preserve">
+    <value>Broken or malicious link, be careful when opening external apps: </value>
+  </data>
 </root>
