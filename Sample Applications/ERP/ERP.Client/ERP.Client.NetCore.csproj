@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+		<AssemblyName>ERP.Client</AssemblyName>
+		<RootNamespace>ERP.Client</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="UI.for.WinForms.AllControls.Net80" Version="2024.3.806" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ERP.Repository\ERP.Repository.NetCore.csproj" />
+	</ItemGroup>
+
+</Project>
