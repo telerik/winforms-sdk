@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Windows11CompactLightBlue.tssp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Windows11CompactLightBlue.tssp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.WinForms.AllControls" Version="2025.1.211" />
+  </ItemGroup>
+
+</Project>
