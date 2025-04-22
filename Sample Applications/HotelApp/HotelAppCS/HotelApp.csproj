@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.props" Condition="Exists('packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -13,6 +14,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -123,20 +126,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MediaFoundation, Version=3.1.0.32450, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\MediaFoundation.dll</HintPath>
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\MediaFoundation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.MSXML, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Microsoft.MSXML.dll</HintPath>
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Microsoft.MSXML.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Microsoft.Toolkit.Uwp.Notifications.dll</HintPath>
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Microsoft.Toolkit.Uwp.Notifications.dll</HintPath>
     </Reference>
-    <Reference Include="RadControlSpy, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\RadControlSpy.dll</HintPath>
+    <Reference Include="RadControlSpy, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\RadControlSpy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -144,206 +147,215 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.dll</HintPath>
+    <Reference Include="Telerik.Licensing.Runtime, Version=1.4.10.0, Culture=neutral, PublicKeyToken=98bb5b04e55c09ef, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Licensing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.ChartView, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.ChartView.dll</HintPath>
+    <Reference Include="Telerik.WinControls, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.GridView.dll</HintPath>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.ChartView.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.PdfViewer, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.PdfViewer.dll</HintPath>
+    <Reference Include="Telerik.WinControls.GridView, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.GridView.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.PivotGrid, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.PivotGrid.dll</HintPath>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.PdfViewer.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadChart, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadChart.dll</HintPath>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.PivotGrid.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadDiagram, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadDiagram.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadChart.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadDock, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadDock.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadDiagram.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadMap, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadMap.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadDock.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadMap, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadMap.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadSpreadsheet, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadToastNotification.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadSpreadsheet, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadSpreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadToastNotification.Design, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadToastNotification.Design.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadToastNotification.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadWebCam, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RadWebCam.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadToastNotification.Design, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadToastNotification.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadWebCam, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RadWebCam.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Scheduler, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Scheduler.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.RichTextEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.SpellChecker, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.SpellChecker.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Scheduler.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.SyntaxEditor, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.SyntaxEditor.dll</HintPath>
+    <Reference Include="Telerik.WinControls.SpellChecker, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.SpellChecker.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    <Reference Include="Telerik.WinControls.SyntaxEditor, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.SyntaxEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Aqua.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Crystal.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Breeze.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.CrystalDark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Crystal, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Crystal.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Desert.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.CrystalDark, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Fluent, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Fluent.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Desert.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Fluent, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Fluent.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Material, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Material.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Material, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Material.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.MaterialPink, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.MaterialPink.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.MaterialBlueGrey, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.MaterialBlueGrey.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.MaterialPink, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.MaterialPink.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.MaterialTeal, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.MaterialTeal.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Office2019.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Office2019.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2022, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.VisualStudio2022.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Windows11, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Windows11.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2022, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.VisualStudio2022.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Windows11, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Windows11.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Windows7.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.UI.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.Themes.Windows8.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI.Design, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.WinControls.UI.Design.dll</HintPath>
+    <Reference Include="Telerik.WinControls.UI, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.CMapUtils, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.CMapUtils.dll</HintPath>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.WinControls.UI.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Core, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Core.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.CMapUtils, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.CMapUtils.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.DrawingML, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.DrawingML.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.DrawingML, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.DrawingML.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Flow.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Fixed.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Doc, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Fixed.FormatProviders.Ocr, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Fixed.FormatProviders.Ocr.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Doc, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Flow.FormatProviders.Doc.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.MediaFoundation, Version=2023.2.1002.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.MediaFoundation.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Windows.Zip, Version=2023.3.1106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\Telerik.Windows.Zip.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
     </Reference>
-    <Reference Include="TelerikCommon, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\TelerikCommon.dll</HintPath>
+    <Reference Include="Telerik.Windows.Documents.TesseractOcr, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Documents.TesseractOcr.dll</HintPath>
     </Reference>
-    <Reference Include="TelerikData, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\TelerikData.dll</HintPath>
+    <Reference Include="Telerik.Windows.MediaFoundation, Version=2025.1.305.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.MediaFoundation.dll</HintPath>
     </Reference>
-    <Reference Include="TelerikExport, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\TelerikExport.dll</HintPath>
+    <Reference Include="Telerik.Windows.Zip, Version=2025.1.310.462, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\Telerik.Windows.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="VisualStyleBuilder.Design, Version=2023.3.1114.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2023.3.1114\lib\net48\VisualStyleBuilder.Design.dll</HintPath>
+    <Reference Include="TelerikCommon, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\TelerikExport.dll</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design, Version=2025.1.310.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>packages\UI.for.WinForms.AllControls.Net48.2025.1.310-preview\lib\net462\VisualStyleBuilder.Design.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -688,6 +700,14 @@
     <None Include="Resources\double_user_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.props'))" />
+    <Error Condition="!Exists('packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.targets'))" />
+  </Target>
+  <Import Project="packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.targets" Condition="Exists('packages\Telerik.Licensing.1.4.10\build\Telerik.Licensing.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
