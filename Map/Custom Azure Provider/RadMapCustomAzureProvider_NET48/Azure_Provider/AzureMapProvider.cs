@@ -9,7 +9,7 @@ using System.Text;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Map.Bing;
 
-namespace RadMapCustomAzureProvider_Net4._8.Azure_Provider
+namespace RadMapCustomAzureProvider_NET48.Azure_Provider
 {
     public class AzureMapProvider : IMapTileProvider, IMapProvider, IMapSearchProvider
     {

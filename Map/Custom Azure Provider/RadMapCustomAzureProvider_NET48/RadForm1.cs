@@ -1,20 +1,15 @@
-﻿using RadMapCustomAzureProvider_Net4._8.Azure_Provider;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using RadMapCustomAzureProvider_NET48.Azure_Provider;
 
-namespace RadMapCustomAzureProvider_Net4._8
+namespace RadMapCustomAzureProvider_NET48
 {
     public partial class RadForm1 : Telerik.WinControls.UI.RadForm
     {
         private string AzureAPIKey = "";
+
         public RadForm1()
         {
             InitializeComponent();
@@ -37,7 +32,7 @@ namespace RadMapCustomAzureProvider_Net4._8
             provider.EnableCaching = true;
             this.radMap1.Providers.Add(provider);
 
-            Telerik.WinControls.UI.MapLayer pinsLayer = new MapLayer("Pins");
+            MapLayer pinsLayer = new MapLayer("Pins");
             this.radMap1.Layers.Add(pinsLayer);
             this.radMap1.MapElement.SearchBarElement.SearchProvider = provider;
             this.radMap1.MapElement.SearchBarElement.SearchProvider.SearchCompleted += BingProvider_SearchCompleted;
@@ -46,6 +41,7 @@ namespace RadMapCustomAzureProvider_Net4._8
         {
             Telerik.WinControls.UI.Map.RectangleG allPoints = new Telerik.WinControls.UI.Map.RectangleG(double.MinValue, double.MaxValue, double.MaxValue, double.MinValue);
             this.radMap1.Layers["Pins"].Clear();
+
             foreach (Telerik.WinControls.UI.Map.Bing.Location location in e.Locations)
             {
                 Telerik.WinControls.UI.Map.PointG point = new Telerik.WinControls.UI.Map.PointG(location.Point.Coordinates[0], location.Point.Coordinates[1]);
@@ -53,6 +49,7 @@ namespace RadMapCustomAzureProvider_Net4._8
                 pin.Size = new System.Drawing.Size(20, 40);
                 pin.BackColor = Color.Red;
                 pin.ToolTipText = location.Address.FormattedAddress;
+
                 this.radMap1.MapElement.Layers["Pins"].Add(pin);
                 allPoints.North = Math.Max(allPoints.North, point.Latitude);
                 allPoints.South = Math.Min(allPoints.South, point.Latitude);

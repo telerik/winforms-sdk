@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="UI.for.WinForms.AllControls.Net90" Version="2025.1.211" />
+    <PackageReference Include="Telerik.UI.for.WinForms.AllControls" Version="2025.1.211" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties ShouldAddDPIScalingManifest="" /></VisualStudio></ProjectExtensions>

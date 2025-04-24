@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 
-namespace RadMapCustomAzureProvider_Net4._8
+namespace RadMapCustomAzureProvider_NET48
 {
     internal static class Program
     {

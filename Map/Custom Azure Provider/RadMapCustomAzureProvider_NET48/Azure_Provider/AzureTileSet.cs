@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RadMapCustomAzureProvider_Net4._8.Azure_Provider
+﻿namespace RadMapCustomAzureProvider_NET48.Azure_Provider
 {
     public enum AzureTileSet
     {

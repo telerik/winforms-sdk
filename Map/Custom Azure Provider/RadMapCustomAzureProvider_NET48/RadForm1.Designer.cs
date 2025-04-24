@@ -1,4 +1,4 @@
-﻿namespace RadMapCustomAzureProvider_Net4._8
+﻿namespace RadMapCustomAzureProvider_NET48
 {
     partial class RadForm1
     {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
-namespace RadMapCustomAzureProvider_Net4._8.Azure_Provider
+namespace RadMapCustomAzureProvider_NET48.Azure_Provider
 {
     [DataContract]
     public class AzureResponse

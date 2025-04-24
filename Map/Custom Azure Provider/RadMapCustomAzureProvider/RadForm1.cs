@@ -1,20 +1,15 @@
-﻿using RadMapCustomAzureProvider.Azure_Provider;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using RadMapCustomAzureProvider.Azure_Provider;
 
 namespace RadMapCustomAzureProvider
 {
     public partial class RadForm1 : Telerik.WinControls.UI.RadForm
     {
         private string AzureAPIKey = "";
+
         public RadForm1()
         {
             InitializeComponent();
@@ -53,12 +48,14 @@ namespace RadMapCustomAzureProvider
                 pin.Size = new System.Drawing.Size(20, 40);
                 pin.BackColor = Color.Red;
                 pin.ToolTipText = location.Address.FormattedAddress;
+
                 this.radMap1.MapElement.Layers["Pins"].Add(pin);
                 allPoints.North = Math.Max(allPoints.North, point.Latitude);
                 allPoints.South = Math.Min(allPoints.South, point.Latitude);
                 allPoints.West = Math.Min(allPoints.West, point.Longitude);
                 allPoints.East = Math.Max(allPoints.East, point.Longitude);
             }
+
             if (e.Locations.Length > 0)
             {
                 if (e.Locations.Length == 1)
