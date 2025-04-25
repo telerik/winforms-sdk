@@ -8,6 +8,10 @@ namespace RadMapCustomAzureProvider_NET48
 {
     public partial class RadForm1 : Telerik.WinControls.UI.RadForm
     {
+        /// <summary>
+        /// The Azure API key required to authenticate and access Azure Map services.
+        /// This key must be provided for the map to function correctly.
+        /// </summary>
         private string AzureAPIKey = "";
 
         public RadForm1()
