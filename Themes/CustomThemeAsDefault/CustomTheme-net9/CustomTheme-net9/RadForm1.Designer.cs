@@ -36,10 +36,11 @@
             // 
             // radaiPrompt1
             // 
-            radaiPrompt1.Location = new System.Drawing.Point(13, 13);
+            radaiPrompt1.Dock = System.Windows.Forms.DockStyle.Fill;
+            radaiPrompt1.Location = new System.Drawing.Point(0, 0);
             radaiPrompt1.Margin = new System.Windows.Forms.Padding(4);
             radaiPrompt1.Name = "radaiPrompt1";
-            radaiPrompt1.Size = new System.Drawing.Size(501, 363);
+            radaiPrompt1.Size = new System.Drawing.Size(438, 271);
             radaiPrompt1.TabIndex = 0;
             // 
             // RadForm1
@@ -47,9 +48,9 @@
             AutoScaleBaseSize = new System.Drawing.Size(7, 15);
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(527, 417);
+            ClientSize = new System.Drawing.Size(438, 271);
             Controls.Add(radaiPrompt1);
-            Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Margin = new System.Windows.Forms.Padding(4);
             Name = "RadForm1";
             Text = "RadForm1";
             ((System.ComponentModel.ISupportInitialize)radaiPrompt1).EndInit();

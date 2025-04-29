@@ -36,17 +36,18 @@
             // 
             // radAIPrompt1
             // 
-            this.radAIPrompt1.Location = new System.Drawing.Point(40, 16);
+            this.radAIPrompt1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radAIPrompt1.Location = new System.Drawing.Point(0, 0);
             this.radAIPrompt1.Margin = new System.Windows.Forms.Padding(5);
             this.radAIPrompt1.Name = "radAIPrompt1";
-            this.radAIPrompt1.Size = new System.Drawing.Size(275, 305);
+            this.radAIPrompt1.Size = new System.Drawing.Size(366, 307);
             this.radAIPrompt1.TabIndex = 0;
             // 
             // RadForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 354);
+            this.ClientSize = new System.Drawing.Size(366, 307);
             this.Controls.Add(this.radAIPrompt1);
             this.Name = "RadForm1";
             this.Text = "RadForm1";
