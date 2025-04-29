@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTheme_net9", "CustomTheme-net9\CustomTheme_net9.csproj", "{C01833E0-5353-4CCE-9335-C0896B00A23E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows11LightBlueClassLibrary", "Windows11LightBlueClassLibrary\Windows11LightBlueClassLibrary.csproj", "{A4B6A8C1-6397-4877-912E-26A5A4F8B642}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C01833E0-5353-4CCE-9335-C0896B00A23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01833E0-5353-4CCE-9335-C0896B00A23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01833E0-5353-4CCE-9335-C0896B00A23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01833E0-5353-4CCE-9335-C0896B00A23E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B6A8C1-6397-4877-912E-26A5A4F8B642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B6A8C1-6397-4877-912E-26A5A4F8B642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B6A8C1-6397-4877-912E-26A5A4F8B642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B6A8C1-6397-4877-912E-26A5A4F8B642}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
