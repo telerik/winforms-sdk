@@ -528,8 +528,8 @@ namespace RadMapCustomAzureProvider_NET48.Azure_Provider
 
                         for (int i = 0; i < locations.Length; i++)
                         {
-                            double lat = double.Parse(azureResponse.Results[i].Position.Latitude);
-                            double lon = double.Parse(azureResponse.Results[i].Position.Longitude);
+                            double lat = double.Parse(azureResponse.Results[i].Position.Latitude, System.Globalization.CultureInfo.InvariantCulture);
+                            double lon = double.Parse(azureResponse.Results[i].Position.Longitude, System.Globalization.CultureInfo.InvariantCulture);
                             var bingPoint = new BingPointG() { Coordinates = new double[2] { lat, lon } };
                             locations[i] = new Location() { Point = bingPoint, Address = new Telerik.WinControls.UI.Map.Bing.Address() { FormattedAddress = azureResponse.Results[i].Address.FreeformAddress } };
                         }
