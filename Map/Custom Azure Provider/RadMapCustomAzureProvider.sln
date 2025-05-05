@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadMapCustomAzureProvider", "RadMapCustomAzureProvider\RadMapCustomAzureProvider.csproj", "{1385B45C-38F8-4786-BE8F-A21A0B7786DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadMapCustomAzureProvider_NET48", "RadMapCustomAzureProvider_NET48\RadMapCustomAzureProvider_NET48.csproj", "{3739021A-637E-49E1-957C-D31BD909E619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1385B45C-38F8-4786-BE8F-A21A0B7786DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1385B45C-38F8-4786-BE8F-A21A0B7786DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1385B45C-38F8-4786-BE8F-A21A0B7786DC}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{1385B45C-38F8-4786-BE8F-A21A0B7786DC}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{3739021A-637E-49E1-957C-D31BD909E619}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3739021A-637E-49E1-957C-D31BD909E619}.Debug|Any CPU.Build.0 = Debug|x86
+		{3739021A-637E-49E1-957C-D31BD909E619}.Staging|Any CPU.ActiveCfg = Release|x86
+		{3739021A-637E-49E1-957C-D31BD909E619}.Staging|Any CPU.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC035108-7ADF-4BE3-8D61-A98D33C21653}
+	EndGlobalSection
+EndGlobal
