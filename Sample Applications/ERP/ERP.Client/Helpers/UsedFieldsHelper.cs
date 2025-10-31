@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ERP.Client
 {
-    static class FieldsHelper
+    internal static class FieldsHelper
     {
         public static List<string> AddressFields = new List<string>() { "AddressLine1", "AddressLine2", "City", "StateProvince", "PostalCode", "ModifiedDate" };
         public static List<string> PurchaseOrderHeaderFields = new List<string>() { "OrderStatus", "OrderDate", "ShipDate", "SubTotal", "TaxAmt", "Freight", "TotalDue", "ModifiedDate", "ShipMethod", "Vendor" };

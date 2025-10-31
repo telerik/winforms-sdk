@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Client", "ERP.Client\ER
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Repository", "ERP.Repository\ERP.Repository.csproj", "{C126BF91-B70E-4226-B94F-3BDD33C660F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Service", "ERP.Service\ERP.Service.csproj", "{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,14 +31,6 @@ Global
 		{C126BF91-B70E-4226-B94F-3BDD33C660F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C126BF91-B70E-4226-B94F-3BDD33C660F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{C126BF91-B70E-4226-B94F-3BDD33C660F8}.Release|x86.Build.0 = Release|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Debug|x86.Build.0 = Debug|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Release|x86.ActiveCfg = Release|Any CPU
-		{ABA66F00-46EA-41D3-8DB8-706CFE4A98F8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +38,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2890AF2D-AEEA-4DB3-9CDA-66EB4EACC553}
 	EndGlobalSection
-	
 EndGlobal

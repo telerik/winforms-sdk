@@ -2,37 +2,24 @@
 using ERP.Repository.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Services.Client;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telerik.WinControls.UI;
-using System.Data.Entity;
-using Telerik.WinControls.Export;
-using System.Windows.Forms;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using System.IO;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace ERP.Client
 {
-    class PurchasesControl : BaseGridControl
+    internal class PurchasesControl : BaseGridControl
     {
-        List<PurchaseOrderHeader> data = new List<PurchaseOrderHeader>();
-
-        List<PurchaseOrderDetail> detailsData = new List<PurchaseOrderDetail>();
-       
-        public Action<List<PurchaseOrderHeader>> Callback { get; private set; }
-
-        List<string> detailsViewColumnNames = new List<string>();
+        private List<PurchaseOrderHeader> data = new List<PurchaseOrderHeader>();
+        private List<PurchaseOrderDetail> detailsData = new List<PurchaseOrderDetail>();
+        private List<string> detailsViewColumnNames = new List<string>();
 
         protected override void Initialize()
         {
             this.dataFormText = "Edit Purchase";
             this.gridControl.ColumnCount = 10;
-            columnTypes = new Type[] { typeof(string), typeof(DateTime), typeof(DateTime), typeof(decimal), typeof(decimal), typeof(decimal), typeof(decimal), typeof(DateTime), typeof(string), typeof(string) };
+            this.columnTypes = new Type[] { typeof(string), typeof(DateTime), typeof(DateTime), typeof(decimal), typeof(decimal), typeof(decimal), typeof(decimal), typeof(DateTime), typeof(string), typeof(string) };
 
             this.columnNames.Add("Order Status");
             this.columnNames.Add("Order Date");
@@ -45,16 +32,11 @@ namespace ERP.Client
             this.columnNames.Add("Ship Method");
             this.columnNames.Add("Vendor");
 
-            this.gridControl.RowCount = MainRepository.GetPurchaseOrders().Count();
-
-            this.Callback = new Action<List<PurchaseOrderHeader>>(query =>
-            {
-                this.data = query;
-                this.gridControl.MasterViewInfo.IsWaiting = false;
-                this.gridControl.TableElement.SynchronizeRows();
-            });
-
-            this.RefreshData(0);
+            this.gridControl.RowCount = MainRepository.PurchaseOrdersCache.Count();
+            this.data = MainRepository.PurchaseOrdersCache;
+            this.gridControl.MasterViewInfo.IsWaiting = false;
+            this.gridControl.TableElement.SynchronizeRows();
+            // this.RefreshData(0);
 
             this.detailsViewColumnNames.Add("Product");
             this.detailsViewColumnNames.Add("Quantity");
@@ -66,13 +48,14 @@ namespace ERP.Client
             this.detailsViewColumnNames.Add("Due Date");
             this.detailsViewColumnNames.Add("Modified Date");
 
-            this.gridControl.RowExpanding += GridControl_RowExpanding;
-            this.gridControl.QueryHasChildRows += GridControl_QueryHasChildRows;
-            this.gridControl.SelectionChanged += GridControl_SelectionChanged;
-           
-            this.gridControl.CellFormatting += GridControl_CellFormatting;
-            this.gridControl.MasterViewInfo.SetColumnDataType(columnTypes);
-            this.gridControl.RowFormatting += GridControl_RowFormatting;
+            this.gridControl.RowExpanding += this.GridControl_RowExpanding;
+            this.gridControl.QueryHasChildRows += this.GridControl_QueryHasChildRows;
+            this.gridControl.SelectionChanged += this.GridControl_SelectionChanged;
+
+            this.gridControl.CellFormatting += this.GridControl_CellFormatting;
+            this.gridControl.MasterViewInfo.SetColumnDataType(this.columnTypes);
+            this.gridControl.RowFormatting += this.GridControl_RowFormatting;
+            this.ClearSelection();
         }
 
         private void GridControl_RowFormatting(object sender, VirtualGridRowElementEventArgs e)
@@ -99,8 +82,9 @@ namespace ERP.Client
                 {
                     e.CellElement.ResetValue(RadItem.EnabledProperty, ValueResetFlags.Local);
 
-                }             
+                }
             }
+
             if (e.CellElement is VirtualGridHeaderCellElement)
             {
                 var cell = e.CellElement as VirtualGridHeaderCellElement;
@@ -119,7 +103,7 @@ namespace ERP.Client
         {
             if (this.gridControl.CurrentCell != null && this.gridControl.CurrentCell.RowIndex >= 0)
             {
-                currentItem = data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
+                this.currentItem = this.data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize] as PurchaseOrderHeader;
             }
         }
 
@@ -130,16 +114,18 @@ namespace ERP.Client
 
         private void GridControl_RowExpanding(object sender, VirtualGridRowExpandingEventArgs e)
         {
-            detailsData = data[e.RowIndex % gridControl.PageSize].PurchaseOrderDetails.ToList();
-            e.ChildViewInfo.RowCount = detailsData.Count;
-            e.ChildViewInfo.ColumnCount = detailsViewColumnNames.Count;
+            this.detailsData = this.data[e.RowIndex % this.gridControl.PageSize].PurchaseOrderDetails.ToList();
+            e.ChildViewInfo.RowCount = this.detailsData.Count;
+            e.ChildViewInfo.ColumnCount = this.detailsViewColumnNames.Count;
         }
 
         protected override void RadGridView1_CellValueNeeded(object sender, VirtualGridCellValueNeededEventArgs e)
         {
             base.RadGridView1_CellValueNeeded(sender, e);
             if (e.ColumnIndex < 0)
+            {
                 return;
+            }
 
             if (e.ViewInfo == this.gridControl.MasterViewInfo)
             {
@@ -147,14 +133,16 @@ namespace ERP.Client
                 {
                     e.FieldName = FieldsHelper.PurchaseOrderHeaderFields[e.ColumnIndex];
                 }
+
                 if (e.RowIndex == RadVirtualGrid.HeaderRowIndex)
                 {
-                    e.Value = columnNames[e.ColumnIndex];
+                    e.Value = this.columnNames[e.ColumnIndex];
                     e.FieldName = FieldsHelper.PurchaseOrderHeaderFields[e.ColumnIndex];
                 }
-                if (e.RowIndex >= 0 && data.Count > 0)
+
+                if (e.RowIndex >= 0 && this.data.Count > 0)
                 {
-                    var rowData = data[e.RowIndex % gridControl.PageSize] as PurchaseOrderHeader;
+                    var rowData = this.data[e.RowIndex % this.gridControl.PageSize] as PurchaseOrderHeader;
 
                     switch (e.ColumnIndex)
                     {
@@ -196,11 +184,12 @@ namespace ERP.Client
             {
                 if (e.RowIndex == RadVirtualGrid.HeaderRowIndex)
                 {
-                    e.Value = detailsViewColumnNames[e.ColumnIndex];
+                    e.Value = this.detailsViewColumnNames[e.ColumnIndex];
                 }
-                if (e.RowIndex >= 0 && detailsData.Count > 0)
+
+                if (e.RowIndex >= 0 && this.detailsData.Count > 0)
                 {
-                    var rowData = detailsData[e.RowIndex] as PurchaseOrderDetail;
+                    var rowData = this.detailsData[e.RowIndex] as PurchaseOrderDetail;
 
                     switch (e.ColumnIndex)
                     {
@@ -235,39 +224,44 @@ namespace ERP.Client
                             break;
                     }
                 }
-
-
             }
         }
+
         protected override void RadGridView1_SortChanged(object sender, VirtualGridEventArgs e)
         {
             if (e.ViewInfo.SortDescriptors.Count == 0)
             {
                 return;
             }
-          
+
             var propertyName = e.ViewInfo.SortDescriptors[0].PropertyName;
             if (propertyName == "OrderStatus")
             {
                 return;
             }
+
             var prop = typeof(PurchaseOrderHeader).GetProperty(propertyName).PropertyType;
             if (prop.IsValueType || prop == typeof(string))
             {
                 base.RadGridView1_SortChanged(sender, e);
             }
-
         }
+
+        protected override void DeleteCurrentRow()
+        {
+            MainRepository.PurchaseOrdersCache.Remove(this.currentItem as PurchaseOrderHeader);
+            this.ClearSelection();
+        }
+
         protected override void RefreshData(int skip)
         {
-            data.Clear();
-            var query = SortHelper.Sort(MainRepository.GetPurchaseOrders(), this.gridControl.SortDescriptors);
-            query = FilterHelper.Filter(query, this.gridControl.FilterDescriptors);
-            gridControl.RowCount = query.Count();
+            this.gridControl.RowCount = 0;
 
+            var sortedData = SortHelper.Sort(MainRepository.PurchaseOrdersCache, this.gridControl.SortDescriptors);
+            var filteredData = FilterHelper.Filter(sortedData, this.gridControl.FilterDescriptors);
 
-            this.gridControl.MasterViewInfo.IsWaiting = true;
-            ExecuteQueryAsync<List<PurchaseOrderHeader>>(Task.Run(() => query.Skip(skip).Take(this.gridControl.PageSize).ToList()), this.Callback);
+            this.data = filteredData.Skip(skip).Take(this.gridControl.PageSize).ToList();
+            this.gridControl.RowCount = filteredData.Count();
         }
 
         protected override Workbook CreateWorkbook()
@@ -276,46 +270,47 @@ namespace ERP.Client
             Worksheet worksheet = workbook.Worksheets.Add();
 
             // set header
-            for (int i = 0; i < columnNames.Count; i++)
+            for (int i = 0; i < this.columnNames.Count; i++)
             {
                 CellSelection selection = worksheet.Cells[0, i];
-                selection.SetValue(columnNames[i]);
+                selection.SetValue(this.columnNames[i]);
             }
 
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < this.data.Count; i++)
             {
                 int rowIndex = i + 1;
                 CellSelection selection = worksheet.Cells[rowIndex, 0];
-                selection.SetValue(data[i].OrderStatus);
+                selection.SetValue(this.data[i].OrderStatus);
 
                 selection = worksheet.Cells[rowIndex, 1];
-                selection.SetValue(data[i].OrderDate);
+                selection.SetValue(this.data[i].OrderDate);
 
                 selection = worksheet.Cells[rowIndex, 2];
-                selection.SetValue(data[i].ShipDate.Value);
+                selection.SetValue(this.data[i].ShipDate.Value);
 
                 selection = worksheet.Cells[rowIndex, 3];
-                selection.SetValue(Convert.ToDouble(data[i].SubTotal));
+                selection.SetValue(Convert.ToDouble(this.data[i].SubTotal));
 
                 selection = worksheet.Cells[rowIndex, 4];
-                selection.SetValue(Convert.ToDouble(data[i].TaxAmt));
+                selection.SetValue(Convert.ToDouble(this.data[i].TaxAmt));
 
                 selection = worksheet.Cells[rowIndex, 5];
-                selection.SetValue(Convert.ToDouble(data[i].Freight));
+                selection.SetValue(Convert.ToDouble(this.data[i].Freight));
 
                 selection = worksheet.Cells[rowIndex, 6];
-                selection.SetValue(Convert.ToDouble(data[i].TotalDue));
+                selection.SetValue(Convert.ToDouble(this.data[i].TotalDue));
 
                 selection = worksheet.Cells[rowIndex, 7];
-                selection.SetValue(data[i].ModifiedDate);
+                selection.SetValue(this.data[i].ModifiedDate);
 
                 selection = worksheet.Cells[rowIndex, 8];
-                selection.SetValue(data[i].ShipMethod.Name);
+                selection.SetValue(this.data[i].ShipMethod.Name);
 
                 selection = worksheet.Cells[rowIndex, 9];
-                selection.SetValue(data[i].Vendor.Name);
+                selection.SetValue(this.data[i].Vendor.Name);
 
             }
+
             worksheet.Columns[worksheet.UsedCellRange].AutoFitWidth();
             worksheet.Name = "Purchases";
             return workbook;

@@ -1,50 +1,57 @@
-﻿using ERP.Repository;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.Services.Client;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Telerik.WinControls.Data;
 
 namespace ERP.Client
 {
     public static class SortHelper
     {
-        public static DataServiceQuery<T> Sort<T>(DataServiceQuery<T> queryable, SortDescriptorCollection sortDescriptors) where T : ISavableObject
+        public static List<T> Sort<T>(List<T> list, SortDescriptorCollection sortDescriptors)
         {
-            DataServiceQuery<T> query = queryable;
+            if (list == null || sortDescriptors == null || sortDescriptors.Count == 0)
+            {
+                return list;
+            }
+
+            IOrderedEnumerable<T> orderedList = null;
             bool isFirst = true;
 
-            if (sortDescriptors != null)
+            foreach (var descriptor in sortDescriptors)
             {
-                foreach (var descriptor in sortDescriptors)
+                var property = typeof(T).GetProperty(descriptor.PropertyName);
+                if (property == null)
                 {
-                    var property = query.ElementType.GetProperty(descriptor.PropertyName);
-                    var parameter = Expression.Parameter(query.ElementType, "srt");
-                    var propertyAccess = Expression.MakeMemberAccess(parameter, property);
-                    var expression = Expression.Lambda(propertyAccess, parameter);
+                    continue;
+                }
 
-                    string methodName = string.Empty;
-
-                    if (isFirst)
+                if (isFirst)
+                {
+                    if (descriptor.Direction == ListSortDirection.Ascending)
                     {
-                        methodName = descriptor.Direction == ListSortDirection.Ascending ? "OrderBy" : "OrderByDescending";
-                        isFirst = false;
+                        orderedList = list.OrderBy(x => property.GetValue(x, null));
                     }
                     else
                     {
-                        methodName = descriptor.Direction == ListSortDirection.Ascending ? "ThenBy" : "ThenByDescending";
+                        orderedList = list.OrderByDescending(x => property.GetValue(x, null));
                     }
-                    var exp = Expression.Call(typeof(Queryable), methodName, new[] { query.ElementType, expression.Body.Type }, query.Expression, Expression.Quote(expression));
 
-                    query = query.Provider.CreateQuery(exp) as DataServiceQuery<T>;
+                    isFirst = false;
+                }
+                else
+                {
+                    if (descriptor.Direction == ListSortDirection.Ascending)
+                    {
+                        orderedList = orderedList.ThenBy(x => property.GetValue(x, null));
+                    }
+                    else
+                    {
+                        orderedList = orderedList.ThenByDescending(x => property.GetValue(x, null));
+                    }
                 }
             }
 
-            return query;
+            return orderedList != null ? orderedList.ToList() : list;
         }
     }
 }

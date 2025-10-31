@@ -6,13 +6,13 @@ using System.Data.Services.Client;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(SalesOrderHeaderMetadata))]
-    public partial class SalesOrderHeader : ISavableObject
+    public partial class SalesOrderHeader 
     {
         partial void OnCustomerIDChanged()
         {
             if (this.Customer != null && this.Customer.CustomerID != this.CustomerID)
             {
-                this.Customer = MainRepository.Context.Customers.Where(c => c.CustomerID == this.CustomerID).ToList().First();
+                this.Customer = MainRepository.CustomersCache.Where(c => c.CustomerID == this.CustomerID).ToList().FirstOrDefault();
             }
         }
 
@@ -22,37 +22,7 @@ namespace ERP.Repository.Service
             {
                 this.ShipMethod = MainRepository.ShipMethodsCache.FirstOrDefault(s => s.ShipMethodID == this.ShipMethodID);
             }
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                MainRepository.UpdateAndSaveAsync(this);
-            }
-        }
-
-        public void Delete()
-        {
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            if (this.Customer != null && this.Customer.CustomerID != this.CustomerID)
-            {
-                this.CustomerID = this.Customer.CustomerID;
-            }
-
-            if (this.ShipMethod != null && this.ShipMethod.ShipMethodID != this.ShipMethodID)
-            {
-                this.ShipMethodID = this.ShipMethod.ShipMethodID;
-            }
-        }
+        }       
     }
 
     public class SalesOrderHeaderMetadata

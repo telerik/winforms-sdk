@@ -1,65 +1,60 @@
-﻿using System;
+﻿using ERP.Client.Properties;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Themes;
 using Telerik.WinControls.UI;
-using ERP.Client.Properties;
-using System.Reflection;
 
 namespace ERP.Client
 {
     public partial class TopControl : UserControl
     {
-        Dictionary<string, bool> loadedThemes = new Dictionary<string, bool>();
+        private Dictionary<string, bool> loadedThemes = new Dictionary<string, bool>();
 
         public RadLabel ViewLabel { get { return this.viewLabel; } }
 
         public TopControl()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
             new FluentTheme();
             new CrystalTheme();
             new VisualStudio2012DarkTheme();
 
-            InitializeThemesDropDown();
+            this.InitializeThemesDropDown();
         }
 
         private void InitializeThemesDropDown()
         {
-            AddThemeItemToThemesDropDownList("Crystal", Resources.fluent);
-            AddThemeItemToThemesDropDownList("Fluent", Resources.fluent);
-            AddThemeItemToThemesDropDownList("FluentDark", Resources.fluent_dark);
-            AddThemeItemToThemesDropDownList("Material", Resources.material);
-            AddThemeItemToThemesDropDownList("MaterialPink", Resources.material_pink);
-            AddThemeItemToThemesDropDownList("MaterialTeal", Resources.material_teal);
-            AddThemeItemToThemesDropDownList("MaterialBlueGrey",Resources.material_blue_grey);
-            AddThemeItemToThemesDropDownList("ControlDefault",Resources.control_default);
-            AddThemeItemToThemesDropDownList("TelerikMetro", Resources.telerik_metro);     
-            AddThemeItemToThemesDropDownList("Windows8", Resources.windows8);
+            this.AddThemeItemToThemesDropDownList("Crystal", Resources.fluent);
+            this.AddThemeItemToThemesDropDownList("Fluent", Resources.fluent);
+            this.AddThemeItemToThemesDropDownList("FluentDark", Resources.fluent_dark);
+            this.AddThemeItemToThemesDropDownList("Material", Resources.material);
+            this.AddThemeItemToThemesDropDownList("MaterialPink", Resources.material_pink);
+            this.AddThemeItemToThemesDropDownList("MaterialTeal", Resources.material_teal);
+            this.AddThemeItemToThemesDropDownList("MaterialBlueGrey",Resources.material_blue_grey);
+            this.AddThemeItemToThemesDropDownList("ControlDefault",Resources.control_default);
+            this.AddThemeItemToThemesDropDownList("TelerikMetro", Resources.telerik_metro);
+            this.AddThemeItemToThemesDropDownList("Windows8", Resources.windows8);
 
-            loadedThemes.Add("ControlDefault", true);
-            loadedThemes.Add("Crystal", true);
+            this.loadedThemes.Add("ControlDefault", true);
+            this.loadedThemes.Add("Crystal", true);
 
-            chooseThemeDropDown.Text = "Crystal";
+            this.chooseThemeDropDown.Text = "Crystal";
             ThemeResolutionService.ApplicationThemeName = "Crystal";
-            chooseThemeDropDown.SelectedIndexChanged += ChooseThemeDropDown_SelectedIndexChanged;
-            chooseThemeDropDown.DropDownStyle = RadDropDownStyle.DropDownList;
+            this.chooseThemeDropDown.SelectedIndexChanged += this.ChooseThemeDropDown_SelectedIndexChanged;
+            this.chooseThemeDropDown.DropDownStyle = RadDropDownStyle.DropDownList;
 
 
         }
 
         private void ChooseThemeDropDown_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            var assemblyName = "Telerik.WinControls.Themes." + chooseThemeDropDown.SelectedItem.Text + ".dll";
-            var themeName = chooseThemeDropDown.SelectedItem.Text;
+            var assemblyName = "Telerik.WinControls.Themes." + this.chooseThemeDropDown.SelectedItem.Text + ".dll";
+            var themeName = this.chooseThemeDropDown.SelectedItem.Text;
             var strTempAssmbPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), assemblyName );
             if (!System.IO.File.Exists(strTempAssmbPath)) // we are in the case of QSF as exe, so the Path is different
             {
@@ -68,18 +63,18 @@ namespace ERP.Client
 
                 if (!System.IO.File.Exists(strTempAssmbPath))
                 {
-                    strTempAssmbPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\..\\bin\\ReleaseTrial");
+                    strTempAssmbPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\..\\bin\\Release");
                     strTempAssmbPath = System.IO.Path.Combine(strTempAssmbPath, assemblyName);
                 }
             }
 
-            if (!loadedThemes.ContainsKey(themeName))
+            if (!this.loadedThemes.ContainsKey(themeName))
             {
 
                 Assembly themeAssembly = Assembly.LoadFrom(strTempAssmbPath);
                 Activator.CreateInstance(themeAssembly.GetType("Telerik.WinControls.Themes." + themeName + "Theme"));
 
-                loadedThemes.Add(themeName, true);
+                this.loadedThemes.Add(themeName, true);
             }
 
             ThemeResolutionService.ApplicationThemeName = themeName;

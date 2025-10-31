@@ -6,7 +6,7 @@ using System.Data.Services.Client;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(WorkOrderMetadata))]
-    public partial class WorkOrder: ISavableObject
+    public partial class WorkOrder
     {
         partial void OnProductIDChanged()
         {
@@ -14,34 +14,7 @@ namespace ERP.Repository.Service
             {
                 this.Product = MainRepository.ProductsCache.FirstOrDefault(p => p.ProductID == this.ProductID);
             }
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                MainRepository.Update(this);
-            }
-
-            MainRepository.SaveChanges();
-        }
-
-        public void Delete()
-        {
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            if (this.Product != null && this.Product.ProductID != this.ProductID)
-            {
-                this.ProductID = this.Product.ProductID;
-            }
-        }
+        }        
     }
 
     public class WorkOrderMetadata

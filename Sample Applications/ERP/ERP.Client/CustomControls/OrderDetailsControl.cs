@@ -1,68 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ERP.Repository.Service;
+using System;
 using System.Windows.Forms;
-using ERP.Repository.Service;
-using ERP.Repository;
 using Telerik.WinControls;
-using System.Data.Services.Client;
-using Telerik.WinControls.UI;
 
 namespace ERP.Client
 {
     public partial class OrderDetailsControl : UserControl
     {
-        SalesOrderHeader data;
-        MapLocationHelper shippingHelper;
-        MapLocationHelper customerHelper;
+        private SalesOrderHeader data;
+        private MapLocationHelper shippingHelper;
+        private MapLocationHelper customerHelper;
 
-        Address shipingAddressBackup = new Address();
-        Address customerAddressBackup = new Address();
+        private Address shipingAddressBackup = new Address();
+        private Address customerAddressBackup = new Address();
         public OrderDetailsControl()
         {
-            InitializeComponent();
+            this.InitializeComponent();
            
             this.orderDetailsPageView.SelectedPage = this.shipingDetailsPage;
-            radGridView1.EnableFiltering = true;
-            radGridView1.ShowFilteringRow = false;
-            radGridView1.ShowHeaderCellButtons = true;
-            radGridView1.ReadOnly = true;
-            radGridView1.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.radGridView1.EnableFiltering = true;
+            this.radGridView1.ShowFilteringRow = false;
+            this.radGridView1.ShowHeaderCellButtons = true;
+            this.radGridView1.ReadOnly = true;
+            this.radGridView1.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
 
-            radGridView1.Columns[0].FieldName = "Product";
-            radGridView1.Columns[1].FieldName = "CarrierTrackingNumber";
-            radGridView1.Columns[2].FieldName = "OrderQty";
-            radGridView1.Columns[3].FieldName = "UnitPrice";
-            radGridView1.Columns[4].FieldName = "UnitPriceDiscount";
-            radGridView1.Columns[5].FieldName = "LineTotal";
-            radGridView1.Columns[6].FieldName = "ModifiedDate";
+            this.radGridView1.Columns[0].FieldName = "Product";
+            this.radGridView1.Columns[1].FieldName = "CarrierTrackingNumber";
+            this.radGridView1.Columns[2].FieldName = "OrderQty";
+            this.radGridView1.Columns[3].FieldName = "UnitPrice";
+            this.radGridView1.Columns[4].FieldName = "UnitPriceDiscount";
+            this.radGridView1.Columns[5].FieldName = "LineTotal";
+            this.radGridView1.Columns[6].FieldName = "ModifiedDate";
 
-            this.orderDetailsPageView.SelectedPageChanged += OrderDetailsPageView_SelectedPageChanged;
+            this.orderDetailsPageView.SelectedPageChanged += this.OrderDetailsPageView_SelectedPageChanged;
 
-            shippingHelper = new MapLocationHelper(shipingDetailsMapControl.MapControl);
-            customerHelper = new MapLocationHelper(customerDetailsMapControl.MapControl);
+            this.shippingHelper = new MapLocationHelper(this.shipingDetailsMapControl.MapControl);
+            this.customerHelper = new MapLocationHelper(this.customerDetailsMapControl.MapControl);
 
-            this.shipingDetailsMapControl.DataControl.CommandExecuted += DataControl_CommandExecuted;
-            this.customerDetailsMapControl.DataControl.CommandExecuted += DataControl_CommandExecuted;
+            this.shipingDetailsMapControl.DataControl.CommandExecuted += this.DataControl_CommandExecuted;
+            this.customerDetailsMapControl.DataControl.CommandExecuted += this.DataControl_CommandExecuted;
         }
 
         private void DataControl_CommandExecuted(object sender, DataDialogCommandEventArgs e)
         {
             if (e.SavaChanges)
             {
-                (this.Data as ISavableObject).Save(false);
+               // (this.Data as ISavableObject).Save(false);
             }
             else
             {
-                (this.Data as ISavableObject).Cancel();
-                CloneAddress(data.Address, this.shipingAddressBackup);
-                CloneAddress(data.Customer.Address, this.customerAddressBackup);
-                UpdateData();
+                //(this.Data as ISavableObject).Cancel();
+                this.CloneAddress(this.data.Address, this.shipingAddressBackup);
+                this.CloneAddress(this.data.Customer.Address, this.customerAddressBackup);
+                this.UpdateData();
             }
 
 
@@ -75,21 +65,24 @@ namespace ERP.Client
                 RadMessageBox.Show("Please select entry in the above grid");
                 return;
             }
-            if (orderDetailsPageView.SelectedPage == shipingDetailsPage)
+
+            if (this.orderDetailsPageView.SelectedPage == this.shipingDetailsPage)
             {
                 if (this.data.Address == null)
                 {
                     return;
                 }
-                shippingHelper.UpdateMap(this.data.Address);
+
+                this.shippingHelper.UpdateMap(this.data.Address);
             }
-            else if (orderDetailsPageView.SelectedPage == customerDetailsPage)
+            else if (this.orderDetailsPageView.SelectedPage == this.customerDetailsPage)
             {
                 if (this.data.Customer.Address == null)
                 {
                     return;
                 }
-                customerHelper.UpdateMap(this.data.Customer.Address);
+
+                this.customerHelper.UpdateMap(this.data.Customer.Address);
             }
         }
 
@@ -101,10 +94,10 @@ namespace ERP.Client
             }
             set
             {
-                data = value;
-                CloneAddress(shipingAddressBackup, data.Address);
-                CloneAddress(customerAddressBackup, data.Customer.Address);
-                UpdateData();
+                this.data = value;
+                this.CloneAddress(this.shipingAddressBackup, this.data.Address);
+                this.CloneAddress(this.customerAddressBackup, this.data.Customer.Address);
+                this.UpdateData();
 
             }
         }
@@ -114,22 +107,23 @@ namespace ERP.Client
 
 
             //grid update
-            this.radGridView1.DataSource = data.SalesOrderDetails;
+            this.radGridView1.DataSource = this.data.SalesOrderDetails;
 
             //map update
             if (this.data.Address != null)
             {
-                shippingHelper.UpdateMap(this.data.Address);
+                this.shippingHelper.UpdateMap(this.data.Address);
             }
+
             if (this.data.Customer.Address != null)
             {
-                customerHelper.UpdateMap(this.data.Customer.Address);
+                this.customerHelper.UpdateMap(this.data.Customer.Address);
             }
 
 
             //data layout update
-            this.shipingDetailsMapControl.DataControl.DataEntry.DataSource = data.Address;
-            this.customerDetailsMapControl.DataControl.DataEntry.DataSource = data.Customer.Address;
+            this.shipingDetailsMapControl.DataControl.DataEntry.DataSource = this.data.Address;
+            this.customerDetailsMapControl.DataControl.DataEntry.DataSource = this.data.Customer.Address;
 
         }
         public void CloneAddress(Address adr1, Address adr2)

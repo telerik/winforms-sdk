@@ -7,7 +7,7 @@ using System.Linq;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(CustomerMetadata))]
-    public partial class Customer : ISavableObject
+    public partial class Customer
     {
         [EntityNotSerializableAttribute]
         public bool IsPerson
@@ -318,61 +318,9 @@ namespace ERP.Repository.Service
             }
         }
 
-        private void ReevalateProperties()
-        {
-            this.OnPropertyChanged("Name");
-            this.OnPropertyChanged("Address");
-            this.OnPropertyChanged("State");
-        }
-
         public override string ToString()
         {
             return this.Name;
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                if (this.Address != null)
-                {
-                    MainRepository.Update(this.Address);
-                }
-
-                if (this.IsPerson)
-                {
-                    MainRepository.Update(this.Person);
-                }
-                else
-                {
-                    MainRepository.Update(this.Store);
-                }
-
-                MainRepository.Update(this);
-                MainRepository.SaveChangesAsync();
-            }
-
-            this.ReevalateProperties();
-        }
-
-        public void Delete()
-        {
-            foreach (var order in this.SalesOrderHeaders)
-            {
-                // delete the related orders
-                MainRepository.Context.DeleteObject(order);
-            }
-
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            // Nothing to cancel.
         }
     }
 

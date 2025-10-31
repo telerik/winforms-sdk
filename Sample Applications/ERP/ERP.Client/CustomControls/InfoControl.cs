@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
@@ -25,13 +18,13 @@ namespace ERP.Client
 
         public InfoControl()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.infoPdfViewer.EnableThumbnails = false;
         }
        
         private void printButton_Click(object sender, EventArgs e)
         {
-            infoPdfViewer.PrintPreview();
+            this.infoPdfViewer.PrintPreview();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -41,12 +34,12 @@ namespace ERP.Client
                 dialog.Filter = "pdf files (*.pdf)|*.pdf|All files (*.*)|*.*";
                 dialog.FilterIndex = 2;
                 dialog.RestoreDirectory = true;
-                dialog.FileName = DocumentName;
+                dialog.FileName = this.DocumentName;
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    
-                    infoPdfViewer.SaveDocument(dialog.FileName);
+
+                    this.infoPdfViewer.SaveDocument(dialog.FileName);
                 }
             }
            

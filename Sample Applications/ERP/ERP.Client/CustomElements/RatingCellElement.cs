@@ -9,7 +9,7 @@ using Telerik.WinControls.UI;
 
 namespace ERP.Client
 {
-    class RatingCellElement : VirtualGridCellElement
+    internal class RatingCellElement : VirtualGridCellElement
     {
         private RadRatingElement ratingElement;
 
@@ -17,12 +17,12 @@ namespace ERP.Client
         {
             base.CreateChildElements();
             this.ratingElement = new RadRatingElement();
-            ratingElement.StretchHorizontally = true;
-            ratingElement.StretchVertically = true;
-            ratingElement.ShouldHandleMouseInput = false;
-            ratingElement.ReadOnly = true;
-            ratingElement.Minimum = 0;
-            ratingElement.Maximum = 5;
+            this.ratingElement.StretchHorizontally = true;
+            this.ratingElement.StretchVertically = true;
+            this.ratingElement.ShouldHandleMouseInput = false;
+            this.ratingElement.ReadOnly = true;
+            this.ratingElement.Minimum = 0;
+            this.ratingElement.Maximum = 5;
             
             this.ratingElement.CaptionElement.Visibility = ElementVisibility.Collapsed;
             this.ratingElement.DescriptionElement.Visibility = ElementVisibility.Collapsed;
@@ -34,8 +34,9 @@ namespace ERP.Client
                 star.MinSize = new System.Drawing.Size(10, 10);
                 this.ratingElement.Items.Add(star);
             }
+
             this.ratingElement.IsInRadGridView = true;
-            this.Children.Add(ratingElement);
+            this.Children.Add(this.ratingElement);
         }
         protected override void UpdateInfo(VirtualGridCellValueNeededEventArgs args)
         {
@@ -68,13 +69,31 @@ namespace ERP.Client
         protected override void DisposeManagedResources()
         {
             base.DisposeManagedResources();
-            ratingElement = null;
+            this.ratingElement = null;
         }
         public override bool CanEdit
         {
             get
             {
                 return false;
+            }
+        }
+    }
+
+    public class DefaultVirtualGridCellElement : VirtualGridCellElement
+    {
+        public int ExcludeColumnIndex { get; set; } 
+        public override bool IsCompatible(int data, object context)
+        {
+            VirtualGridRowElement rowElement = context as VirtualGridRowElement;
+
+            return data != this.ExcludeColumnIndex && rowElement.RowIndex >= 0;
+        }
+        protected override Type ThemeEffectiveType
+        {
+            get
+            {
+                return typeof(VirtualGridCellElement);
             }
         }
     }

@@ -4,30 +4,9 @@ using System.Data.Services.Client;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(AddressMetadata))]
-    public partial class Address : ISavableObject
+    public partial class Address 
     {
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                MainRepository.Update(this);
-                MainRepository.SaveChangesAsync();
-            }
-        }
-
-        public void Delete()
-        {
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            // Nothing to cancel.
-        }
+        
     }
 
     public class AddressMetadata

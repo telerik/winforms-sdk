@@ -7,7 +7,7 @@ using System.ComponentModel;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(ProductMetadata))]
-    public partial class ProductInventory : ISavableObject
+    public partial class ProductInventory
     {
         [DisplayAttribute(Name = "Product Number", Order = 0)]
         [EntityNotSerializableAttribute]
@@ -20,10 +20,13 @@ namespace ERP.Repository.Service
             }
             set
             {
-                if (this.Product.ProductNumber != value)
+                if (this.Product != null)
                 {
-                    this.Product.ProductNumber = value;
-                    this.OnPropertyChanged("ProductNumber");
+                    if (this.Product.ProductNumber != value)
+                    {
+                        this.Product.ProductNumber = value;
+                        this.OnPropertyChanged("ProductNumber");
+                    }
                 }
             }
         }
@@ -37,10 +40,13 @@ namespace ERP.Repository.Service
             }
             set
             {
-                if (this.Product.Color != value)
+                if (this.Product != null)
                 {
-                    this.Product.Color = value;
-                    this.OnPropertyChanged("Color");
+                    if (this.Product.Color != value)
+                    {
+                        this.Product.Color = value;
+                        this.OnPropertyChanged("Color");
+                    }
                 }
             }
         }
@@ -55,10 +61,13 @@ namespace ERP.Repository.Service
             }
             set
             {
-                if (this.Product.SafetyStockLevel != value)
+                if (this.Product != null)
                 {
-                    this.Product.SafetyStockLevel = value;
-                    this.OnPropertyChanged("StockLevel");
+                    if (this.Product.SafetyStockLevel != value)
+                    {
+                        this.Product.SafetyStockLevel = value;
+                        this.OnPropertyChanged("StockLevel");
+                    }
                 }
             }
         }
@@ -72,10 +81,13 @@ namespace ERP.Repository.Service
             }
             set
             {
-                if (this.Product.Size != value)
+                if (this.Product != null)
                 {
-                    this.Product.Size = value;
-                    this.OnPropertyChanged("Size");
+                    if (this.Product.Size != value)
+                    {
+                        this.Product.Size = value;
+                        this.OnPropertyChanged("Size");
+                    }
                 }
             }
         }
@@ -90,10 +102,13 @@ namespace ERP.Repository.Service
             }
             set
             {
-                if (this.Product.ListPrice != value)
+                if (this.Product != null)
                 {
-                    this.Product.ListPrice = value;
-                    this.OnPropertyChanged("Price");
+                    if (this.Product.ListPrice != value)
+                    {
+                        this.Product.ListPrice = value;
+                        this.OnPropertyChanged("Price");
+                    }
                 }
             }
         }
@@ -108,10 +123,13 @@ namespace ERP.Repository.Service
             }
             set
             {
-                if (this.Product.StandardCost != value)
+                if (this.Product != null)
                 {
-                    this.Product.StandardCost = value;
-                    this.OnPropertyChanged("Cost");
+                    if (this.Product.StandardCost != value)
+                    {
+                        this.Product.StandardCost = value;
+                        this.OnPropertyChanged("Cost");
+                    }
                 }
             }
         }
@@ -158,41 +176,7 @@ namespace ERP.Repository.Service
             this.OnPropertyChanged("Cost");
             this.OnPropertyChanged("Size");
             this.OnPropertyChanged("Price");
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                MainRepository.Update(this.Product);
-                MainRepository.Update(this);
-                MainRepository.SaveChangesAsync();
-            }
-        }
-
-        public void Delete()
-        {
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            if (this.Product != null && this.Product.ProductID != this.ProductID)
-            {
-                this.ProductID = this.Product.ProductID;
-            }
-
-            if (this.Location != null && this.Location.LocationID != this.LocationID)
-            {
-                this.LocationID = this.Location.LocationID;
-            }
-
-            this.ReevalateProperties();
-        }
+        }        
     }
 
     public class ProductMetadata

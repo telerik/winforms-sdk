@@ -1,151 +1,166 @@
 ﻿using ERP.Repository.Service;
+using Newtonsoft.Json;
 using System;
-using System.Data.Services.Client;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace ERP.Repository
 {
-    public partial class MainRepository : RepositoryBase
+    public static class MainRepository
     {
-        public static DataServiceQuery<Customer> GetIndividualCustomers()
+        public static List<Product> ProductsCache { get; set; }
+        public static List<StateProvince> StatesCache { get; set; }
+        public static List<ShipMethod> ShipMethodsCache { get; set; }
+        public static List<UnitMeasure> UnitMeasuresCache { get; set; }
+        public static List<Vendor> VendorsCache { get; set; }
+        public static List<Location> LocationsCache { get; set; }
+        public static List<ProductInventory> ProductInventoryCache { get; set; }
+        public static List<Customer> CustomersCache { get; set; }
+        public static List<BillOfMaterial> BillsCache { get; set; }
+        public static List<Customer> IndividualCustomersCache { get; set; }
+        public static List<SalesOrderHeader> OrdersCache { get; set; }
+        public static List<PurchaseOrderHeader> PurchaseOrdersCache { get; set; }
+        public static List<Customer> StoreCustomersCache { get; set; }
+        public static List<WorkOrder> WorkOrdersCache { get; set; }
+        public static List<Customer> TopCustomersCache { get; set; }
+
+        public static void InitializeData()
         {
-            var customersQuery =
-                ((DataServiceQuery<Customer>)Context.Customers.Where(c => c.PersonID != null && c.StoreID == null))
-                .Expand("Person/BusinessEntity/BusinessEntityAddresses/Address")
-                .Expand("SalesOrderHeaders/Customer")
-                .Expand("SalesOrderHeaders/ShipMethod")
-                .Expand(c => c.Person.EmailAddresses)
-                .Expand(c => c.Person.PersonPhones)
-                .Expand(c => c.SalesOrderHeaders);
-            return customersQuery;
+            // AppDomain.CurrentDomain.BaseDirectory returns the bin\Debug or bin\Release folder
+            // We need to go up one level to get to ERP.Client, then into Data folder
+            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            var dataDir = Path.Combine(baseDir,"..", "..", "ERP.Client\\Data");
+            
+            // Normalize the path to remove the ".." components
+            var dir = Path.GetFullPath(dataDir);
+
+            var products = LoadData<Product>($"{dir}\\Product.json");
+            ProductsCache = (List<Product>)products;
+
+            var bills = LoadData<BillOfMaterial>($"{dir}\\Bill.json");
+            BillsCache = (List<BillOfMaterial>)bills;
+
+            var customers = LoadData<Customer>($"{dir}\\Customer.json");
+            CustomersCache = (List<Customer>)customers;
+
+            var individualCustomers = LoadData<Customer>($"{dir}\\IndividualCustomer.json");
+            IndividualCustomersCache = (List<Customer>)individualCustomers;
+
+            var locations = LoadData<Location>($"{dir}\\Location.json");
+            LocationsCache = (List<Location>)locations;
+
+            var orders = LoadData<SalesOrderHeader>($"{dir}\\Order.json");
+            OrdersCache = (List<SalesOrderHeader>)orders;
+
+            var productInventories = LoadData<ProductInventory>($"{dir}\\ProductInventory.json");
+            ProductInventoryCache = (List<ProductInventory>)productInventories;
+
+            var purchaseOrders = LoadData<PurchaseOrderHeader>($"{dir}\\PurchaseOrder.json");
+            PurchaseOrdersCache = (List<PurchaseOrderHeader>)purchaseOrders;
+
+            var shipMethods = LoadData<ShipMethod>($"{dir}\\ShipMethod.json");
+            ShipMethodsCache = (List<ShipMethod>)shipMethods;
+
+            var states = LoadData<StateProvince>($"{dir}\\StateProvince.json");
+            StatesCache = (List<StateProvince>)states;
+
+            var storeCustomers = LoadData<Customer>($"{dir}\\StoreCustomer.json");
+            StoreCustomersCache = (List<Customer>)storeCustomers;
+
+            var unitMeasures = LoadData<UnitMeasure>($"{dir}\\UnitMeasure.json");
+            UnitMeasuresCache = (List<UnitMeasure>)unitMeasures;
+
+            var vendors = LoadData<Vendor>($"{dir}\\Vendor.json");
+            VendorsCache = (List<Vendor>)vendors;
+
+            var workOrders = LoadData<WorkOrder>($"{dir}\\WorkOrder.json");
+            WorkOrdersCache = (List<WorkOrder>)workOrders;
+
+            TopCustomersCache = CustomersCache.Where(c => c.PersonID != null && c.StoreID == null).Take(100).ToList();
         }
 
-        public static DataServiceQuery<Customer> GetStoreCustomers()
+        private static IEnumerable<SalesOrderHeader> GetSalesOrders()
         {
-            var stores =
-                ((DataServiceQuery<Customer>)Context.Customers.Where(c => c.StoreID != null && c.PersonID == null))
-                .Expand("Store/BusinessEntity/BusinessEntityContacts/Person/EmailAddresses")
-                .Expand("Store/BusinessEntity/BusinessEntityContacts/Person/PersonPhones")
-                .Expand("Store/BusinessEntity/BusinessEntityAddresses/Address/StateProvince/CountryRegion")
-                .Expand("SalesOrderHeaders/Customer");
-            return stores;
-        }
-
-        public static DataServiceQuery<SalesOrderHeader> GetSalesOrders()
-        {
-            var salesOrders =
-                Context.SalesOrderHeaders
-                .Expand("Customer/Person/BusinessEntity/BusinessEntityAddresses/Address/StateProvince/CountryRegion")
-                .Expand(c => c.Customer.Person.EmailAddresses)
-                .Expand(c => c.Customer.Person.PersonPhones)
-                .Expand(s => s.ShipMethod)
-                .Expand(s => s.Address.StateProvince)
-                .Expand(s => s.SalesOrderDetails)
-                .Where(s => s.Customer.Person.BusinessEntity.BusinessEntityAddresses.Any()) as DataServiceQuery<SalesOrderHeader>;
+            var salesOrders = OrdersCache
+                .Where(s => s.Customer.Person.BusinessEntity.BusinessEntityAddresses.Any());
 
             return salesOrders;
         }
 
-        public static DataServiceQuery<BillOfMaterial> GetBills()
+        private static IEnumerable<BillOfMaterial> GetBills()
         {
-            var materials =
-                Context.BillOfMaterials
-                .Expand(b => b.Product)
-                .Expand(b => b.Product1)
-                .Expand(b => b.UnitMeasure);
+            var materials = BillsCache;
 
             return materials;
         }
 
-        public static DataServiceQuery<PurchaseOrderHeader> GetPurchaseOrders()
+        private static IEnumerable<PurchaseOrderHeader> GetPurchaseOrders()
         {
-            var purchaseOrders =
-                Context.PurchaseOrderHeaders
-                .Expand(o => o.Vendor)
-                .Expand(o => o.ShipMethod)
-                .Expand("PurchaseOrderDetails/Product");
+            var purchaseOrders = PurchaseOrdersCache;
 
             return purchaseOrders;
         }
 
-        public static void GetOrders(Action<DataServiceQuery<SalesOrderHeader>> callback)
+        public static void GetOrders(Action<IEnumerable<SalesOrderHeader>> callback)
         {
-            ExecuteQueryAsync<DataServiceQuery<SalesOrderHeader>>(GetOrdersAsync(), callback);
+            callback(GetSalesOrders());
         }
 
-        public static void GetCustomers(bool isIndividual, Action<DataServiceQuery<Customer>> callback)
+        public static void GetCustomers(bool isIndividual, Action<IEnumerable<Customer>> callback)
         {
-            ExecuteQueryAsync<DataServiceQuery<Customer>>(GetCustomersAsync(isIndividual), callback);
+            if (isIndividual)
+            {
+                callback(IndividualCustomersCache);
+            }
+            else
+            {
+                callback(StoreCustomersCache);
+            }
         }
 
-        public static void GetBillOfMaterials(Action<DataServiceQuery<BillOfMaterial>> callback)
+        public static void GetBillOfMaterials(Action<IEnumerable<BillOfMaterial>> callback)
         {
-            ExecuteQueryAsync<DataServiceQuery<BillOfMaterial>>(GetBillOfMaterialsAsync(), callback);
+            callback(GetBills());
         }
 
-        public static void GetWorkOrders(Action<DataServiceQuery<WorkOrder>> action)
+        public static void GetWorkOrders(Action<IEnumerable<WorkOrder>> action)
         {
-            ExecuteQueryAsync<DataServiceQuery<WorkOrder>>(GetWorkOrdersAsync(), action);
+            action(WorkOrdersCache);
         }
 
-        public static void GetProductInventories(Action<DataServiceQuery<ProductInventory>> action)
+        public static void GetProductInventories(Action<IEnumerable<ProductInventory>> action)
         {
-            ExecuteQueryAsync<DataServiceQuery<ProductInventory>>(GetProductInventoriesAsync(), action);
+            action(ProductInventoryCache);
         }
 
-        public static void GetVendors(Action<DataServiceQuery<Vendor>> action)
+        public static void GetVendors(Action<IEnumerable<Vendor>> action)
         {
-            ExecuteQueryAsync<DataServiceQuery<Vendor>>(GetVendorsAsync(), action);
+            action(VendorsCache);
         }
 
-        public static void GetPurchaseOrders(Action<DataServiceQuery<PurchaseOrderHeader>> action)
+        public static void GetPurchaseOrders(Action<IEnumerable<PurchaseOrderHeader>> action)
         {
-            ExecuteQueryAsync<DataServiceQuery<PurchaseOrderHeader>>(GetPurchaseOrdersAsync(), action);
-        }
-
-        private static async Task<DataServiceQuery<SalesOrderHeader>> GetOrdersAsync()
-        {
-            return await Task.Run(() => GetSalesOrders());
-        }
-
-        private static async Task<DataServiceQuery<Customer>> GetCustomersAsync(bool isIndividual)
-        {
-            return await Task.Run(() => isIndividual ? GetIndividualCustomers() : GetStoreCustomers());
-        }
-
-        private static async Task<DataServiceQuery<BillOfMaterial>> GetBillOfMaterialsAsync()
-        {
-            return await Task.Run(() => GetBills());
-        }
-
-        private static async Task<DataServiceQuery<ProductInventory>> GetProductInventoriesAsync()
-        {
-            return await Task.Run(() =>
-                Context.ProductInventories
-                .Expand(p => p.Product)
-                .Expand(p => p.Location));
-        }
-
-        private static async Task<DataServiceQuery<WorkOrder>> GetWorkOrdersAsync()
-        {
-            return await Task.Run(() => Context.WorkOrders.Expand(w => w.Product));
-        }
-
-        private static async Task<DataServiceQuery<Vendor>> GetVendorsAsync()
-        {
-            return await Task.Run(() => Context.Vendors);
-        }
-
-        private static async Task<DataServiceQuery<PurchaseOrderHeader>> GetPurchaseOrdersAsync()
-        {
-            return await Task.Run(() => GetPurchaseOrders());
+            action(PurchaseOrdersCache);
         }
 
         public static Product GetProduct(int id)
         {
             return ProductsCache.FirstOrDefault(p => p.ProductID == id);
+        }
+
+        private static object LoadData<T>(string fileName)
+        {
+            if (File.Exists(fileName))
+            {
+                var json = File.ReadAllText(fileName);
+                var listType = typeof(List<>).MakeGenericType(typeof(T));
+                var data = JsonConvert.DeserializeObject(json, listType);
+
+                return data;
+            }
+
+            return null;
         }
     }
 }

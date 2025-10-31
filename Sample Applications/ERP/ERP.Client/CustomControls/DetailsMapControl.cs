@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
 namespace ERP.Client
@@ -15,7 +7,7 @@ namespace ERP.Client
     {
         public DetailsMapControl()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.radMap1.ShowLegend = false;
             this.radMap1.ShowSearchBar = false;
             this.radMap1.ShowNavigationBar = false;
@@ -29,7 +21,7 @@ namespace ERP.Client
         {
             get
             {
-                return erpDataDialog1;
+                return this.erpDataDialog1;
             }
         }
         public RadMap MapControl

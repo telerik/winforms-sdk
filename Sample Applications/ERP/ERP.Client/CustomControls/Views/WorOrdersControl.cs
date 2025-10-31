@@ -2,32 +2,22 @@
 using ERP.Repository.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Services.Client;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telerik.WinControls.UI;
-using System.Data.Entity;
-using Telerik.WinControls.Export;
-using System.Windows.Forms;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using System.IO;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace ERP.Client
 {
-    class WorkOrdersControl : BaseGridControl
+   public class WorkOrdersControl : BaseGridControl
     {
-        List<WorkOrder> data = new List<WorkOrder>();
-        public Action<List<WorkOrder>> Callback { get; private set; }
+        private List<WorkOrder> data = new List<WorkOrder>();
 
         protected override void Initialize()
         {
             this.dataFormText = "Edit Work Order";
             this.gridControl.ColumnCount = 8;
-            columnTypes = new Type[] { typeof(string), typeof(int), typeof(int), typeof(short), typeof(DateTime), typeof(DateTime), typeof(DateTime), typeof(DateTime) };
+            this.columnTypes = new Type[] { typeof(string), typeof(int), typeof(int), typeof(short), typeof(DateTime), typeof(DateTime), typeof(DateTime), typeof(DateTime) };
             this.columnNames.Add("Product");
             this.columnNames.Add("Quantity");
             this.columnNames.Add("Stocked");
@@ -36,20 +26,12 @@ namespace ERP.Client
             this.columnNames.Add("End Date");
             this.columnNames.Add("Due Date");
             this.columnNames.Add("Modified Date");
-
-            this.gridControl.RowCount = MainRepository.Context.WorkOrders.Count();
-
-            this.Callback = new Action<List<WorkOrder>>(query =>
-            {
-                this.data = query;
-                this.gridControl.MasterViewInfo.IsWaiting = false;
-                this.gridControl.TableElement.SynchronizeRows();
-            });
-            this.RefreshData(0);
-
-            this.gridControl.SelectionChanged += GridControl_SelectionChanged;
-            this.gridControl.MasterViewInfo.SetColumnDataType(columnTypes);
-            this.gridControl.CellFormatting += GridControl_CellFormatting;
+            this.gridControl.RowCount = MainRepository.WorkOrdersCache.Count();
+            this.data = MainRepository.WorkOrdersCache;
+            this.gridControl.SelectionChanged += this.GridControl_SelectionChanged;
+            this.gridControl.MasterViewInfo.SetColumnDataType(this.columnTypes);
+            this.gridControl.CellFormatting += this.GridControl_CellFormatting;
+            this.ClearSelection();
         }
 
         private void GridControl_CellFormatting(object sender, VirtualGridCellElementEventArgs e)
@@ -65,6 +47,7 @@ namespace ERP.Client
                     e.CellElement.ResetValue(RadItem.EnabledProperty, ValueResetFlags.Local);
                 }
             }
+
             if (e.CellElement is VirtualGridHeaderCellElement)
             {
                 var cell = e.CellElement as VirtualGridHeaderCellElement;
@@ -83,29 +66,33 @@ namespace ERP.Client
         {
             if (this.gridControl.CurrentCell != null && this.gridControl.CurrentCell.RowIndex >= 0)
             {
-                currentItem = data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
-            }
-           
+                this.currentItem = this.data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
+            }           
         }
 
         protected override void RadGridView1_CellValueNeeded(object sender, VirtualGridCellValueNeededEventArgs e)
         {
             base.RadGridView1_CellValueNeeded(sender, e);
+
             if (e.ColumnIndex < 0)
+            {
                 return;
+            }
 
             if (e.RowIndex < 0)
             {
                 e.FieldName = FieldsHelper.WorkOrdersFields[e.ColumnIndex];
 
             }
+
             if (e.RowIndex == RadVirtualGrid.HeaderRowIndex)
             {
-                e.Value = columnNames[e.ColumnIndex];
+                e.Value = this.columnNames[e.ColumnIndex];
             }
-            if (e.RowIndex >= 0 && data.Count > 0)
+
+            if (e.RowIndex >= 0 && this.data.Count > 0)
             {
-                var rowData = data[e.RowIndex % gridControl.PageSize] as WorkOrder;
+                var rowData = this.data[e.RowIndex % this.gridControl.PageSize] as WorkOrder;
 
                 switch (e.ColumnIndex)
                 {
@@ -154,19 +141,23 @@ namespace ERP.Client
             {
                 base.RadGridView1_SortChanged(sender, e);
             }
-
         }
+
+        protected override void DeleteCurrentRow()
+        {
+            MainRepository.WorkOrdersCache.Remove(this.currentItem as WorkOrder);
+            this.ClearSelection();
+        }
+
         protected override void RefreshData(int skip)
         {
-            data.Clear();
+            this.gridControl.RowCount = 0;
 
-            var query = SortHelper.Sort(MainRepository.Context.WorkOrders.Expand(p => p.Product), this.gridControl.SortDescriptors);
-            query = FilterHelper.Filter(query, this.gridControl.FilterDescriptors);
-            gridControl.RowCount = query.Count();
+            var sortedData = SortHelper.Sort(MainRepository.WorkOrdersCache, this.gridControl.SortDescriptors);
+            var filteredData = FilterHelper.Filter(sortedData, this.gridControl.FilterDescriptors);
 
-            this.gridControl.MasterViewInfo.IsWaiting = true;
-            ExecuteQueryAsync<List<WorkOrder>>(Task.Run(() => query.Skip(skip).Take(this.gridControl.PageSize).ToList()), this.Callback);
-
+            this.data = filteredData.Skip(skip).Take(this.gridControl.PageSize).ToList();
+            this.gridControl.RowCount = filteredData.Count();
         }
 
         protected override Workbook CreateWorkbook()
@@ -175,40 +166,41 @@ namespace ERP.Client
             Worksheet worksheet = workbook.Worksheets.Add();
 
             // set header
-            for (int i = 0; i < columnNames.Count; i++)
+            for (int i = 0; i < this.columnNames.Count; i++)
             {
                 CellSelection selection = worksheet.Cells[0, i];
-                selection.SetValue(columnNames[i]);
+                selection.SetValue(this.columnNames[i]);
             }
 
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < this.data.Count; i++)
             {
                 int rowIndex = i + 1;
                 CellSelection selection = worksheet.Cells[rowIndex, 0];
-                selection.SetValue(data[i].Product.Name);
+                selection.SetValue(this.data[i].Product.Name);
 
                 selection = worksheet.Cells[rowIndex, 1];
-                selection.SetValue(data[i].OrderQty);
+                selection.SetValue(this.data[i].OrderQty);
 
                 selection = worksheet.Cells[rowIndex, 2];
-                selection.SetValue(data[i].StockedQty);
+                selection.SetValue(this.data[i].StockedQty);
 
                 selection = worksheet.Cells[rowIndex, 3];
-                selection.SetValue(data[i].ScrappedQty);
+                selection.SetValue(this.data[i].ScrappedQty);
 
                 selection = worksheet.Cells[rowIndex, 4];
-                selection.SetValue(data[i].StartDate);
+                selection.SetValue(this.data[i].StartDate);
 
                 selection = worksheet.Cells[rowIndex, 5];
-                selection.SetValue(data[i].EndDate.Value);
+                selection.SetValue(this.data[i].EndDate.Value);
 
                 selection = worksheet.Cells[rowIndex, 6];
-                selection.SetValue(data[i].DueDate);
+                selection.SetValue(this.data[i].DueDate);
 
                 selection = worksheet.Cells[rowIndex, 7];
-                selection.SetValue(data[i].ModifiedDate);
+                selection.SetValue(this.data[i].ModifiedDate);
 
             }
+
             worksheet.Columns[worksheet.UsedCellRange].AutoFitWidth();
             worksheet.Name = "Work Orders";
             return workbook;

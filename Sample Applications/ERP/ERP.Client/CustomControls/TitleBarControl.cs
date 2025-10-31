@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ERP.Client.Properties;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using ERP.Client.Properties;
 
 namespace ERP.Client.CustomControls
 {
@@ -16,17 +9,17 @@ namespace ERP.Client.CustomControls
     {
         public TitleBarControl()
         {
-            InitializeComponent();
-            radPanel1.ElementTree.EnableApplicationThemeName = false;
-            radTitleBar1.ElementTree.EnableApplicationThemeName = false;
-            radTitleBar1.TitleBarElement.BorderPrimitive.Visibility = ElementVisibility.Collapsed;
-            radTitleBar1.ThemeName = "VisualStudio2012Dark";
-            radPanel1.BackgroundImage = Resources.logo;
-            radPanel1.BackgroundImageLayout = ImageLayout.Center;
-            radPanel1.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
-            radPanel1.Text = "";
-            radPanel1.BackColor = Color.FromArgb(52, 53, 54);
-            radTitleBar1.BackColor = Color.FromArgb(52, 53, 54);
+            this.InitializeComponent();
+            this.radPanel1.ElementTree.EnableApplicationThemeName = false;
+            this.radTitleBar1.ElementTree.EnableApplicationThemeName = false;
+            this.radTitleBar1.TitleBarElement.BorderPrimitive.Visibility = ElementVisibility.Collapsed;
+            this.radTitleBar1.ThemeName = "VisualStudio2012Dark";
+            this.radPanel1.BackgroundImage = Resources.logo;
+            this.radPanel1.BackgroundImageLayout = ImageLayout.Center;
+            this.radPanel1.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
+            this.radPanel1.Text = "";
+            this.radPanel1.BackColor = Color.FromArgb(52, 53, 54);
+            this.radTitleBar1.BackColor = Color.FromArgb(52, 53, 54);
             this.BackColor = Color.FromArgb(52, 53, 54); 
 
         }
