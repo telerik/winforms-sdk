@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Telerik.WinControls.UI;
-using ERP.Repository.Service;
 using ERP.Repository;
+using ERP.Repository.Service;
+using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace ERP.Client
 {
@@ -18,17 +14,17 @@ namespace ERP.Client
         public event EventHandler<DataDialogCommandEventArgs> CommandExecuted;
         public ERPDataDialog()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.radDataEntry.ItemDefaultSize = new Size(300, 25);
             this.radDataEntry.FlowDirection = FlowDirection.TopDown;
             this.radDataEntry.DataEntryElement.ItemSpace = 10;
             this.radDataEntry.FitToParentWidth = true;
 
-            this.radDataEntry.ItemInitializing += radDataEntry_ItemInitializing;
-            this.radDataEntry.BindingCreating += radDataEntry_BindingCreating;
-            this.radDataEntry.BindingCreated += radDataEntry_BindingCreated;
-            this.radDataEntry.EditorInitializing += radDataEntry_EditorInitializing;
-            this.radDataEntry.VerticalScrollbar.ValueChanged += VerticalScrollbar_ValueChanged;
+            this.radDataEntry.ItemInitializing += this.radDataEntry_ItemInitializing;
+            this.radDataEntry.BindingCreating += this.radDataEntry_BindingCreating;
+            this.radDataEntry.BindingCreated += this.radDataEntry_BindingCreated;
+            this.radDataEntry.EditorInitializing += this.radDataEntry_EditorInitializing;
+            this.radDataEntry.VerticalScrollbar.ValueChanged += this.VerticalScrollbar_ValueChanged;
         }
 
         private void VerticalScrollbar_ValueChanged(object sender, EventArgs e)
@@ -46,8 +42,8 @@ namespace ERP.Client
 
         private void radDataEntry_ItemInitializing(object sender, ItemInitializingEventArgs e)
         {
-          
-            if (radDataEntry.DataSource is Address)
+
+            if (this.radDataEntry.DataSource is Address)
             {
                 if (!FieldsHelper.AddressFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -56,7 +52,7 @@ namespace ERP.Client
 
                 }
             }
-            else if (radDataEntry.DataSource is PurchaseOrderHeader)
+            else if (this.radDataEntry.DataSource is PurchaseOrderHeader)
             {
                 if (!FieldsHelper.PurchaseOrderHeaderFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -64,7 +60,7 @@ namespace ERP.Client
                     e.Panel.Visible = false;
                 }
             }
-            else if (radDataEntry.DataSource is Vendor)
+            else if (this.radDataEntry.DataSource is Vendor)
             {
                 if (!FieldsHelper.VendorFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -72,7 +68,7 @@ namespace ERP.Client
                     e.Panel.Visible = false;
                 }
             }
-            else if (radDataEntry.DataSource is ProductInventory)
+            else if (this.radDataEntry.DataSource is ProductInventory)
             {
                 if (!FieldsHelper.InventoriesFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -80,7 +76,7 @@ namespace ERP.Client
                     e.Panel.Visible = false;
                 }
             }
-            else if (radDataEntry.DataSource is WorkOrder)
+            else if (this.radDataEntry.DataSource is WorkOrder)
             {
                 if (!FieldsHelper.WorkOrdersFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -88,7 +84,7 @@ namespace ERP.Client
                     e.Panel.Visible = false;
                 }
             }
-            else if (radDataEntry.DataSource is BillOfMaterial)
+            else if (this.radDataEntry.DataSource is BillOfMaterial)
             {
                 if (!FieldsHelper.BillOfMaterialsFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -96,7 +92,7 @@ namespace ERP.Client
                     e.Panel.Visible = false;
                 }
             }
-            else if (radDataEntry.DataSource is SalesOrderHeader)
+            else if (this.radDataEntry.DataSource is SalesOrderHeader)
             {
                 if (!FieldsHelper.OrdersFields.Contains(e.Panel.Controls[1].Text))
                 {
@@ -104,9 +100,9 @@ namespace ERP.Client
                     e.Panel.Visible = false;
                 }
             }
-            else if (radDataEntry.DataSource is Customer)
+            else if (this.radDataEntry.DataSource is Customer)
             {
-                var customer = radDataEntry.DataSource as Customer;
+                var customer = this.radDataEntry.DataSource as Customer;
                 if (customer.IsPerson)
                 {
                     if (!FieldsHelper.IndividualsFields.Contains(e.Panel.Controls[1].Text))
@@ -123,16 +119,12 @@ namespace ERP.Client
                         e.Panel.Visible = false;
                     }
                 }
-
             }
-
         }
-
-        
 
         private void radDataEntry_EditorInitializing(object sender, EditorInitializingEventArgs e)
         {
-            if (radDataEntry.DataSource is Address)
+            if (this.radDataEntry.DataSource is Address)
             {
                 if (e.Property.Name == "StateProvince")
                 {
@@ -143,11 +135,32 @@ namespace ERP.Client
                     radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
                     e.Editor = radDropDownList1;
                 }
-
             }
-            else if (radDataEntry.DataSource is PurchaseOrderHeader)
+            else if (this.radDataEntry.DataSource is PurchaseOrderHeader)
             {
                 var purchaseOrder = this.radDataEntry.DataSource as PurchaseOrderHeader;
+
+                if (e.Property.Name == "ShipDate")
+                {
+                    RadDateTimePicker radDateTimePicker = new RadDateTimePicker();
+                    e.Editor = radDateTimePicker;
+                }
+                else if (e.Property.Name == "ShipMethod")
+                {
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DisplayMember = "Name";
+                    radDropDownList.DataSource = MainRepository.ShipMethodsCache;
+                    e.Editor = radDropDownList;
+                }
+                else if (e.Property.Name == "Vendor")
+                {
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DataSource = MainRepository.VendorsCache;
+                    radDropDownList.DisplayMember = "Name";
+                    e.Editor = radDropDownList;
+                }
 
                 if (e.Property.Name == "OrderStatus")
                 {
@@ -156,27 +169,8 @@ namespace ERP.Client
                     radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
                     e.Editor = radDropDownList1;
                 }
-                else if (e.Property.Name == "ShipMethod")
-                {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = MainRepository.ShipMethodsCache;
-                    radDropDownList1.ValueMember = "ShipMethodID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
-                }
-                else if (e.Property.Name == "Vendor")
-                {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = MainRepository.VendorsCache;
-                    radDropDownList1.ValueMember = "BusinessEntityID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
-                }
-
             }
-            else if (radDataEntry.DataSource is Customer)
+            else if (this.radDataEntry.DataSource is Customer)
             {
 
                 if (e.Property.Name == "State")
@@ -189,10 +183,14 @@ namespace ERP.Client
                     e.Editor = radDropDownList1;
                 }
             }
-            else if (radDataEntry.DataSource is BillOfMaterial)
+            else if (this.radDataEntry.DataSource is BillOfMaterial)
             {
-
-                if (e.Property.Name == "UnitMeasure")
+                if (e.Property.Name == "EndDate")
+                {
+                    RadDateTimePicker radDateTimePicker = new RadDateTimePicker();
+                    e.Editor = radDateTimePicker;
+                }
+                else if (e.Property.Name == "UnitMeasure")
                 {
                     var radDropDownList1 = new RadDropDownList();
                     radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
@@ -201,82 +199,73 @@ namespace ERP.Client
                     radDropDownList1.DisplayMember = "Name";
                     e.Editor = radDropDownList1;
                 }
+                else if (e.Property.Name == "Product")
+                {
+                    var radDropDownList1 = new RadDropDownList();
+                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+                    radDropDownList1.DataSource = MainRepository.ProductsCache;
+
+                    e.Editor = radDropDownList1;
+                }
                 else if (e.Property.Name == "Product1")
                 {
                     var radDropDownList1 = new RadDropDownList();
                     radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
                     radDropDownList1.DataSource = MainRepository.ProductsCache.ToList();
-                    radDropDownList1.ValueMember = "ProductID";
+                    radDropDownList1.DataMember = "ProductAssemblyID";
                     radDropDownList1.DisplayMember = "Name";
                     e.Editor = radDropDownList1;
                 }
-                else if (e.Property.Name == "Product")
-                {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = MainRepository.ProductsCache.ToList();
-                    radDropDownList1.ValueMember = "ProductID";
-                    radDropDownList1.DisplayMember = "Name";
 
-                    e.Editor = radDropDownList1;
-                }
             }
-            else if (radDataEntry.DataSource is ProductInventory)
+            else if (this.radDataEntry.DataSource is ProductInventory)
             {
-                if (e.Property.Name == "Product")
-                {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = MainRepository.ProductsCache;
-                    radDropDownList1.ValueMember = "ProductID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
-                }
-                else if (e.Property.Name == "Color")
+                if (e.Property.Name == "Color")
                 {
                     e.Editor = new RadColorBox();
                 }
                 else if (e.Property.Name == "Location")
                 {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = MainRepository.LocationsCache;
-                    radDropDownList1.ValueMember = "LocationID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DataSource = MainRepository.LocationsCache;
+                    radDropDownList.DisplayMember = "Name";
+                    e.Editor = radDropDownList;
+                }
+                else if (e.Property.Name == "Product")
+                {
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DataSource = MainRepository.ProductsCache;
+                    radDropDownList.DisplayMember = "Name";
+                    e.Editor = radDropDownList;
                 }
             }
-            else if (radDataEntry.DataSource is SalesOrderHeader)
+            else if (this.radDataEntry.DataSource is SalesOrderHeader)
             {
-                var order = radDataEntry.DataSource as SalesOrderHeader;
-
                 if (e.Property.Name == "Customer")
                 {
-                    var customers = MainRepository.TopCustomersCache;
-                    var orderCustomer = order.Customer;
-                    if (orderCustomer != null && !customers.Contains(orderCustomer))
-                    {
-                        customers.Insert(0, orderCustomer);
-                    }
-
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = customers;
-                    radDropDownList1.ValueMember = "CustomerID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DataSource = MainRepository.CustomersCache;
+                    radDropDownList.DisplayMember = "FirstName";
+                    e.Editor = radDropDownList;
                 }
                 else if (e.Property.Name == "ShipMethod")
                 {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DataSource = MainRepository.ShipMethodsCache;
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.ValueMember = "ShipMethodID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DataSource = MainRepository.ShipMethodsCache;
+                    radDropDownList.DisplayMember = "FirstName";
+                    e.Editor = radDropDownList;
+                }
+                else if(e.Property.Name == "ShipDate")
+                {
+                    RadDateTimePicker radDateTimePicker = new RadDateTimePicker();
+                    e.Editor = radDateTimePicker;
                 }
             }
-            else if (radDataEntry.DataSource is Vendor)
+            else if (this.radDataEntry.DataSource is Vendor)
             {
                 if (e.Property.Name == "CreditRating")
                 {
@@ -286,23 +275,28 @@ namespace ERP.Client
                     e.Editor = editor;
                 }
             }
-            else if (radDataEntry.DataSource is WorkOrder)
+            else if (this.radDataEntry.DataSource is WorkOrder)
             {
-                if (e.Property.Name == "Product")
+                if (e.Property.Name == "EndDate")
                 {
-                    var radDropDownList1 = new RadDropDownList();
-                    radDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-                    radDropDownList1.DataSource = MainRepository.ProductsCache;
-                    radDropDownList1.ValueMember = "ProductID";
-                    radDropDownList1.DisplayMember = "Name";
-                    e.Editor = radDropDownList1;
+                    RadDateTimePicker radDateTimePicker = new RadDateTimePicker();
+                    e.Editor = radDateTimePicker;
+                }
+                else if (e.Property.Name == "Product")
+                {
+                    RadDropDownList radDropDownList = new RadDropDownList();
+                    radDropDownList.DropDownStyle = RadDropDownStyle.DropDownList;
+                    radDropDownList.DataSource = MainRepository.ProductsCache;
+                    radDropDownList.DisplayMember = "Name";
+                    e.Editor = radDropDownList;
                 }
             }
         }
 
         private void radDataEntry_BindingCreating(object sender, BindingCreatingEventArgs e)
         {
-            if (radDataEntry.DataSource is Address)
+
+            if (this.radDataEntry.DataSource is Address)
             {
                 if (e.DataMember == "StateProvince")
                 {
@@ -310,14 +304,14 @@ namespace ERP.Client
                     e.PropertyName = "SelectedValue";
                 }
             }
-            else if (radDataEntry.DataSource is PurchaseOrderHeader)
+            else if (this.radDataEntry.DataSource is PurchaseOrderHeader)
             {
                 if (e.DataMember == "ShipMethod" || e.DataMember == "OrderStatus" || e.DataMember == "Vendor")
                 {
                     e.PropertyName = "SelectedValue";
                 }
             }
-            else if (radDataEntry.DataSource is Customer)
+            else if (this.radDataEntry.DataSource is Customer)
             {
                 if (e.DataMember == "State")
                 {
@@ -325,15 +319,8 @@ namespace ERP.Client
                     e.PropertyName = "SelectedValue";
                 }
             }
-            else if (radDataEntry.DataSource is BillOfMaterial)
+            else if (this.radDataEntry.DataSource is BillOfMaterial)
             {
-                var entry = radDataEntry.DataSource as BillOfMaterial;
-
-                if (e.DataMember == "Product")
-                {
-                    e.DataMember = "ComponentID";
-                    e.PropertyName = "SelectedValue";
-                }
                 if (e.DataMember == "Product1")
                 {
                     e.DataMember = "ProductAssemblyID";
@@ -341,26 +328,52 @@ namespace ERP.Client
                 }
                 else if (e.DataMember == "UnitMeasure")
                 {
-                    e.DataMember = "UnitMeasure.UnitMeasureCode";
-                    e.PropertyName = "SelectedValue";
+                    e.DataMember = "UnitMeasureCode";
+                    e.PropertyName = "Text";
                 }
-
             }
 
+            if (e.DataMember == "ShipDate" || e.DataMember == "Color" || e.DataMember == "EndDate")
+            {
+                e.PropertyName = "Value";
+            }
+
+            if (e.DataMember == "Location" || e.DataMember == "Product" || e.DataMember == "Customer" || e.DataMember == "ShipMethod")
+            {
+                e.PropertyName = "SelectedValue";
+            }
         }
 
         private void radDataEntry_BindingCreated(object sender, BindingCreatedEventArgs e)
         {
-            if (radDataEntry.DataSource is ProductInventory)
+            if (this.radDataEntry.DataSource is BillOfMaterial)
             {
                 if (e.DataMember == "Color")
                 {
                     e.Binding.FormattingEnabled = true;
-                    e.Binding.Format += Binding_Format;
+                    e.Binding.Format += this.Binding_Format;
                 }
             }
-        }
 
+            if (e.DataMember == "ShipDate" || e.DataMember == "EndDate")
+            {
+                e.Binding.FormattingEnabled = true;
+            }
+            else if (e.DataMember == "Color")
+            {
+                e.Binding.FormattingEnabled = true;
+                e.Binding.Parse += this.Binding_Parse;
+            }
+        }
+        private void Binding_Parse(object sender, ConvertEventArgs e)
+        {
+            // Convert RGB values to hexadecimal with transparency
+            if (e.Value is Color color)
+            {
+                // Include alpha channel for transparency: #AARRGGBB format
+                e.Value = string.Format("#{0:X2}{1:X2}{2:X2}{3:X2}", color.A, color.R, color.G, color.B);
+            }
+        }
         private void Binding_Format(object sender, ConvertEventArgs e)
         {
             if (e.DesiredType == typeof(Color) && e.Value != null)
@@ -374,6 +387,7 @@ namespace ERP.Client
                 {
                     color = Color.FromName(e.Value.ToString());
                 }
+
                 e.Value = color;
             }
         }
@@ -388,7 +402,6 @@ namespace ERP.Client
                 form.DialogResult = DialogResult.OK;
                 form.Close();
             }
-
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -401,8 +414,8 @@ namespace ERP.Client
                 form.DialogResult = DialogResult.Cancel;
                 form.Close();
             }
-
         }
+
         public RadDataEntry DataEntry
         {
             get

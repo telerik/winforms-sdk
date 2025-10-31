@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
+using System.Linq;
 
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(BillOfMaterialMetadata))]
-    public partial class BillOfMaterial : ISavableObject
+    public partial class BillOfMaterial
     {
         partial void OnComponentIDChanged()
         {
@@ -41,53 +40,9 @@ namespace ERP.Repository.Service
         {
             if (this.UnitMeasure != null && this.UnitMeasure.UnitMeasureCode != this.UnitMeasureCode)
             {
-                this.UnitMeasure = MainRepository.UnitMeasuresCache.First(u => u.UnitMeasureCode == this.UnitMeasureCode);
+                this.UnitMeasure = MainRepository.UnitMeasuresCache.First(u => u.Name == this.UnitMeasureCode);
             }
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                try
-                {
-                    MainRepository.Context.AttachTo("BillOfMaterials", this);
-                    MainRepository.Update(this);
-                    MainRepository.SaveChangesAsync();
-                }
-                catch(Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            }
-        }
-
-        public void Delete()
-        {
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            if (this.Product != null && this.Product.ProductID != this.ComponentID)
-            {
-                this.ComponentID = this.Product.ProductID;
-            }
-
-            if (this.Product1 != null && this.Product1.ProductID != this.ProductAssemblyID)
-            {
-                this.ProductAssemblyID = this.Product1.ProductID;
-            }
-
-            if (this.UnitMeasure != null && this.UnitMeasure.UnitMeasureCode != this.UnitMeasureCode)
-            {
-                this.UnitMeasureCode = this.UnitMeasure.UnitMeasureCode;
-            }
-        }
+        }       
     }
 
     public class BillOfMaterialMetadata
@@ -115,7 +70,6 @@ namespace ERP.Repository.Service
         [DisplayAttribute(Name = "Per Assembly Qty", Order = 6)]
         public decimal PerAssemblyQty { get; set; }
 
-        [DisplayAttribute(AutoGenerateField = false)]
         public string UnitMeasureCode { get; set; }
 
         [DisplayAttribute(AutoGenerateField = false)]

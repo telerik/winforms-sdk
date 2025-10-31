@@ -9,11 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="out\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="out\**" />
+    <None Remove="bin\**" />
+    <None Remove="out\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ERP.Service\ERP.Service.NetCore.csproj" />
+    <PackageReference Include="Microsoft.Data.Services.Client" Version="5.8.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="Telerik.Licensing" Version="1.6.24" />
   </ItemGroup>
 
 </Project>

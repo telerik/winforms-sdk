@@ -2,33 +2,25 @@
 using ERP.Repository.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Services.Client;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telerik.WinControls.UI;
-using System.Data.Entity;
-using Telerik.WinControls.Export;
-using System.Windows.Forms;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using System.IO;
 using System.Drawing;
+using System.Linq;
+using Telerik.WinControls.UI;
+using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace ERP.Client
 {
-    class VendorsControl : BaseGridControl
+   public class VendorsControl : BaseGridControl
     {
-        List<Vendor> data = new List<Vendor>();
+        private List<Vendor> data = new List<Vendor>();
+
         public Action<List<Vendor>> Callback { get; private set; }
 
         protected override void Initialize()
         {
             this.dataFormText = "Edit Supplier";
-            columnTypes = new Type[] { typeof(string), typeof(string), typeof(byte), typeof(string), typeof(string), typeof(string), typeof(DateTime) };
+            this.columnTypes = new Type[] { typeof(string), typeof(string), typeof(byte), typeof(string), typeof(string), typeof(string), typeof(DateTime) };
             this.gridControl.ColumnCount = 7;
-            this.gridControl.CreateCellElement += GridControl_CreateCellElement;
+            this.gridControl.CreateCellElement += this.GridControl_CreateCellElement;
 
             this.columnNames.Add("Account Number");
             this.columnNames.Add("Name");
@@ -38,36 +30,34 @@ namespace ERP.Client
             this.columnNames.Add("URL");
             this.columnNames.Add("Modified Date");
 
-
-            this.gridControl.RowCount = MainRepository.Context.Vendors.Count();
-
-            this.Callback = new Action<List<Vendor>>(query =>
-            {
-                this.data = query;
-                this.gridControl.MasterViewInfo.IsWaiting = false;
-                this.gridControl.TableElement.SynchronizeRows();
-            });
-
-
-            this.RefreshData(0);
-            this.gridControl.CellFormatting += GridControl_CellFormatting;
-            this.gridControl.SelectionChanged += GridControl_SelectionChanged;
-            this.gridControl.MasterViewInfo.SetColumnDataType(columnTypes);
+            this.gridControl.RowCount = MainRepository.VendorsCache.Count();
+            this.data = MainRepository.VendorsCache;     
+            this.gridControl.CellFormatting += this.GridControl_CellFormatting;
+            this.gridControl.SelectionChanged += this.GridControl_SelectionChanged;
+            this.gridControl.MasterViewInfo.SetColumnDataType(this.columnTypes);
+            this.ClearSelection();
         }
 
         private void GridControl_SelectionChanged(object sender, EventArgs e)
         {
             if (this.gridControl.CurrentCell != null && this.gridControl.CurrentCell.RowIndex >= 0)
             {
-                currentItem = data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
+                this.currentItem = this.data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
             }
         }
 
         private void GridControl_CreateCellElement(object sender, VirtualGridCreateCellEventArgs e)
         {
-            if (e.ColumnIndex == 2 && e.RowIndex >= 0)
+            if (e.CellType == typeof(VirtualGridCellElement))
             {
-                e.CellElement = new RatingCellElement();
+                if (e.ColumnIndex == 2 && e.RowIndex >= 0)
+                {
+                    e.CellElement = new RatingCellElement();
+                }
+                else
+                {
+                    e.CellElement = new DefaultVirtualGridCellElement() { ExcludeColumnIndex = 2 };
+                }
             }
         }
 
@@ -77,6 +67,7 @@ namespace ERP.Client
             {
                 return;
             }
+
             if (e.CellElement.ColumnIndex == 4 && e.CellElement.Value != null)
             {
                 var value = (bool)e.CellElement.Value;
@@ -90,8 +81,8 @@ namespace ERP.Client
                     e.CellElement.ForeColor = Color.Red;
                     e.CellElement.Text = "Inactive";
                 }
-
             }
+
             else if (e.CellElement.ColumnIndex == 3 && e.CellElement.Value != null)
             {
                 var value = (bool)e.CellElement.Value;
@@ -105,7 +96,6 @@ namespace ERP.Client
                     e.CellElement.ForeColor = Color.Gold;
                     e.CellElement.Text = "Not Preferred";
                 }
-
             }
         }
 
@@ -113,23 +103,29 @@ namespace ERP.Client
         {
             base.RadGridView1_CellValueNeeded(sender, e);
             if (e.ColumnIndex < 0)
+            {
                 return;
+            }
+
             if (e.RowIndex < 0)
             {
                 e.FieldName = FieldsHelper.VendorFields[e.ColumnIndex];
             }
+
             if (e.RowIndex == RadVirtualGrid.HeaderRowIndex)
             {
-                e.Value = columnNames[e.ColumnIndex];
+                e.Value = this.columnNames[e.ColumnIndex];
                 e.FieldName = FieldsHelper.VendorFields[e.ColumnIndex];
             }
-            if (e.RowIndex >= 0 && data.Count > 0)
+
+            if (e.RowIndex >= 0 && this.data.Count > 0)
             {
-                if ((e.RowIndex % gridControl.PageSize) >= data.Count)
+                if ((e.RowIndex % this.gridControl.PageSize) >= this.data.Count)
                 {
                     return;
                 }
-                var rowData = data[e.RowIndex % gridControl.PageSize] as Vendor;
+
+                var rowData = this.data[e.RowIndex % this.gridControl.PageSize] as Vendor;
 
                 switch (e.ColumnIndex)
                 {
@@ -158,6 +154,7 @@ namespace ERP.Client
                 }
             }
         }
+
         protected override void RadGridView1_SortChanged(object sender, VirtualGridEventArgs e)
         {
             if (e.ViewInfo.SortDescriptors.Count == 0)
@@ -171,19 +168,24 @@ namespace ERP.Client
             if (prop.IsValueType || prop == typeof(string))
             {
                 base.RadGridView1_SortChanged(sender, e);
-            }
-           
+            }           
+        }
+
+        protected override void DeleteCurrentRow()
+        {
+            MainRepository.VendorsCache.Remove(this.currentItem as Vendor);
+            this.ClearSelection();
         }
 
         protected override void RefreshData(int skip)
         {
-            data.Clear();
-            var query = SortHelper.Sort(MainRepository.Context.Vendors, this.gridControl.SortDescriptors);
-            query = FilterHelper.Filter(query, this.gridControl.FilterDescriptors);
-            gridControl.RowCount = query.Count();
+            this.gridControl.RowCount = 0;
 
-            this.gridControl.MasterViewInfo.IsWaiting = true;
-            ExecuteQueryAsync<List<Vendor>>(Task.Run(() => query.Skip(skip).Take(this.gridControl.PageSize).ToList()), this.Callback);
+            var sortedData = SortHelper.Sort(MainRepository.VendorsCache, this.gridControl.SortDescriptors);
+            var filteredData = FilterHelper.Filter(sortedData, this.gridControl.FilterDescriptors);
+
+            this.data = filteredData.Skip(skip).Take(this.gridControl.PageSize).ToList();
+            this.gridControl.RowCount = filteredData.Count();
         }
 
         protected override Workbook CreateWorkbook()
@@ -192,36 +194,37 @@ namespace ERP.Client
             Worksheet worksheet = workbook.Worksheets.Add();
 
             // set header
-            for (int i = 0; i < columnNames.Count; i++)
+            for (int i = 0; i < this.columnNames.Count; i++)
             {
                 CellSelection selection = worksheet.Cells[0, i];
-                selection.SetValue(columnNames[i]);
+                selection.SetValue(this.columnNames[i]);
             }
 
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < this.data.Count; i++)
             {
                 int rowIndex = i + 1;
                 CellSelection selection = worksheet.Cells[rowIndex, 0];
-                selection.SetValue(data[i].AccountNumber);
+                selection.SetValue(this.data[i].AccountNumber);
 
                 selection = worksheet.Cells[rowIndex, 1];
-                selection.SetValue(data[i].Name);
+                selection.SetValue(this.data[i].Name);
 
                 selection = worksheet.Cells[rowIndex, 2];
-                selection.SetValue(data[i].CreditRating);
+                selection.SetValue(this.data[i].CreditRating);
 
                 selection = worksheet.Cells[rowIndex, 3];
-                selection.SetValue(data[i].PreferredVendorStatus);
+                selection.SetValue(this.data[i].PreferredVendorStatus);
 
                 selection = worksheet.Cells[rowIndex, 4];
-                selection.SetValue(data[i].ActiveFlag);
+                selection.SetValue(this.data[i].ActiveFlag);
 
                 selection = worksheet.Cells[rowIndex, 5];
-                selection.SetValue(data[i].PurchasingWebServiceURL);
+                selection.SetValue(this.data[i].PurchasingWebServiceURL);
 
                 selection = worksheet.Cells[rowIndex, 6];
-                selection.SetValue(data[i].ModifiedDate);
+                selection.SetValue(this.data[i].ModifiedDate);
             }
+
             worksheet.Columns[worksheet.UsedCellRange].AutoFitWidth();
             worksheet.Name = "Suppliers";
             return workbook;

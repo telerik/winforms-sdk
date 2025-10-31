@@ -2,32 +2,22 @@
 using ERP.Repository.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Services.Client;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telerik.WinControls.UI;
-using System.Data.Entity;
-using Telerik.WinControls.Export;
-using System.Windows.Forms;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using System.IO;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace ERP.Client
 {
-    class BillOfMaterialsControl : BaseGridControl
+    public class BillOfMaterialsControl : BaseGridControl
     {
-        List<BillOfMaterial> data = new List<BillOfMaterial>();
-        public Action<List<BillOfMaterial>> Callback { get; private set; }
+        private List<BillOfMaterial> data = new List<BillOfMaterial>();
 
         protected override void Initialize()
         {
             this.dataFormText = "Edit Bill of Material";
             this.gridControl.ColumnCount = 8;
-            columnTypes = new Type[] { typeof(string), typeof(string), typeof(DateTime), typeof(DateTime), typeof(short), typeof(string), typeof(decimal), typeof(DateTime) };
+            this.columnTypes = new Type[] { typeof(string), typeof(string), typeof(DateTime), typeof(DateTime), typeof(short), typeof(string), typeof(decimal), typeof(DateTime) };
             this.columnNames.Add("Parent Product");
             this.columnNames.Add("Child Product");
             this.columnNames.Add("Start Date");
@@ -37,20 +27,12 @@ namespace ERP.Client
             this.columnNames.Add("Per Assembly Qty");
             this.columnNames.Add("Modified Date");
 
-            this.gridControl.RowCount = MainRepository.Context.BillOfMaterials.Count();
-
-            this.Callback = new Action<List<BillOfMaterial>>(query =>
-            {
-                this.data = query;
-                this.gridControl.MasterViewInfo.IsWaiting = false;
-                this.gridControl.TableElement.SynchronizeRows();
-                MainRepository.Context.MergeOption = MergeOption.PreserveChanges;
-            });
-
-            this.RefreshData(0);
-            this.gridControl.SelectionChanged += GridControl_SelectionChanged;
-            this.gridControl.MasterViewInfo.SetColumnDataType(columnTypes);
-            this.gridControl.CellFormatting += GridControl_CellFormatting;
+            this.gridControl.RowCount = MainRepository.BillsCache.Count();
+            this.data = MainRepository.BillsCache;
+            this.gridControl.SelectionChanged += this.GridControl_SelectionChanged;
+            this.gridControl.MasterViewInfo.SetColumnDataType(this.columnTypes);
+            this.gridControl.CellFormatting += this.GridControl_CellFormatting;
+            this.ClearSelection();
         }
 
         private void GridControl_CellFormatting(object sender, VirtualGridCellElementEventArgs e)
@@ -66,6 +48,7 @@ namespace ERP.Client
                     e.CellElement.ResetValue(RadItem.EnabledProperty, ValueResetFlags.Local);
                 }
             }
+
             if (e.CellElement is VirtualGridHeaderCellElement)
             {
                 var cell = e.CellElement as VirtualGridHeaderCellElement;
@@ -84,28 +67,32 @@ namespace ERP.Client
         {
             if (this.gridControl.CurrentCell != null && this.gridControl.CurrentCell.RowIndex >= 0)
             {
-                currentItem = data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
+                this.currentItem = this.data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
             }
         }
 
         protected override void RadGridView1_CellValueNeeded(object sender, VirtualGridCellValueNeededEventArgs e)
         {
             base.RadGridView1_CellValueNeeded(sender, e);
+
             if (e.ColumnIndex < 0)
+            {
                 return;
+            }
+
             if (e.RowIndex < 0)
             {
                 e.FieldName = FieldsHelper.BillOfMaterialsFields[e.ColumnIndex];
-
             }
 
             if (e.RowIndex == RadVirtualGrid.HeaderRowIndex)
             {
-                e.Value = columnNames[e.ColumnIndex];
+                e.Value = this.columnNames[e.ColumnIndex];
             }
-            if (e.RowIndex >= 0 && data.Count > 0)
+
+            if (e.RowIndex >= 0 && this.data.Count > 0)
             {
-                var rowData = data[e.RowIndex % gridControl.PageSize] as BillOfMaterial;
+                var rowData = this.data[e.RowIndex % this.gridControl.PageSize] as BillOfMaterial;
 
                 switch (e.ColumnIndex)
                 {
@@ -114,13 +101,15 @@ namespace ERP.Client
                         {
                             break;
                         }
+
                         e.Value = rowData.Product.Name;
                         break;
                     case 1:
                         if (rowData.Product1 != null)
                         {
                             e.Value = rowData.Product1.Name;
-                        }                   
+                        } 
+                        
                         break;
                     case 2:
                         e.Value = rowData.StartDate;
@@ -138,6 +127,7 @@ namespace ERP.Client
                         {
                             break;
                         }
+
                         e.Value = rowData.UnitMeasure.Name;
                         break;
                     case 6:
@@ -164,21 +154,23 @@ namespace ERP.Client
             {
                 base.RadGridView1_SortChanged(sender, e);
             }
+        }
 
+        protected override void DeleteCurrentRow()
+        {
+            MainRepository.BillsCache.Remove(this.currentItem as BillOfMaterial);
+            this.ClearSelection();
         }
 
         protected override void RefreshData(int skip)
         {
-            data.Clear();
-            MainRepository.Context.MergeOption = MergeOption.NoTracking;
+            this.gridControl.RowCount = 0;
 
-            var query = SortHelper.Sort(MainRepository.GetBills(), this.gridControl.SortDescriptors);
-            query = FilterHelper.Filter(query, this.gridControl.FilterDescriptors);
-            gridControl.RowCount = query.Count();
+            var sortedData = SortHelper.Sort(MainRepository.BillsCache, this.gridControl.SortDescriptors);
+            var filteredData = FilterHelper.Filter(sortedData, this.gridControl.FilterDescriptors);
 
-            this.gridControl.MasterViewInfo.IsWaiting = true;
-
-            ExecuteQueryAsync<List<BillOfMaterial>>(Task.Run(() => query.Skip(skip).Take(this.gridControl.PageSize).ToList()), this.Callback);
+            this.data = filteredData.Skip(skip).Take(this.gridControl.PageSize).ToList();
+            this.gridControl.RowCount = filteredData.Count();
         }
 
         protected override Workbook CreateWorkbook()
@@ -187,42 +179,43 @@ namespace ERP.Client
             Worksheet worksheet = workbook.Worksheets.Add();
 
             // set header
-            for (int i = 0; i < columnNames.Count; i++)
+            for (int i = 0; i < this.columnNames.Count; i++)
             {
                 CellSelection selection = worksheet.Cells[0, i];
-                selection.SetValue(columnNames[i]);
+                selection.SetValue(this.columnNames[i]);
             }
 
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < this.data.Count; i++)
             {
                 int rowIndex = i + 1;
                 CellSelection selection = worksheet.Cells[rowIndex, 0];
-                selection.SetValue(data[i].Product.Name);
+                selection.SetValue(this.data[i].Product.Name);
 
                 selection = worksheet.Cells[rowIndex, 1];
-                selection.SetValue(data[i].Product1.Name);
+                selection.SetValue(this.data[i].Product1.Name);
 
                 selection = worksheet.Cells[rowIndex, 2];
-                selection.SetValue(data[i].StartDate);
+                selection.SetValue(this.data[i].StartDate);
 
                 selection = worksheet.Cells[rowIndex, 3];
-                if (data[i].EndDate.HasValue)
+                if (this.data[i].EndDate.HasValue)
                 {
-                    selection.SetValue(data[i].EndDate.Value);
+                    selection.SetValue(this.data[i].EndDate.Value);
                 }
 
                 selection = worksheet.Cells[rowIndex, 4];
-                selection.SetValue(data[i].BOMLevel);
+                selection.SetValue(this.data[i].BOMLevel);
 
                 selection = worksheet.Cells[rowIndex, 5];
-                selection.SetValue(data[i].UnitMeasure.Name);
+                selection.SetValue(this.data[i].UnitMeasure.Name);
 
                 selection = worksheet.Cells[rowIndex, 6];
-                selection.SetValue(Convert.ToDouble(data[i].PerAssemblyQty));
+                selection.SetValue(Convert.ToDouble(this.data[i].PerAssemblyQty));
 
                 selection = worksheet.Cells[rowIndex, 7];
-                selection.SetValue(data[i].ModifiedDate);
+                selection.SetValue(this.data[i].ModifiedDate);
             }
+
             worksheet.Columns[worksheet.UsedCellRange].AutoFitWidth();
             worksheet.Name = "Bill Of Materials";
             return workbook;

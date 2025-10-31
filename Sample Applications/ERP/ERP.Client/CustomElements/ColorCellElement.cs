@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telerik.WinControls;
 using Telerik.WinControls.Paint;
-using Telerik.WinControls.Primitives;
 using Telerik.WinControls.UI;
 
 namespace ERP.Client
 {
-    class ColorCellElement : VirtualGridCellElement
+    internal class ColorCellElement : VirtualGridCellElement
     {
         protected override void UpdateInfo(VirtualGridCellValueNeededEventArgs args)
         {
@@ -58,7 +53,7 @@ namespace ERP.Client
                     color = Color.FromName(this.Value.ToString());
                 }
                 
-                var rect = new RectangleF(Size.Width - 20, 3, 18, Size.Height - 6);
+                var rect = new RectangleF(this.Size.Width - 20, 3, 18, this.Size.Height - 6);
                 using (var brush = new SolidBrush(color))
                 {
                     gr.FillEllipse(brush,rect);

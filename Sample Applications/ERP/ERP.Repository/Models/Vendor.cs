@@ -7,38 +7,12 @@ using System.ComponentModel;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(VendorMetadata))]
-    public partial class Vendor : ISavableObject
+    public partial class Vendor
     {
         public override string ToString()
         {
             return this.Name;
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                MainRepository.Update(this);
-            }
-
-            MainRepository.SaveChanges();
-        }
-
-        public void Delete()
-        {
-            this.ActiveFlag = false;
-            MainRepository.Update(this);
-            MainRepository.SaveChanges();
-        }
-
-        public void Cancel()
-        {
-            // Nothing to cancel.
-        }
+        }       
     }
 
     public class VendorMetadata
@@ -73,6 +47,6 @@ namespace ERP.Repository.Service
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         [DisplayAttribute(Name = "Modified Date")]
-        public DateTime? ModifiedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }       
     }
 }

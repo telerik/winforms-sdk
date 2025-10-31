@@ -1,0 +1,344 @@
+[
+  {
+    "UnitMeasureCode": "BOX",
+    "Name": "Boxes",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "BTL",
+    "Name": "Bottle",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "C  ",
+    "Name": "Celsius",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CAN",
+    "Name": "Canister",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CAR",
+    "Name": "Carton",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CBM",
+    "Name": "Cubic meters",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CCM",
+    "Name": "Cubic centimeter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CDM",
+    "Name": "Cubic decimeter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CM ",
+    "Name": "Centimeter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CM2",
+    "Name": "Square centimeter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CR ",
+    "Name": "Crate",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CS ",
+    "Name": "Case",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "CTN",
+    "Name": "Container",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "DM ",
+    "Name": "Decimeter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "DZ ",
+    "Name": "Dozen",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "EA ",
+    "Name": "Each",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "FT3",
+    "Name": "Cubic foot",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "G  ",
+    "Name": "Gram",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "GAL",
+    "Name": "Gallon",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "IN ",
+    "Name": "Inch",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "KG ",
+    "Name": "Kilogram",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "KGV",
+    "Name": "Kilogram/cubic meter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "KM ",
+    "Name": "Kilometer",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "KT ",
+    "Name": "Kiloton",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "L  ",
+    "Name": "Liter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "LB ",
+    "Name": "US pound",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "M  ",
+    "Name": "Meter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "M2 ",
+    "Name": "Square meter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "M3 ",
+    "Name": "Cubic meter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "MG ",
+    "Name": "Milligram",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "ML ",
+    "Name": "Milliliter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "MM ",
+    "Name": "Millimeter",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "OZ ",
+    "Name": "Ounces",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "PAK",
+    "Name": "Pack",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "PAL",
+    "Name": "Pallet",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "PC ",
+    "Name": "Piece",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "PCT",
+    "Name": "Percentage",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  },
+  {
+    "UnitMeasureCode": "PT ",
+    "Name": "Pint, US liquid",
+    "ModifiedDate": "2002-06-01T00:00:00",
+    "BillOfMaterials": [],
+    "Products": [],
+    "Products1": [],
+    "ProductVendors": []
+  }
+]

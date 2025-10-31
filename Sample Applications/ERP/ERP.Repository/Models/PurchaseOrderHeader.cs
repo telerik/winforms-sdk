@@ -6,7 +6,7 @@ using System.Data.Services.Client;
 namespace ERP.Repository.Service
 {
     [MetadataType(typeof(PurchaseOrderHeaderMetadata))]
-    public partial class PurchaseOrderHeader : ISavableObject
+    public partial class PurchaseOrderHeader
     {
         public PurchaseOrderHeader()
         {
@@ -59,42 +59,6 @@ namespace ERP.Repository.Service
             if (this.Vendor != null && this.Vendor.BusinessEntityID != this.VendorID)
             {
                 this.Vendor = MainRepository.VendorsCache.FirstOrDefault(v => v.BusinessEntityID == this.VendorID);
-            }
-        }
-
-        public void Save(bool isAddingItem)
-        {
-            if (isAddingItem)
-            {
-                // Logic when adding new item.
-            }
-            else
-            {
-                MainRepository.Update(this);
-                MainRepository.SaveChangesAsync();
-            }
-        }
-
-        public void Delete()
-        {
-            foreach (var orderDetails in this.PurchaseOrderDetails)
-            {
-                MainRepository.Context.DeleteObject(orderDetails);
-            }
-
-            MainRepository.DeleteAndSave(this);
-        }
-
-        public void Cancel()
-        {
-            if (this.ShipMethod != null && this.ShipMethod.ShipMethodID != this.ShipMethodID)
-            {
-                this.ShipMethodID = this.ShipMethod.ShipMethodID;
-            }
-
-            if (this.Vendor != null && this.Vendor.BusinessEntityID != this.VendorID)
-            {
-                this.VendorID = this.Vendor.BusinessEntityID;
             }
         }
     }

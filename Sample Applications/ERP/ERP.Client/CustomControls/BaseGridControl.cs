@@ -21,7 +21,7 @@ namespace ERP.Client
     public partial class BaseGridControl : UserControl
     {
         protected List<string> columnNames;
-        protected ISavableObject currentItem;
+        protected object currentItem;
         protected Type[] columnTypes;
         protected string dataFormText; 
         public RadVirtualGrid gridControl
@@ -31,28 +31,35 @@ namespace ERP.Client
 
         public BaseGridControl()
         {
-            InitializeComponent();
-            columnNames = new List<string>();
+            this.InitializeComponent();
+            this.columnNames = new List<string>();
+            this.radGridView1.SelectionMode = VirtualGridSelectionMode.FullRowSelect;
             this.radGridView1.AllowFiltering = true;
             this.radGridView1.AllowAddNewRow = false;
             this.radGridView1.AutoSizeColumnsMode = VirtualGridAutoSizeColumnsMode.Fill;
-            this.radGridView1.CellValueNeeded += RadGridView1_CellValueNeeded;
+            this.radGridView1.CellValueNeeded += this.RadGridView1_CellValueNeeded;
             this.radGridView1.EnablePaging = true;
             this.radGridView1.PageSize = 20;
-            this.radGridView1.VirtualGridElement.PageIndexChanged += VirtualGridElement_PageIndexChanged;
-            this.radGridView1.VirtualGridElement.PageIndexChanging += VirtualGridElement_PageIndexChanging;
-            this.radGridView1.CellEditorInitialized += RadGridView1_CellEditorInitialized;
+            this.radGridView1.VirtualGridElement.PageIndexChanged += this.VirtualGridElement_PageIndexChanged;
+            this.radGridView1.VirtualGridElement.PageIndexChanging += this.VirtualGridElement_PageIndexChanging;
+            this.radGridView1.CellEditorInitialized += this.RadGridView1_CellEditorInitialized;
             this.radGridView1.BeginEditMode = RadVirtualGridBeginEditMode.BeginEditProgrammatically;
             this.radGridView1.VirtualGridElement.TableElement.PagingPanelElement.Margin = new Padding(0, 0, 0, 1);
             this.radGridView1.AllowMultiColumnSorting = false;
-            this.radGridView1.SortChanged += RadGridView1_SortChanged;
+            this.radGridView1.SortChanged += this.RadGridView1_SortChanged;
+            this.radGridView1.FilterChanged += this.RadGridView1_FilterChanged;
             this.Initialize();
+        }
+
+        private void RadGridView1_FilterChanged(object sender, VirtualGridEventArgs e)
+        {
+            this.RefreshData(0);
         }
 
         protected virtual void RadGridView1_SortChanged(object sender, VirtualGridEventArgs e)
         {
-            var skip = e.ViewInfo.PageSize * radGridView1.PageIndex;
-            RefreshData(skip);
+            var skip = e.ViewInfo.PageSize * this.radGridView1.PageIndex;
+            this.RefreshData(skip);
         }
 
         private void RadGridView1_CellEditorInitialized(object sender, VirtualGridCellEditorInitializedEventArgs e)
@@ -63,15 +70,15 @@ namespace ERP.Client
                 var element = editor.EditorElement as RadItem;
                 if (element is RadSpinEditorElement)
                 {
-                    ((RadSpinEditorElement)element).TextBoxItem.KeyDown += Element_KeyDown;
+                    ((RadSpinEditorElement)element).TextBoxItem.KeyDown += this.Element_KeyDown;
                 }
                 else if(element is RadDateTimeEditorElement)
                 {
-                    ((RadDateTimeEditorElement)element).KeyDown += Element_KeyDown;
+                    ((RadDateTimeEditorElement)element).KeyDown += this.Element_KeyDown;
                 }
                 else if (element is RadTextBoxEditorElement)
                 {
-                    ((RadTextBoxEditorElement)element).TextBoxItem.KeyDown += Element_KeyDown;
+                    ((RadTextBoxEditorElement)element).TextBoxItem.KeyDown += this.Element_KeyDown;
                 }
             }
         }
@@ -80,7 +87,7 @@ namespace ERP.Client
         {
             if (e.KeyCode == Keys.Enter)
             {
-                RefreshData(0);
+                this.RefreshData(0);
                 this.gridControl.PageIndex = 0;
             }
         }
@@ -94,7 +101,7 @@ namespace ERP.Client
         protected virtual void VirtualGridElement_PageIndexChanging(object sender, VirtualGridPageChangingEventArgs e)
         {
             var skip = e.ViewInfo.PageSize * e.NewIndex;
-            RefreshData(skip);
+            this.RefreshData(skip);
         }
 
         protected virtual void Initialize()
@@ -112,6 +119,7 @@ namespace ERP.Client
 
         }
 
+        private ERPDataForm dialog = new ERPDataForm();
         protected virtual void EditButton_Click(object sender, EventArgs e)
         {
             if (this.gridControl.CurrentCell == null)
@@ -120,15 +128,12 @@ namespace ERP.Client
                 return;
             }
 
-            var dialog = new ERPDataForm();
-            dialog.Text = dataFormText;
-            dialog.DataEntry.DataSource = currentItem;
+            this.dialog.Text = this.dataFormText;
+            this.dialog.DataEntry.DataSource = this.currentItem;
          
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (this.dialog.ShowDialog() == DialogResult.OK)
             {
-                currentItem.Save(false);
-                this.RefreshData(this.gridControl.PageSize * this.gridControl.PageIndex);
-                
+                this.RefreshData(this.gridControl.PageSize * this.gridControl.PageIndex);                
             }
         }
 
@@ -142,9 +147,14 @@ namespace ERP.Client
 
             if (RadMessageBox.Show("Delete Selected Item?", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                (currentItem as ISavableObject).Delete();
+                this.DeleteCurrentRow();
                 this.RefreshData(this.gridControl.PageSize * this.gridControl.PageIndex);
             }
+        }
+
+        protected virtual void DeleteCurrentRow()
+        {
+            
         }
 
         protected virtual void PrintButton_Click(object sender, EventArgs e)
@@ -159,7 +169,7 @@ namespace ERP.Client
             var window = new Form() { Width = 0, Height = 0, Opacity = 0 };
             spreadsheet.Parent = window;
             window.Show();
-            spreadsheet.Workbook = CreateWorkbook();         
+            spreadsheet.Workbook = this.CreateWorkbook();         
             spreadsheet.Print(new PrintWhatSettings(ExportWhat.ActiveSheet, false));
             window.Close();
         }
@@ -182,7 +192,7 @@ namespace ERP.Client
 
                 using (Stream output = new FileStream(savefile.FileName, FileMode.Create))
                 {
-                    formatProvider.Export(CreateWorkbook(), output);
+                    formatProvider.Export(this.CreateWorkbook(), output, null);
                 }
             }
         }
@@ -191,10 +201,15 @@ namespace ERP.Client
         {
             return new Workbook();
         }
+        protected void ClearSelection()
+        {
+            this.gridControl.SelectCell(-1, -1);
+            this.gridControl.CurrentCell = null;
+        }
+
         protected virtual void RefreshData(int skip)
         {
 
-        }
-       
+        }              
     }
 }

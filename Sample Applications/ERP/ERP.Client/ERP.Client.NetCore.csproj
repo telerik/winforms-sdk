@@ -11,8 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="out\**" />
     <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="out\**" />
     <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="bin\**" />
+    <None Remove="out\**" />
     <None Remove="ViewModels\**" />
   </ItemGroup>
 
@@ -21,6 +27,8 @@
   </ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Telerik.Licensing" Version="1.6.24" />
+		<PackageReference Include="Telerik.UI.for.WinForms.AllControls" Version="2025.3.917-preview" />
 		<PackageReference Include="UI.for.WinForms.AllControls.Net80" Version="2024.3.806" />
 	</ItemGroup>
 

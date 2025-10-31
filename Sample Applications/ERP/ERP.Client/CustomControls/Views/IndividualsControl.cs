@@ -2,40 +2,31 @@
 using ERP.Repository.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Services.Client;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telerik.WinControls.UI;
-using System.Data.Entity;
-using Telerik.WinControls.Export;
 using System.Windows.Forms;
-using Telerik.Windows.Documents.Spreadsheet.Model;
-using Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.Xlsx;
-using System.IO;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using Telerik.Windows.Documents.Spreadsheet.Model;
 
 namespace ERP.Client
 {
-    class IndividualsControl : BaseGridControl
+    public class IndividualsControl : BaseGridControl 
     {
-        RelatedOrdersControl relatedOrdersControl;
+        private RelatedOrdersControl relatedOrdersControl;
 
-        List<Customer> data = new List<Customer>();
-        public Action<List<Customer>> Callback { get; private set; }
+        private List<Customer> data = new List<Customer>();
 
         protected override void Initialize()
         {
             this.dataFormText = "Edit Individual";
-            relatedOrdersControl = new RelatedOrdersControl();
-            relatedOrdersControl.Parent = this;
-            relatedOrdersControl.Dock = DockStyle.Bottom;
-            relatedOrdersControl.Height = 300;
+            this.relatedOrdersControl = new RelatedOrdersControl();
+            this.relatedOrdersControl.Parent = this;
+            this.relatedOrdersControl.Dock = DockStyle.Bottom;
+            this.relatedOrdersControl.Height = 300;
 
-            this.gridControl.SelectionChanged += GridControl_SelectionChanged;
+            this.gridControl.SelectionChanged += this.GridControl_SelectionChanged;
             this.gridControl.ColumnCount = 9;
-            columnTypes = new Type[] { typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(DateTime) };
+            this.columnTypes = new Type[] { typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(string), typeof(DateTime) };
             this.columnNames.Add("Account Number");
             this.columnNames.Add("First Name");
             this.columnNames.Add("Last Name");
@@ -45,19 +36,11 @@ namespace ERP.Client
             this.columnNames.Add("City");
             this.columnNames.Add("State");
             this.columnNames.Add("Modified Date");
-
-            this.gridControl.RowCount = MainRepository.GetIndividualCustomers().Count();
-
-            this.Callback = new Action<List<Customer>>(query =>
-            {
-                this.data = query;
-                this.gridControl.MasterViewInfo.IsWaiting = false;
-                this.gridControl.TableElement.SynchronizeRows();
-            });
-
-            this.RefreshData(0);
-            this.gridControl.MasterViewInfo.SetColumnDataType(columnTypes);
-            this.gridControl.CellFormatting += GridControl_CellFormatting;
+            this.gridControl.RowCount = MainRepository.IndividualCustomersCache.Count();
+            this.data = MainRepository.IndividualCustomersCache;   
+            this.gridControl.MasterViewInfo.SetColumnDataType(this.columnTypes);
+            this.gridControl.CellFormatting += this.GridControl_CellFormatting;
+            this.ClearSelection();
         }
 
         private void GridControl_CellFormatting(object sender, VirtualGridCellElementEventArgs e)
@@ -75,6 +58,7 @@ namespace ERP.Client
                     e.CellElement.ResetValue(RadItem.EnabledProperty, ValueResetFlags.Local);
                 }
             }
+
             if (e.CellElement is VirtualGridHeaderCellElement)
             {
                 var cell = e.CellElement as VirtualGridHeaderCellElement;
@@ -95,30 +79,34 @@ namespace ERP.Client
         {
             if (this.gridControl.CurrentCell != null && this.gridControl.CurrentCell.RowIndex >= 0)
             {
-                var item = data[this.gridControl.CurrentCell.RowIndex % gridControl.PageSize];
-                relatedOrdersControl.OrdersGrid.DataSource = item.SalesOrderHeaders;
-                currentItem = data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
-            }
-    
+                var item = this.data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
+                this.relatedOrdersControl.OrdersGrid.DataSource = item.SalesOrderHeaders;
+                this.currentItem = this.data[this.gridControl.CurrentCell.RowIndex % this.gridControl.PageSize];
+            }    
         }
 
         protected override void RadGridView1_CellValueNeeded(object sender, VirtualGridCellValueNeededEventArgs e)
         {
             base.RadGridView1_CellValueNeeded(sender, e);
             if (e.ColumnIndex < 0)
+            {
                 return;
+            }
+
             if (e.RowIndex < 0)
             {
                 e.FieldName = FieldsHelper.IndividualsFields[e.ColumnIndex];
 
             }
+
             if (e.RowIndex == RadVirtualGrid.HeaderRowIndex)
             {
-                e.Value = columnNames[e.ColumnIndex];
+                e.Value = this.columnNames[e.ColumnIndex];
             }
-            if (e.RowIndex >= 0 && data.Count > 0)
+
+            if (e.RowIndex >= 0 && this.data.Count > 0)
             {
-                var rowData = data[e.RowIndex % gridControl.PageSize] as Customer;
+                var rowData = this.data[e.RowIndex % this.gridControl.PageSize] as Customer;
 
                 switch (e.ColumnIndex)
                 {
@@ -153,6 +141,7 @@ namespace ERP.Client
                 }
             }
         }
+
         protected override void RadGridView1_SortChanged(object sender, VirtualGridEventArgs e)
         {
             if (e.ViewInfo.SortDescriptors.Count == 0)
@@ -166,24 +155,29 @@ namespace ERP.Client
             {
                 return;
             }
+
             var prop = typeof(Customer).GetProperty(propertyName).PropertyType;
             if (prop.IsValueType || prop == typeof(string))
             {
                 base.RadGridView1_SortChanged(sender, e);
             }
-
         }
+
+        protected override void DeleteCurrentRow()
+        {
+            MainRepository.IndividualCustomersCache.Remove(this.currentItem as Customer);
+            this.ClearSelection();
+        }
+
         protected override void RefreshData(int skip)
         {
-            data.Clear();
-            
-            var query = SortHelper.Sort(MainRepository.GetIndividualCustomers(), this.gridControl.SortDescriptors);
-            query = FilterHelper.Filter(query, this.gridControl.FilterDescriptors);
-            gridControl.RowCount = query.Count();
+            this.gridControl.RowCount = 0;
 
-            this.gridControl.MasterViewInfo.IsWaiting = true;
-            ExecuteQueryAsync<List<Customer>>(Task.Run(() => query.Skip(skip).Take(this.gridControl.PageSize).ToList()), this.Callback);
+            var sortedData = SortHelper.Sort(MainRepository.IndividualCustomersCache, this.gridControl.SortDescriptors);
+            var filteredData = FilterHelper.Filter(sortedData, this.gridControl.FilterDescriptors);
 
+            this.data = filteredData.Skip(skip).Take(this.gridControl.PageSize).ToList();
+            this.gridControl.RowCount = filteredData.Count();
         }
 
         protected override Workbook CreateWorkbook()
@@ -192,43 +186,44 @@ namespace ERP.Client
             Worksheet worksheet = workbook.Worksheets.Add();
 
             // set header
-            for (int i = 0; i < columnNames.Count; i++)
+            for (int i = 0; i < this.columnNames.Count; i++)
             {
                 CellSelection selection = worksheet.Cells[0, i];
-                selection.SetValue(columnNames[i]);
+                selection.SetValue(this.columnNames[i]);
             }
 
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < this.data.Count; i++)
             {
                 int rowIndex = i + 1;
                 CellSelection selection = worksheet.Cells[rowIndex, 0];
-                selection.SetValue(data[i].AccountNumber);
+                selection.SetValue(this.data[i].AccountNumber);
 
                 selection = worksheet.Cells[rowIndex, 1];
-                selection.SetValue(data[i].FirstName);
+                selection.SetValue(this.data[i].FirstName);
 
                 selection = worksheet.Cells[rowIndex, 2];
-                selection.SetValue(data[i].LastName);
+                selection.SetValue(this.data[i].LastName);
 
                 selection = worksheet.Cells[rowIndex, 3];
-                selection.SetValue(data[i].EmailAddress);
+                selection.SetValue(this.data[i].EmailAddress);
 
                 selection = worksheet.Cells[rowIndex, 4];
-                selection.SetValue(data[i].Phone);
+                selection.SetValue(this.data[i].Phone);
 
                 selection = worksheet.Cells[rowIndex, 5];
-                selection.SetValue(data[i].AddressLine1);
+                selection.SetValue(this.data[i].AddressLine1);
 
                 selection = worksheet.Cells[rowIndex, 6];
-                selection.SetValue(data[i].City);
+                selection.SetValue(this.data[i].City);
 
                 selection = worksheet.Cells[rowIndex, 7];
-                selection.SetValue(data[i].State);
+                selection.SetValue(this.data[i].State);
 
                 selection = worksheet.Cells[rowIndex, 8];
-                selection.SetValue(data[i].ModifiedDate);
+                selection.SetValue(this.data[i].ModifiedDate);
 
             }
+
             worksheet.Columns[worksheet.UsedCellRange].AutoFitWidth();
             worksheet.Name = "Individuals";
             return workbook;

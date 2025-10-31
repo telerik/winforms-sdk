@@ -1,16 +1,17 @@
-﻿using System;
+﻿using ERP.Repository;
+using System;
 using System.Net;
 using System.Windows.Forms;
 
 namespace ERP.Client
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
@@ -22,6 +23,7 @@ namespace ERP.Client
 
             //run the manually created instance. This is needed as otherwise the static types of the assemblies will be needed prior we get here
             Form m = Activator.CreateInstance(System.Reflection.Assembly.GetExecutingAssembly().GetType("ERP.Client.MainForm")) as Form;
+            MainRepository.InitializeData();
             Application.Run(m);
         }
 
@@ -41,10 +43,11 @@ namespace ERP.Client
                     
                     if (!System.IO.File.Exists(strTempAssmbPath)) // we are in the case of QSF as exe, so the Path is different
                     {
-                        strTempAssmbPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\..\\bin\\ReleaseTrial");
+                        strTempAssmbPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "..\\..\\..\\..\\bin\\Release");
                         strTempAssmbPath = System.IO.Path.Combine(strTempAssmbPath, neededAssembly);
                        
                     }
+
                     break;
                 }
             }

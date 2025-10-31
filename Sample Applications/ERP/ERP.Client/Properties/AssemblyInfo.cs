@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ERP.Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ERP.Client")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany(Telerik.WinControls.VersionNumber.CompanyName)]
+[assembly: AssemblyProduct(Telerik.WinControls.VersionNumber.ProductName)]
+[assembly: AssemblyCopyright(Telerik.WinControls.VersionNumber.CopyrightText)]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(Telerik.WinControls.VersionNumber.Number)]
+[assembly: AssemblyFileVersion(Telerik.WinControls.VersionNumber.Number)]
