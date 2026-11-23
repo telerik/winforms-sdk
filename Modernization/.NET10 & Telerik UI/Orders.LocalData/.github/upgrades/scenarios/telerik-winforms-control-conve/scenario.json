@@ -1,0 +1,15 @@
+{
+  "scenarioId": "telerik-winforms-control-conversion",
+  "operationId": "faf2f20f-9875-445f-ab0b-5abbe9a666ea",
+  "description": "Convert standard Microsoft WinForms controls (Button, DataGridView, TreeView, ListView, ComboBox, and others) to Telerik UI for WinForms equivalents \u2014 install the AllControls NuGet package, set up licensing, convert forms with the Telerik MCP migration tools, and apply a theme. Use to adopt Telerik UI for WinForms, or as a follow-up after telerik-winforms-version-upgrade or dotnet-version-upgrade.\n",
+  "startTime": "2026-11-20T17:54:43.3663523Z",
+  "lastUpdateTime": "2026-11-20T18:43:49.3588239Z",
+  "properties": {
+    "taskStates": {
+      "01-prepare-orders-project": "Completed",
+      "02-convert-form1-controls": "Completed",
+      "03-finalize-orders-conversion": "Completed"
+    }
+  },
+  "folderPath": ""
+}

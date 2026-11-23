@@ -1,0 +1,92 @@
+{
+  "packageGovernance": {
+    "totalDistinctPackages": 0,
+    "totalVersionDriftInstances": 0,
+    "targetFramework": "net10.0",
+    "packages": []
+  },
+  "projects": [
+    {
+      "name": "Orders",
+      "path": "Orders.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net462"
+      ],
+      "targetFramework": "net10.0",
+      "dependencies": {
+        "packages": [],
+        "assemblies": [
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Orders.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Orders.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Orders.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Orders.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Orders.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Orders.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [],
+        "frameworkReferences": []
+      }
+    }
+  ]
+}
